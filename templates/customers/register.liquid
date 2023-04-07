@@ -1,0 +1,68 @@
+<link href="{{ 'style-login.css' | asset_url }}" rel="preload" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'style-login.css' | asset_url }}"></noscript>
+
+<div class="page-wrap login-page-wrap sign-up"> <!-- START PAGE WRAP -->
+    <div class="section login">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-content">
+                        <div class="columns display-flex">
+                            <div class="column form-column">
+                                <div class="section-title">
+                                    <h2>SIGN UP</h2>
+                                </div>
+                                <div class="form-wrap">
+
+                                    {% form 'create_customer', class:"account-form" %}
+
+                                        <div class="error-form">
+                                            {{ form.errors | default_errors }}
+                                        </div>
+
+                                        <div class="field-wrap">
+                                            <span>First Name*</span>
+                                            <input class="input-field" type="text"  name="customer[first_name]" />
+                                        </div>
+                                        <div class="field-wrap">
+                                            <span>Last Name*</span>
+                                            <input class="input-field" type="text" value="" name="customer[last_name]" />
+                                        </div>
+                                        <div class="field-wrap email-wrap">
+                                            <span>Email*</span>
+                                            <input class="input-field" type="email"  name="customer[email]" />
+                                        </div>
+                                        <div class="field-wrap">
+                                            <span>Password*</span>
+                                            <input class="input-field" type="password" value="" name="customer[password]" id="create_password" />
+                                        </div>
+                                        <p class="term-link">By creating an account, I agree to the Wet Noses <a href="/pages/terms-of-use">Terms of Use.</a> </p>
+                                        <div class="field-wrap submit-wrap">
+                                            <input type="submit" class="input-submit" value="SUBMIT">
+                                        </div>
+
+                                    {% endform %}
+
+                                </div>
+                                <div class="additional-links sign-up">
+                                    <p>Have an account? <a href="/account/login">Login here.</a></p>
+                                </div>
+                            </div>
+                            <div class="column image-column">
+                                <div class="image-wrap">
+                                    <img src="{{ "blog-post-1.png" | asset_url }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- END PAGE WRAP -->
+<style>
+    .error-form{
+        color:red;
+        padding-bottom: 10px;
+    }
+</style>

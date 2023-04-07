@@ -1,0 +1,166 @@
+<header>
+    <div class="header-wrap">
+        <div class="top-row">
+            <div class="container">
+                <div class="logo-wrap">
+                    <img src="{{ product.images[0].src | img_url: "50x" }}" alt="World Of Luxury"
+                        class="lazyload"
+                        data-src="{{ section.settings.top_logo | img_url: '800x' }}"
+                        data-widths="[800]"
+                        data-sizes="auto"
+                        tabindex="-1"
+                    />
+                </div>
+                <div class="middle-row">
+                    <div class="columns-wrap display-flex">
+                        <div class="column left-column">
+                            <div class="links">
+                                <div class="link-item">
+                                    <a href="#">
+                                        <div class="icon">
+                                            <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.25 11.9583H30.75M10.25 20.5H30.75M10.25 29.0416H30.75" stroke="black" stroke-linecap="round"/>
+                                            </svg>
+                                        </div>
+                                        <span>Catalogue</span>
+                                    </a>
+                                </div>
+                                <div class="link-item">
+                                    <a href="#" class="search-action">
+                                        <div class="icon">
+                                            <svg class="search-image" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23.7134 22.7136L29.9998 29" stroke="black" stroke-width="1.31707" stroke-linecap="round"/>
+                                                <path d="M18.75 24.5C22.4779 24.5 25.5 21.4779 25.5 17.75C25.5 14.0221 22.4779 11 18.75 11C15.0221 11 12 14.0221 12 17.75C12 21.4779 15.0221 24.5 18.75 24.5Z" stroke="black" stroke-width="1.31707" stroke-linecap="round"/>
+                                            </svg>
+                                            <svg class="close-image" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.8364 10.8362L30.164 30.1638M10.8364 30.1638L30.164 10.8362" stroke="#1F1F1F" stroke-linecap="round"/>
+                                            </svg>
+                                        </div>
+                                        <span>Search</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column center-column">
+                            <div class="main-logo">
+                                <a href="#">World of luxury</a>
+                            </div>
+                        </div>
+                        <div class="column right-column">
+                            <div class="links">
+                                <div class="link-item">
+                                    <a href="#" class="cart-action">
+                                        <div class="icon">
+                                            <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.56176 11.2446C9.47499 10.724 9.87648 10.25 10.4043 10.25H35.021L32.4585 25.625H11.9585L9.56176 11.2446Z" stroke="black" stroke-linecap="round"/>
+                                                <path d="M14.5208 34.1667C15.4643 34.1667 16.2292 33.4018 16.2292 32.4583C16.2292 31.5148 15.4643 30.75 14.5208 30.75C13.5773 30.75 12.8125 31.5148 12.8125 32.4583C12.8125 33.4018 13.5773 34.1667 14.5208 34.1667Z" stroke="black" stroke-linecap="round"/>
+                                                <path d="M29.8958 34.1667C30.8393 34.1667 31.6042 33.4018 31.6042 32.4583C31.6042 31.5148 30.8393 30.75 29.8958 30.75C28.9523 30.75 28.1875 31.5148 28.1875 32.4583C28.1875 33.4018 28.9523 34.1667 29.8958 34.1667Z" stroke="black" stroke-linecap="round"/>
+                                                <path d="M9.396 10.25V7.6875L6.8335 7.6875" stroke="black" stroke-linecap="round"/>
+                                            </svg>
+                                        </div>
+                                        <span>Cart</span>
+                                    </a>
+                                </div>
+                                <div class="link-item">
+                                    <a href="#">
+                                        <div class="icon">
+                                            <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18.792 25.625L23.917 20.5L18.792 15.375" stroke="black" stroke-linecap="square"/>
+                                                <path d="M7.6875 20.5H22.2083" stroke="black" stroke-linecap="square"/>
+                                                <path d="M23.9163 20.5H22.208" stroke="black" stroke-linecap="round"/>
+                                                <path d="M30.7497 6.83344V34.1668H11.958V6.83344H30.7497Z" stroke="black" stroke-linecap="square"/>
+                                            </svg>
+                                        </div>
+                                        <span>Sign In</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                            
+            </div>
+        </div>
+        <div class="bottom-row">
+            <div class="navigation-wrap">
+                <nav class="top-navigation">
+                    <ul class="display-flex">
+                        {% for block in section.blocks %}
+                            <li>
+                                <a href="{{ block.settings.link_url }}">
+                                    <span class="icon">
+                                        {% if block.settings.icon != blank %}
+                                            <img class="main-icon" src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+                                        {% endif %}
+                                        {% if block.settings.icon_hover != blank %}
+                                            <img class="hover-icon" src="{{ block.settings.icon_hover | img_url: 'master' }}" alt="">
+                                        {% endif %}
+                                    </span>
+                                    <span class="title">{{ block.settings.title }}</span>
+                                </a>
+                            </li>                            
+                        {% endfor %}    
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="search-form">
+        <div class="form-wrap">
+            <form action="">
+                <div class="input-field">
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="input-field submit-field">
+                    <button>
+                        <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.7134 22.7136L29.9998 29" stroke="black" stroke-width="1.31707" stroke-linecap="round"/>
+                            <path d="M18.75 24.5C22.4779 24.5 25.5 21.4779 25.5 17.75C25.5 14.0221 22.4779 11 18.75 11C15.0221 11 12 14.0221 12 17.75C12 21.4779 15.0221 24.5 18.75 24.5Z" stroke="black" stroke-width="1.31707" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
+
+{% schema %}
+    {
+        "name": "Small cart",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "top_logo",
+                "label": "Top logo"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Blocks",
+                "type": "blocks",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Link name"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link_url",
+                        "label": "Link url"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "icon",
+                        "label": "Icon"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "icon_hover",
+                        "label": "Icon hover"
+                    }
+                ]
+            }
+        ]
+
+    }
+{% endschema %}

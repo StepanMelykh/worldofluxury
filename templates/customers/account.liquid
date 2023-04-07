@@ -1,0 +1,346 @@
+<link href="{{ 'style-account-pages.css' | asset_url }}" rel="preload" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'style-account-pages.css' | asset_url }}"></noscript>
+
+<div class="page-wrap account-page-section"> <!-- START PAGE WRAP -->
+    <div class="section login">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-content">
+
+                        <!-- ACCOUNT PAGE CONTENT-->
+
+                        <div class="account-page__row">
+                            <div class="account-page__nav">
+
+                                {% include "customer-menu", active_menu: 'address'  %}
+
+                            </div>
+
+                            <div class="account-page__content">
+                                <div class="account-information">
+                                    <div class="account-page-heading">
+                                        Account Information
+                                    </div>
+                                    <div class="account-information__wrap">
+                                        <div class="account-information__item">
+                                            <div class="account-information__property">Name</div>
+                                            <div class="account-information__item-margin">
+                                                <div class="account-information__value">{{ customer.first_name }} {{ customer.last_name }}</div>
+                                                {% comment %}<a href="#" class="account-information__edit-btn">EDIT</a>{% endcomment %}
+                                            </div>
+
+                                        </div>
+                                        <div class="account-information__item">
+                                            <div class="account-information__property">EMAIL</div>
+                                            <div class="account-information__item-margin">
+                                                <div class="account-information__value">{{ customer.email }}</div>
+                                                {% comment %}<a href="#" class="account-information__edit-btn">EDIT</a>{% endcomment %}
+                                            </div>
+                                        </div>
+                                        <div class="account-information__item">
+                                            <div class="account-information__property">Password</div>
+                                            <div class="account-information__item-margin">
+                                                <div class="account-information__value dots">•••••••••</div>
+                                                <a href="#" class="account-information__edit-btn" onclick="document.location.href='/account/login#recover'">EDIT</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="account-address">
+                                    <div class="account-page-heading">
+                                        Address Book
+                                        <div class="account-page-heading__button">
+
+                                            <span>
+                                                <a href="javascript:void(0);" id="add_new_address" class="account-info-form" data-form-id="add-address">
+                                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="11" cy="11" r="11" fill="#373732"/>
+                                                        <path d="M15 10.4286H11.5714V7H10.4286V10.4286H7V11.5714H10.4286V15H11.5714V11.5714H15V10.4286Z" fill="#FFFFFA"/>
+                                                    </svg>
+                                                    ADD NEW
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {% for address in customer.addresses %}
+
+                                        <div class="account-address__wrap">
+                                            <div class="account-address__mark">
+                                                {% if address ==  customer.default_address  %}
+                                                    DEFAULT
+                                                {% endif %}
+                                            </div>
+                                            <div class="account-address__item">
+                                                <div class="account-address__item-buttons">
+                                                    {{ "EDIT" | edit_customer_address_link: address.id }}
+                                                    {{ "DELETE" | delete_customer_address_link: address.id }}
+                                                </div>
+
+                                                <div class="account-address__item-info">{{ address.first_name }} {{ address.last_name }}</div>
+                                                {% if address.company != empty %}
+                                                    <div class="account-address__item-info">{{ address.company }}</div>
+                                                {% endif %}
+                                                <div class="account-address__item-info">{{ address.street }}</div>
+                                                <div class="account-address__item-info">{{ address.city }}{% if address.province_code %}, {{ address.province_code | upcase }}{% endif %}</div>
+                                                <div class="account-address__item-info">{{ address.zip | upcase }}</div>
+                                                <div class="account-address__item-info">{{ address.country }}</div>
+                                                <div class="account-address__item-info">{{ address.phone }}</div>
+                                            </div>
+
+                                            <div class="account__edit-address" id="EditAddress_{{ address.id }}" style="display:none;">
+
+                                                    {% form 'customer_address', address %}
+
+                                                        <div class="login-error form-i-error"></div>
+
+                                                        <div class="account-form__row" data-form-name="add-address">
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        First Name
+                                                                    </div>
+                                                                    <input class="account-form__input" type="text" id="AddressFirstName_{{ form.id }}"  name="address[first_name]" placeholder="First Name" value="{{ form.first_name }}" autocapitalize="words">
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        Last Name
+                                                                    </div>
+                                                                    <input class="account-form__input" type="text" id="AddressLastName_{{ form.id }}"  name="address[last_name]"   placeholder="Last Name" value="{{ form.last_name }}" autocapitalize="words">
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        Company Name (Optional)
+                                                                    </div>
+                                                                    <input class="account-form__input" type="text" id="AddressCompany_{{ form.id }}"   name="address[company]"    placeholder="Company" value="{{ form.company }}" autocapitalize="words">
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        Phone Number
+                                                                    </div>
+                                                                    <input class="account-form__input" type="tel" id="AddressPhone_{{ form.id }}" placeholder="Phone"  name="address[phone]" value="{{ form.phone }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        Address Line 1
+                                                                    </div>
+                                                                    <input class="account-form__input" type="text" id="AddressAddress1_{{ form.id }}"  name="address[address1]"  placeholder="Address 1" value="{{ form.address1 }}" autocapitalize="words">
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        Address Line 2
+                                                                    </div>
+                                                                    <input class="account-form__input" type="text" id="AddressAddress2_{{ form.id }}"  name="address[address2]" placeholder="Address 2" value="{{ form.address2 }}" autocapitalize="words">
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        City
+                                                                    </div>
+                                                                    <input class="account-form__input" type="text" id="AddressCity_{{ form.id }}"      name="address[city]" placeholder="City" value="{{ form.city }}" autocapitalize="words">
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        Country
+                                                                    </div>
+                                                                    <select class="input-field" id="AddressCountry_{{ form.id }}" class="input-full country" name="address[country]" data-default="{{ form.country }}">{{ all_country_option_tags }}</select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-form__col account-form__col_50" id="AddressProvinceContainer_{{ form.id }}" style="display:none">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        State
+                                                                    </div>
+                                                                    <select class="input-field" id="AddressProvince_{{ form.id }}" class="input-full" name="address[province]" data-default="{{ form.province }}"></select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="account-form__col account-form__col_50">
+                                                                <div class="account-form__input-wrap">
+                                                                    <div class="account-form__input-title">
+                                                                        Zip/Postal Code
+                                                                    </div>
+                                                                    <input class="account-form__input" type="text" id="AddressZip_{{ form.id }}" placeholder="Postal/Zip Code"  name="address[zip]" value="{{ form.zip }}" autocapitalize="characters">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="account-form__buttons space-between">
+                                                            <div class="account-form__buttons-wrap">
+                                                                <label class="account-form__checkbox-container">Set as default
+                                                                    <input type="checkbox" id="address_default_address_{{ form.id }}" name="address[default]" {% if address.id == customer.default_address.id %}value="1" checked{% endif %}>
+                                                                    <span class="account-form__checkbox-checkmark"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="account-form__buttons-wrap">
+                                                                <button class="account-form__cancel-button" onclick="Shopify.CustomerAddress.toggleForm({{ form.id }}); return false;">CANCEL</button>
+                                                                <button type="submit" class="account-form__button">SAVE</button>
+                                                            </div>
+                                                        </div>
+
+                                                    {% endform %}
+
+                                            </div>
+
+                                        </div>
+
+
+                                    {% endfor %}
+
+                                    <div id="AddAddress" style="display: none" class="account__edit-address">
+                                        {% form 'customer_address', customer.new_address %}
+
+                                            <div class="login-error form-i-error"></div>
+                                            <div class="account-form__row" data-form-name="add-address">
+
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            First Name
+                                                        </div>
+                                                        <input class="account-form__input" type="text" id="AddressFirstNameNew"  name="address[first_name]" placeholder="First Name" value="{{ form.first_name }}" autocapitalize="words">
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            Last Name
+                                                        </div>
+                                                        <input class="account-form__input" type="text" id="AddressLastNameNew" name="address[last_name]" placeholder="Last Name" value="{{ form.last_name }}" autocapitalize="words">
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            Company Name (Optional)
+                                                        </div>
+                                                        <input class="account-form__input" type="text" id="AddressCompanyNew"  name="address[company]" placeholder="Company" value="{{ form.company }}" autocapitalize="words">
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            Phone Number
+                                                        </div>
+                                                        <input type="text" class="account-form__input">
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            Address Line 1
+                                                        </div>
+                                                        <input class="account-form__input" type="text" id="AddressAddress1New" name="address[address1]" placeholder="Address 1" value="{{ form.address1 }}" autocapitalize="words">
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            Address Line 2
+                                                        </div>
+                                                        <input class="account-form__input" type="text" id="AddressAddress2New"  name="address[address2]" placeholder="Address 2" value="{{ form.address2 }}" autocapitalize="words">
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            City
+                                                        </div>
+                                                        <input class="account-form__input" type="text" id="AddressCityNew"  name="address[city]" placeholder="City" value="{{ form.city }}" autocapitalize="words">
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            Country
+                                                        </div>
+                                                        <select id="AddressCountryNew"  name="address[country]" data-default="{{ form.country }}">{{ all_country_option_tags }}</select>
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50"  id="AddressProvinceContainerNew" style="display:none">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            State
+                                                        </div>
+                                                        <select class="select-field" id="AddressProvinceNew" name="address[province]" data-default="{{ form.province }}"></select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            Zip/Postal Code
+                                                        </div>
+                                                        <input class="account-form__input" type="text" id="AddressZipNew" placeholder="Postal/Zip Code" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters">
+                                                    </div>
+                                                </div>
+                                                <div class="account-form__col account-form__col_50">
+                                                    <div class="account-form__input-wrap">
+                                                        <div class="account-form__input-title">
+                                                            Phone Number
+                                                        </div>
+                                                        <input class="account-form__input" type="tel" id="AddressPhoneNew" placeholder="Phone" name="address[phone]" value="{{ form.phone }}">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="account-form__buttons space-between">
+                                                <div class="account-form__buttons-wrap">
+                                                    <label class="account-form__checkbox-container">Make Default
+                                                        {{ form.set_as_default_checkbox }}
+                                                        <span class="account-form__checkbox-checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="account-form__buttons-wrap">
+                                                    <button class="account-form__cancel-button" id="close_add_new_address">CANCEL</button>
+                                                    <button class="account-form__button">ADD ADDRESS</button>
+                                                </div>
+                                            </div>
+                                        {% endform %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- END ACCOUNT PAGE CONTENT-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- END PAGE WRAP -->
+
+<script>
+
+    // Initialize observers on address selectors
+
+
+    // Setup province selector on each customer address
+    {% paginate customer.addresses by 5 %}
+    {% for address in customer.addresses %}
+        new Shopify.CountryProvinceSelector('AddressCountry_{{ address.id }}', 'AddressProvince_{{ address.id }}', {
+            hideElement: 'AddressProvinceContainer_{{ address.id }}'}
+        );
+    {% endfor %}
+    {% endpaginate %}
+
+
+</script>
+

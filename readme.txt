@@ -1,0 +1,1 @@
+theme get --password=shptka_6f19ca53c644830d0a54e9946f56dbee --store=learning-darkroomagency.myshopify.com --themeid=134200525022

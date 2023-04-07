@@ -1,0 +1,41 @@
+{{ 'style-default-page.css' | asset_url | stylesheet_tag }}
+<style>
+    .shopify-challenge__errors{
+        display: none;
+    }
+</style>
+
+<div class="page-wrap default-page-wrap"> <!-- START PAGE WRAP -->
+    <section class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 left-column">
+
+                </div>
+                <div class="col-md-6 right-column">
+                    <div class="content-wrap">
+                        <div class="content">
+
+                            {{ content_for_layout }}
+
+                        </div>
+                        <div class="footer-content">
+                            <div class="image-wrap fingers-wrap">
+                                <img src="{{ "page-img-1.svg" | asset_url }}" alt="">
+                            </div>
+                            <div class="image-wrap smile-wrap">
+                                <img src="{{ "page-img-2.svg" | asset_url }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div> <!-- END PAGE WRAP -->
+

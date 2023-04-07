@@ -1,0 +1,121 @@
+<link href="{{ 'style-login.css' | asset_url }}" rel="preload" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'style-login.css' | asset_url }}"></noscript>
+
+
+<div class="page-wrap login-page-wrap" id="customer_login"> <!-- START PAGE WRAP -->
+    <div class="section login">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-content">
+                        <div class="columns display-flex">
+                            <div class="column form-column">
+                                <div class="section-title">
+                                    <h2>LOGIN</h2>
+                                </div>
+                                <div class="form-wrap">
+
+                                    {% form 'customer_login', class: "account-form" %}
+
+                                        <div class="error-form">
+                                            {{ form.errors | default_errors }}
+                                        </div>
+
+                                        <div class="field-wrap">
+                                            <span>Email</span>
+                                            <input class="input-field" type="email"  name="customer[email]" />
+                                        </div>
+                                        <div class="field-wrap">
+                                            <span>Password</span>
+                                            <input class="input-field" type="password"  name="customer[password]" />
+                                        </div>
+                                        <p class="forgot-link"><a href="javascript:void(0)" onclick="showRecoverPasswordForm();">Forgot password?</a> </p>
+                                        <div class="field-wrap submit-wrap">
+                                            <input type="submit" class="input-submit" value="LOGIN">
+                                        </div>
+
+                                    {% endform %}
+
+                                </div>
+                                <div class="additional-links">
+                                    <p>Don't have an account? <a href="/account/register">Create one.</a></p>
+                                    <p>Have a Wholesale account? <a href="/account/login">Login here.</a></p>
+                                </div>
+                            </div>
+                            <div class="column image-column">
+                                <div class="image-wrap">
+                                    <img src="{{ "blog-post-1.png" | asset_url }}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- END PAGE WRAP -->
+
+<div class="page-wrap login-page-wrap forgot-passrword" id="recover_password" style="display: none;"> <!-- START PAGE WRAP -->
+    <div class="section login forgot">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-content">
+                        <div class="columns">
+                            <div class="column form-column">
+                                <div class="section-title">
+                                    <h2>FORGOT PASSWORD</h2>
+                                </div>
+                                <div class="form-wrap">
+                                    {% form 'recover_customer_password', class: "account-form" %}
+
+                                        <div class="error-form">
+                                            {{ form.errors | default_errors }}
+                                        </div>
+
+                                        <div class="field-wrap">
+                                            <span>Email</span>
+                                            <input class="input-field" type="email"  name="customer[email]" />
+                                        </div>
+
+                                        <div class="field-wrap submit-wrap">
+                                            <input type="submit" class="input-submit" value="RESET MY PASSWORD">
+                                        </div>
+
+                                    {% endform %}
+                                </div>
+                                <div class="additional-links">
+                                    <p>Have an account? <a href="/account/login">Login here.</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- END PAGE WRAP -->
+
+<style>
+    .error-form{
+        color:red;
+        padding-bottom: 10px;
+    }
+</style>
+<script>
+    function showRecoverPasswordForm() {
+        document.getElementById('recover_password').style.display = 'block';
+        document.getElementById('customer_login').style.display='none';
+    }
+
+    function hideRecoverPasswordForm() {
+        document.getElementById('recover_password').style.display = 'none';
+        document.getElementById('customer_login').style.display = 'block';
+    }
+
+    if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+
+    {% if reset_success %}
+        document.getElementById('resetSuccess').style.display = 'block';
+    {% endif %}
+</script>

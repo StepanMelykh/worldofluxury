@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Social Links",
+    "settings": [
+      {
+        "type": "url",
+        "id": "fb_link",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "ig_link",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "linkedin_link",
+        "label": "LinkedIn"
+      },
+      {
+        "type": "url",
+        "id": "pint_link",
+        "label": "Pinterest"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Contact Email"
+      }
+    ]
+  },
+  {
+    "name": "Other Settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon_image",
+        "label": "Favicon Image"
+      },
+      {
+        "type": "textarea",
+        "id": "copyright_text",
+        "label": "Copyright Text",
+        "default": "© 2022 Nera. All rights reserved."
+      }
+    ]
+  }
+]
