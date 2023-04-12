@@ -19,7 +19,7 @@
                 items: 1,
                 dots: true,
                 loop: true,
-                autoplay: true,
+                // autoplay: true,
                 autoplaySpeed: 1000,
             }); 
         }
@@ -50,7 +50,12 @@
                     loop: true,
                     // autoplay: true,
                     // autoplaySpeed: 1000,
-                    margin: 50,
+                    margin: 20,
+                    responsive : {
+                        1400 : {
+                            margin: 50,
+                        }
+                    }
                 }); 
             })
         }

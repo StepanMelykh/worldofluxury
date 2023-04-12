@@ -1,0 +1,38 @@
+{% if section.settings.image_url != blank %}
+    <a href="{{ section.settings.link_url }}">
+        <div class="image-wrap">
+            <img class="main-image lazyload" src="{{ section.settings.image_url | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
+                data-src="{{ section.settings.image_url | img_url: '1920x' }}"
+                data-widths="[1920]"
+                data-sizes="auto"
+                tabindex="-1"
+            />
+        </div>                    
+    </a>
+{% endif %}
+
+
+{% schema %}
+    {
+        "name": "Big banner",
+        "tag": "section",
+        "class": "big-banner",
+        "settings": [
+            {
+                "type": "url",
+                "id": "link_url",
+                "label": "Link url"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_url",
+                "label": "Banner"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Big banner"
+            }
+        ]
+    }
+{% endschema %}

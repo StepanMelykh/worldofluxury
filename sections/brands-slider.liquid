@@ -1,0 +1,54 @@
+<div class="partners-wrap">
+    <div class="section-title">{{ section.settings.title }}</div>
+    <div id="partners-slider" class="partners-slider owl-carousel">
+        {% for block in section.blocks %}
+            <div class="partner-item">
+                <img class="main-image lazyload" src="{{ block.settings.image | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
+                    data-src="{{ block.settings.image | img_url: '227x' }}"
+                    data-widths="[227]"
+                    data-sizes="auto"
+                    tabindex="-1"
+                />
+            </div>            
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+        {
+        "name": "Brands slider",
+        "tag": "section",
+        "class": "partners",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Slide",
+                "type": "slide",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Slide title"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Brands slider"
+            }
+        ]
+    }
+{% endschema %}

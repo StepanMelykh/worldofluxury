@@ -1,0 +1,55 @@
+<div class="slider-wrap">
+    <div id="hero-slider" class="owl-carousel">
+        {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+                <div class="slide-item">
+                    <a href="{{ block.settings.link_url }}">
+                        <img class="main-image lazyload" src="{{ block.settings.image | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
+                            data-src="{{ block.settings.image | img_url: '1920x' }}"
+                            data-widths="[1920]"
+                            data-sizes="auto"
+                            tabindex="-1"
+                        />
+                    </a>
+                </div>                
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Hero home",
+        "tag": "section",
+        "class": "home-hero",
+        "settings": [],
+        "blocks": [
+            {
+                "name": "Slide",
+                "type": "slide",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Slide title"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "link_url",
+                        "label": "Link url"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Home hero"
+            }
+        ]
+    }
+{% endschema %}

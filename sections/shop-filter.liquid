@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="section-title">Shop watches</div>
+    <div class="columns display-flex">
+        <div class="column">
+            <div class="image-wrap">
+                <img src="{{ 'temp-shop-img-1.png' | asset_url }}" alt="">
+            </div>
+            <div class="footer">
+                <a href="">
+                    <span>View Watches up to</span>
+                    <span>$3,999</span>
+                </a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="image-wrap">
+                <img src="{{ 'temp-shop-img-2.png' | asset_url }}" alt="">
+            </div>
+            <div class="footer">
+                <a href="">
+                    <span>View Watches</span>
+                    <span>$3,999 - $9,999</span>
+                </a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="image-wrap">
+                <img src="{{ 'temp-shop-img-3.png' | asset_url }}" alt="">
+            </div>
+            <div class="footer">
+                <a href="">
+                    <span>View Watches over</span>
+                    <span>$9,999</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Shop filter",
+        "tag": "section",
+        "class": "shop-filter",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Shop filter"
+            }
+        ]
+    }
+{% endschema %}

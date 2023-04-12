@@ -1,0 +1,77 @@
+<div class="top-row">
+    <div class="tabs-wrap">
+        <div class="tab active">New products</div>
+        <div class="tab">Top sale</div>
+    </div>
+</div>
+<div id="products-slider" class="products-slider owl-carousel">
+
+    {%  assign  count = 1 %}
+    {% paginate collections.all.products by 10 %}
+        {% assign collection = collections.all.products | sort: 'published_at'%}
+        {% for product in collection %}
+            <div class="product-item" data-product-count="{{ count }}">
+                <div class="body-item">
+                    <div class="image-wrap">
+                        <span class="label-brend">Name Brand</span>
+                        <span class="label-percent">-15%</span>                                
+                        <a href="#">
+                            <img src="{{ product.images[0] | img_url: 'master' }}" alt="{{ product.title }}">   
+                        </a>
+                    </div>
+                    <div class="product-name">
+                        <a href="{{ product.url }}">{{ product.title }}</a>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <div class="top-row display-flex">
+                        <div class="column retail">
+                            <span class="label">Retail price</span>
+                            <span class="retail-price">$34,700</span>
+                        </div>
+                        <div class="column discount">
+                            <span class="label">Discount</span>
+                            <span class="discount-price">$34,700</span>
+                        </div>
+                    </div>
+                    <div class="bottom-row display-flex">
+                        <div class="column our-price">
+                            <span class="label">Our price</span>
+                            <span class="our-price-price">{{ product.price | money_without_trailing_zeros  }}</span>
+                        </div>
+                        <div class="column order">
+                            <a class="add-to-cart" href="#">Order now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%  assign count = count | plus: 1  %}
+        {% endfor %}
+    {% endpaginate %}
+</div>
+
+
+{% schema %}
+    {
+        "name": "Products slider",
+        "tag": "section",
+        "class": "products-grid",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "number",
+                "id": "product_count",
+                "label": "Count"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Products slider"
+            }
+        ]
+    }
+{% endschema %}

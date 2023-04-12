@@ -26,10 +26,9 @@
 
   <link rel="canonical" href="{{ canonical_url }}" />
   <meta name="viewport" content="width=device-width" />
-
+    <link rel="stylesheet" href="{{ 'owl.carousel.min.css' | asset_url }}" />
     <link rel="stylesheet" href="{{ 'fonts.css' | asset_url }}" />
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" />
-
 </head>
 <body>
     <main>
@@ -43,12 +42,13 @@
     </footer>
     
 
-    {% section "small-cart" %}
+    {% include "small-cart" %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
     {{ 'lazysizes.min.js' | asset_url | script_tag }}
     <!-- {{ 'script-cart.js' | asset_url | script_tag }} -->
+    {{ 'owl.carousel.min.js' | asset_url | script_tag }}
     {{ 'main.js' | asset_url | script_tag }}
 
 </body>

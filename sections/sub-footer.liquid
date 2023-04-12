@@ -1,53 +1,28 @@
 <div class="sub-footer-wrap display-flex">
     <div class="column left-column">
         <div class="navigation">
-            <div class="footer-column">
-                <div class="title-column">About us</div>
-                <ul class="footer-nav">
-                    <li><a href="#">About World of Luxury</a></li>
-                    <li><a href="#">Client Testimonials</a></li>
-                    <li><a href="#">Our Showroom</a></li>
-                    <li><a href="#">Our Promise</a></li>
-                    <li><a href="#">Our Blog</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ`s</a></li>
-                    <li><a href="#">Trade in</a></li>
-                    <li><a href="#">Sell your watch</a></li>
-                    <li><a href="#">Site map</a></li>
-                    <li><a href="#">Newsletter Signup</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <div class="title-column">Business</div>
-                <ul class="footer-nav">
-                    <li><a href="#">Pre-Owned Watches</a></li>
-                    <li><a href="#">Consignment</a></li>
-                    <li><a href="#">Watch Sourcing</a></li>
-                    <li><a href="#">Watch Terminology</a></li>
-                    <li><a href="#">Caring for your Watch</a></li>
-                    <li><a href="#">Schedule Appointment</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <div class="title-column">Policies</div>
-                <ul class="footer-nav">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Our Policies</a></li>
-                    <li><a href="#">US / International Shipping</a></li>
-                    <li><a href="#">Shop with Confidence</a></li>
-                    <li><a href="#">Guarantees</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Warranty</a></li>
-                </ul>
-            </div>
+            {% for block in section.blocks %}
+                <div class="footer-column">
+                    <div class="title-column">{{ block.settings.title }}</div>
+                    <ul class="footer-nav">
+                        {% for link in block.settings.navigation.links %}
+                            <li><a href="{{ link.url }}">{{ link.title }}</a></li>    
+                        {% endfor %}
+                    </ul>
+                </div>                
+            {% endfor %}
         </div>
     </div>
     <div class="column right-column">
         <div class="footer-column">
-            <div class="title-column">Contact us</div>
+            <div class="title-column">{{ section.settings.title }}</div>
             <div class="contacts">
-                <p><span class="name">E-mail:</span><a href="mailto:info@worldofluxuryus.com">info@worldofluxuryus.com</a></p>
-                <p><span class="name">Tel:</span><a href="tel:+1 (833) 443-8496">+1 (833) 443-8496</a></p>
+                {% if section.settings.email != blank %}
+                    <p><span class="name">E-mail:</span><a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></p>
+                {% endif %}
+                {% if section.settings.phone != blank %}
+                    <p><span class="name">Tel:</span><a href="tel: {{ section.settings.phone }}">{{ section.settings.phone }}</a></p>
+                {% endif %}
             </div>
             <div class="social display-flex">
                 <div class="social-link facebook-link">
@@ -102,7 +77,14 @@
                 "label": "Title contats"
             },
             {
-                
+                "type": "text",
+                "id": "email",
+                "label": "Email"
+            },
+            {
+                "type": "text",
+                "id": "phone",
+                "label": "Phone"
             }
         ],
         "blocks": [
@@ -117,9 +99,9 @@
                         "label": "Title"
                     },
                     {
-                        "type": "navigation",
-                        "id": "logo",
-                        "label": "Logo"
+                        "type": "link_list",
+                        "id": "navigation",
+                        "label": "Navigation"
                     }
                 ]
             }
