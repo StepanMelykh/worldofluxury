@@ -9,6 +9,7 @@
         productsSlider();
         cartActive();
         searchForm();
+        mobileNavigation();
 
     });
 
@@ -29,12 +30,20 @@
         var partners = jQuery('#partners-slider');
         if (partners.length > 0) { 
             partners.owlCarousel({
-                items: 8,
+                items: 5,
                 dots: true,
                 loop: true,
                 // autoplay: true,
                 autoplaySpeed: 1000,
                 margin: 5,
+                responsive: {
+                    768 : {
+                        items: 6,
+                    },
+                    1820 : {
+                        items: 8,
+                    }
+                }
             }); 
         }
     }
@@ -50,8 +59,11 @@
                     loop: true,
                     // autoplay: true,
                     // autoplaySpeed: 1000,
-                    margin: 20,
-                    responsive : {
+                    margin: 10,
+                    responsive: {
+                        991 : {
+                            margin: 20,
+                        },
                         1400 : {
                             margin: 50,
                         }
@@ -106,13 +118,42 @@
         });
     }
 
+    function mobileNavigation() {
+        jQuery('.catalog-action').on('click', function () {
+            jQuery('.mobile-navigation').toggleClass('active');
+            modalOverlayActive('show');
+        });
+
+        jQuery('.close-mobile-nav').on('click', function () {
+            jQuery('.mobile-navigation').toggleClass('active');
+            modalOverlayActive('hide');
+        });
+
+        jQuery('.has-child').on('click', function () {
+            var subMenu = jQuery('.sub-menu', this);
+            if (jQuery(this).hasClass('open')) {
+                subMenu.slideUp();
+            } else { 
+                subMenu.slideDown();
+            }
+
+            jQuery(this).toggleClass('open');
+
+        });
+    }
+
     jQuery('.modal__overlay').click(function(e){
 
         if( jQuery('#cart').hasClass('active') ){
             jQuery('#cart').removeClass('active');
         }
+
         if( jQuery('.login-section').hasClass('active') ){
             closeLoginForm();
+        }
+
+        if (jQuery('.mobile-navigation').hasClass('active')) {
+            jQuery('.mobile-navigation').toggleClass('active');
         }
 
         modalOverlayActive('hide');

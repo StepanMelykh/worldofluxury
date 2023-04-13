@@ -4,12 +4,20 @@
             {% if block.settings.image != blank %}
                 <div class="slide-item">
                     <a href="{{ block.settings.link_url }}">
-                        <img class="main-image lazyload" src="{{ block.settings.image | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
+                        <img class="desktop-slide main-image lazyload" src="{{ block.settings.image | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
                             data-src="{{ block.settings.image | img_url: '1920x' }}"
                             data-widths="[1920]"
                             data-sizes="auto"
                             tabindex="-1"
                         />
+                        {% if block.settings.image_mobile != blank %}
+                            <img class="mobile-slide main-image lazyload" src="{{ block.settings.image_mobile | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
+                                data-src="{{ block.settings.image_mobile | img_url: '768x' }}"
+                                data-widths="[768]"
+                                data-sizes="auto"
+                                tabindex="-1"
+                            />
+                        {% endif %}
                     </a>
                 </div>                
             {% endif %}
@@ -36,6 +44,11 @@
                     {
                         "type": "image_picker",
                         "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_mobile",
                         "label": "Image"
                     },
                     {
