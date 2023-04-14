@@ -10,6 +10,7 @@
         cartActive();
         searchForm();
         mobileNavigation();
+        productGallary();
 
     });
 
@@ -140,6 +141,22 @@
             jQuery(this).toggleClass('open');
 
         });
+    }
+
+    function productGallary() { 
+        var productGallary = jQuery('#product-gallary');
+        if (productGallary.length > 0) { 
+
+                productGallary.owlCarousel({
+                    items: 1,
+                    dots: true,
+                    loop: true,
+                    // autoplay: true,
+                    // autoplaySpeed: 1000,
+                    margin: 10
+                }); 
+
+        }
     }
 
     jQuery('.modal__overlay').click(function(e){

@@ -1885,5 +1885,18 @@ body {
           position: absolute;
           top: 0px;
           left: 0px; }
+    body section.product-info {
+      padding-top: 40px; }
+      body section.product-info .container {
+        width: calc(100% - 400px);
+        margin: 0px auto; }
+      body section.product-info .product-gallary {
+        width: 631px;
+        height: 665; }
+        body section.product-info .product-gallary img {
+          -o-object-fit: cover;
+             object-fit: cover;
+          width: 100%;
+          height: 100%; }
 
 /*# sourceMappingURL=style.css.map */

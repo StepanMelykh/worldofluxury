@@ -1,0 +1,29 @@
+<section class="product-info">
+    <div class="container">
+
+        <div class="columns display-flex">
+            <div class="column gallary-column">
+                <div id="product-gallary" class="product-gallary owl-carousel">
+                    <div class="slide-item">
+                        <img src="{{ "temp-product-slide-1.jpg" | asset_url }}" alt="">                    
+                    </div>
+                    <div class="slide-item">
+                        <img src="{{ "temp-product-slide-1.jpg" | asset_url }}" alt="">                    
+                    </div>
+                </div>
+            </div>
+            <div class="column info-column">
+                <div class="breadcrumbs">Home / Shop / Watches / Franck Muller / Vanguard /</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+      "name": "Product info",
+      "settings": [
+        
+      ]
+    }
+    {% endschema %}
