@@ -632,6 +632,12 @@ footer {
       footer .logos-wrap .logo-item img {
         max-width: 100%;
         max-height: 100%; }
+  footer .copyright {
+    text-align: center;
+    font-size: 20px;
+    line-height: 140%;
+    color: #1B1B1B;
+    padding-top: 15px; }
 
 .modal__overlay {
   visibility: hidden;
