@@ -1,29 +1,205 @@
-<section class="product-info">
-    <div class="container">
+{% assign variant_product = product.variants[0] %}
 
-        <div class="columns display-flex">
-            <div class="column gallary-column">
-                <div id="product-gallary" class="product-gallary owl-carousel">
+<div class="container">
+    <div class="columns display-flex">
+        <div class="column gallary-column">
+            <div id="product-gallary" class="product-gallary owl-carousel">
+                {% for image in product.images  %}
                     <div class="slide-item">
-                        <img src="{{ "temp-product-slide-1.jpg" | asset_url }}" alt="">                    
+                        <img src="{{ image | img_url: 'master' }}" alt="{{ product.title }}">                    
                     </div>
-                    <div class="slide-item">
-                        <img src="{{ "temp-product-slide-1.jpg" | asset_url }}" alt="">                    
+                {% endfor %}
+            </div>
+        </div>
+        {% assign price = product.price %}
+        {% assign retail_price = product.compare_at_price %}
+        {% assign discount = retail_price| minus: price %}
+        {% assign percent = discount | times: 100 | divided_by: retail_price %}            
+        <div class="column info-column">
+            <div class="breadcrumbs">Home / Shop / Watches / Franck Muller / Vanguard /</div>
+            <div class="discount">-{{ percent }}%</div>
+            <h1 class="product-title">{{ product.title }}, {{ product.variants[0].sku }}</h1>
+            <div class="price-columns display-flex">
+                <div class="price-column our-price">
+                    <div class="label">Our price</div>
+                    <div class="price">{{ price | money_without_trailing_zeros }}</div>
+                </div>
+                <div class="price-column retail-price">
+                    <div class="label">Retail price</div>
+                    <div class="price bg-price">{{ retail_price | money_without_trailing_zeros }}</div>
+                </div>
+                <div class="price-column discount-price">
+                    <div class="label">Discount</div>
+                    <div class="price bg-price">{{ discount | money_without_trailing_zeros }}</div>
+                </div>
+            </div>
+            <div class="order-columns display-flex">
+                <div class="column add-to-cart-column">
+                    <div class="btn-wrap">
+                        <a href="" class="add-to-cart">Order now</a>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="" class="price-damand">Prequalify now</a>
+                    </div>
+                </div>
+                <div class="column quantity-column">
+                    <div class="quantity-wrap">
+                        <span class="quantity minus-quantuity"></span>
+                        <span class="count-quantity">1</span>
+                        <span class="quantity plus-quantuity"></span>
+                    </div>
+                    <div class="affirm-info">
+                        <span>Starting at <span>$615/mo</span> with</span>
+                        <span class="logo-img"><img src="{{ 'payment-method-affirm.png' | asset_url }}" alt=""></span>
+                    </div>
+                </div>
+                <div class="column review-column">
+                    <span class="count-of-view">5 views/30 days</span>
+                    <span>People have viewed this product in the last 30 days</span>
+                </div>
+            </div>
+            <div class="payment-methods display-flex">
+                    <div class="logo-wrap">
+                        <img src="{{ "payment-method-paypal.png" | asset_url }}" alt="PayPal">
+                    </div>
+                    <div class="logo-wrap">
+                        <img src="{{ "payment-method-amazon.png" | asset_url }}" alt="PayPal">
+                    </div>
+                    <div class="logo-wrap">
+                        <img src="{{ "payment-method-affirm.png" | asset_url }}" alt="PayPal">
+                    </div>
+                    <div class="logo-wrap">
+                        <img src="{{ "payment-method-bankwire.png" | asset_url }}" alt="PayPal">
+                    </div>
+                    <div class="logo-wrap">
+                        <img src="{{ "payment-method-escrow.png" | asset_url }}" alt="PayPal">
+                    </div>
+            </div>
+            <div class="inquires-columns display-flex">
+                <div class="column inquire-column">
+                    <div class="inquire-link inquire-action">
+                        <span class="icon">
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 0.71875H1V10.5188H15V0.71875Z" stroke="white" stroke-linecap="square"/>
+                            <path d="M1 0.71875L8 7.01875L15 0.71875" stroke="white" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <a href="#">Inquire us</a>
+                    </div>
+                    <div class="inquire-link phone-action">
+                        <span class="icon">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.58826 13.781L11.0054 11.3638L15 14.1498L14.1039 15.0459C13.5071 15.6428 12.6309 15.8642 11.8222 15.6226C9.3496 14.8839 7.12845 13.5297 5.15873 11.56C3.18901 9.5903 1.83483 7.36916 1.09618 4.8966C0.854554 4.08782 1.07598 3.21169 1.67285 2.61482L2.56892 1.71875L5.35493 5.71333L2.93777 8.13049" stroke="white" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <a href="#">(833) 443-8496</a>
+                    </div>
+                    <div class="inquire-link trade-action">
+                        <span class="icon">
+                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.1997 0.71875L14.9997 3.71868L12.1997 6.71861" stroke="white" stroke-linecap="square"/>
+                            <path d="M0.999756 3.71875H14.0664" stroke="white" stroke-linecap="square"/>
+                            <path d="M3.79976 16.7186L0.999756 13.7187L3.79976 10.7188" stroke="white" stroke-linecap="square"/>
+                            <path d="M14.9998 13.7188H1.93311" stroke="white" stroke-linecap="square"/>
+                            </svg>
+                        </span>
+                        <a href="#">Trade in</a>
+                    </div>
+                    <div class="inquire-link sell-action">
+                        <span class="icon">
+                            <svg width="8" height="17" viewBox="0 0 8 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.97917 0.71875V2.63542M3.97917 2.63542C5.89583 2.63542 7.01389 3.27431 7.33333 4.55208M3.97917 2.63542C1.10417 2.63542 0.625 4.51042 0.625 5.51042C0.625 9.47823 7.33333 7.39349 7.33333 11.2604C7.33333 12.2604 6.85417 14.1354 3.97917 14.1354M3.97917 14.1354V16.0521M3.97917 14.1354C2.0625 14.1354 0.944444 13.4965 0.625 12.2188" stroke="white" stroke-linecap="square"/>
+                            </svg>
+                        </span>
+                        <a href="#">Sell Your Watch</a>
+                    </div>
+                    <div class="social-links">
+                        <div class="social-link">
+                            <a href=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column tags-column">
+                    <div class="top-row">
+                        <div class="info-block stock">
+                            <div class="label">Availability:</div>
+                            {% if variant_product.available %}
+                                <div class="value">In stock</div>
+                            {% else %}
+                                <div class="value">Out of stock</div>
+                            {% endif %}
+                        </div>
+                        <div class="info-block sku">
+                            <div class="label">Model No:</div>
+                            <div class="value">{{ product.variants[0].sku }}</div>
+                        </div>
+                    </div>
+                    <div class="bottom-row">
+                        <div class="info-block tags">
+                            <div class="label">Tags:</div>
+                            <div class="tags-wrap">
+                                {% for tag in product.tags %}
+                                    <a href="/collections/all/{{ tag |  handleize }}">{{ tag }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="info-block categories">
+                            <div class="label">Categories:</div>
+                            <div class="tags-wrap">
+                                {% for collection_item in product.collections %}
+                                    <a href="/collections/{{ collection_item.handle }}">{{ collection_item.title }},</a>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="column info-column">
-                <div class="breadcrumbs">Home / Shop / Watches / Franck Muller / Vanguard /</div>
+        </div>
+    </div>
+    <div class="additional-info">
+        <div class="tabs-info">
+            <div class="tabs-title">
+                <div class="tab-name active" data-tab-name="description">Description</div>
+                <div class="tab-name" data-tab-name="attributes">Additional information</div>
+            </div>
+            <div class="tabs-content">
+                <div class="tab-content product-description active" data-tab-content="description">
+                    {% if product.description == blank %}
+                    <p>V 35 SC AT FO (RS) Franck Muller. This watch has a 35 mm x 50 mm Stainless Steel case. Fixed Stainless Steel bezel. The dial is made in the technique of “sunburst guilloche”, silver color. Large pink Arabic numerals of different sizes with luminous coating. Silver-tone leaf-style shape hands with a luminescent coating. Dial Type: Analog. The watch performs following functions: hours, minutes, seconds. Automatic movement is powered by a Сalibre FM 2671.H5. Power reserve approximately 42 hours. Solid case back. Tonneau case shape. On the end of the crown, which is located at 3 o’clock, there is an engraving in the form of two letters FM. Sapphire crystal protects front side of the watch. Alligator leather strap with pin buckle. This model is water-resistant up to 30 m.</p>
+                    <p>V 35 SC AT FO (RS) Franck Muller Vanguard Stainless Steel Ladies watch</p>
+                    {% else %}
+                        {{ product.description }}
+                    {% endif  %}
+                </div>
+                <div class="tab-content product-attributes" data-tab-content="attributes">
+                    <div class="attribute-item">
+                        <div class="name">Watch brand</div>
+                        <span class="line"></span>
+                        <div class="value"><a href="#">Franck Muller</a></div>
+                    </div>
+                    <div class="attribute-item">
+                        <div class="name">CRYSTAL</div>
+                        <span class="line"></span>
+                        <div class="value">Scratch Resistant Sapphire</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
+<script>
+    console.log({{ product | json }});
+    console.log({{ product.collections | json }});
+</script>
 
 {% schema %}
     {
       "name": "Product info",
+      "tag": "section",
+      "class": "product-info",
       "settings": [
         
       ]
     }
-    {% endschema %}
+{% endschema %}

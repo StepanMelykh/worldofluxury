@@ -225,285 +225,284 @@ body {
                 @include media($md){
                     transform: translateX(8px);
                 }
-                .product-item {
-                    width: 455px;
-                    height: 580px;
-                    background-color: #FFFFFF;
-                    @include media($xl){
-                        width: 100%;
-                        height: auto;
-                    }
-                    .body-item {
-                        .image-wrap {
-                            width: 100%;
-                            height: 358px;
-                            position: relative;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 8px 8px 0px 0px;
-                            @include media($md){
-                                height: 207px;
-                            }
-                            a {
-                                display: flex;
-                                width: 100%;
-                                height: 100%;
-                            }
-                            img {
-                                max-width: 100%;
-                                max-height: 100%;
-                                object-position: center;
-                                object-fit: contain;
-                            }
-                            span {
-                                position: absolute;
-                                &.label-brend {
-                                    font-size: 20.966px;
-                                    line-height: 26px;
-                                    top: 3px;
-                                    left: 15px;
-                                    color: #878787;
-                                    @include media($lg){
-                                        font-size: 11px;
-                                        line-height: 140%;
-                                        left: 8px;
-                                    }
-                                }
-                                &.label-percent {
-                                    width: 126px;
-                                    height: 30px;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    font-weight: 600;
-                                    font-size: 20.966px;
-                                    line-height: 26px;
-                                    color: #ffffff;
-                                    background: #CAB160;
-                                    top: 0px;
-                                    right: 0px;
-                                    border-radius: 0px 8px 0px 8px;
-                                    @include media($lg){
-                                        font-size: 14px;
-                                        height: 20px;
-                                        width: 82px;
-                                    }
-                                }
-                            }
-                        }
-                        .product-name {
-                            background: #F9F9F9;
-                            border-radius: 8px 8px 0px 0px;
-                            padding: 9px 15px 10px;
-                            height: 98px;
-                            @include media($md){
-                                padding: 6px 9px 8px;
-                                height: 55px;
-                            }
-                            a {
-                                font-weight: 600;
-                                font-size: 20.966px;
-                                line-height: 140%; 
-                                color: #171717;
-                                @include media($xl){
-                                    font-size: 16px;
-                                }
-                                @include media($md){
-                                    font-size: 14px;
-                                    line-height: 140%;
-                                }
-                            }
-                        }
-                    }
-                    .footer-item {
-                        .column {
-                            display: flex;
-                            height: 100%;
-                            align-items: center;
-                            box-sizing: border-box;
-                            @include media($xl){
-                                justify-content: space-between;
-                            } 
-                            @include media($lg){
-                                justify-content: left;
-                            }
-                            span {
-                                display: inline-block;
-                            }
-                            &:first-child {
-                                width: calc(100% - 242px);
-                                @include media($xl){
-                                    width: 48%;
-                                } 
-                            }
-                            &:last-child {
-                                width: 242px;
-                                @include media($xl){
-                                    width: 48%;
-                                } 
-                            }
-                        }
-                        .top-row {
-                            background: #F9F9F9;
-                            padding-bottom: 15px;
-                            border-radius: 0px 0px 8px 8px;
-                            @include media($md){
-                                align-items: center;
-                                padding-bottom: 7px;
-                            }
-                            .retail {
-                                padding-left: 15px;
-                                @include media($lg){
-                                    padding-left: 10px;
-                                }
-                                .label {
-                                    font-weight: 600;
-                                    font-size: 14.9757px;
-                                    line-height: 140%;
-                                    margin-right: 15px;
-                                    @include media($xl){
-                                        font-size: 12px;
-                                    }      
-                                    @include media($lg){
-                                        font-size: 10px;
-                                        letter-spacing: -0.05em;
-                                        margin-right: 10px;
-                                    }                                
-                                }
-                                .retail-price {
-                                    background: #2D2D2D;
-                                    border-radius: 8px;
-                                    height: 22px;
-                                    padding: 0px 8px;
-                                    display: inline-flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    color: #ffffff;
-                                    text-decoration: line-through;
-                                    font-weight: 600;
-                                    font-size: 17.9709px;
-                                    line-height: 120%;
-                                    @include media($xl){
-                                        font-size: 14px;
-                                    } 
-                                    @include media($lg){
-                                        font-size: 12px;
-                                    } 
-                                    @include media($md){
-                                        height: 14px;
-                                        border-radius: 5px;
-                                        padding: 0px 5px;
-                                    }
-                                }                            
-                            }
-                            .discount {
-                                padding-left: 20px;
-                                @include media($lg){
-                                    padding-left: 15px;
-                                }
-                                @include media($md){
-                                    padding-left: 0px;
-                                    position: relative;
-                                    top: -1px;
-                                    left: -2px;
-                                }
-                                .label {
-                                    font-weight: 600;
-                                    font-size: 20.966px;
-                                    line-height: 140%;
-                                    margin-right: 15px; 
-                                    @include media($xl){
-                                        font-size: 12px;
-                                    }
-                                    @include media($md){
-                                        font-size: 14px;
-                                        letter-spacing: -0.05em;
-                                    }                                       
-                                }
-                                .discount-price {
-                                    background: #CAB160;
-                                    border-radius: 8px;
-                                    height: 25px;
-                                    padding: 0px 15px;
-                                    display: inline-flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    color: #ffffff;
-                                    text-decoration: line-through;
-                                    font-weight: 600;
-                                    font-size: 20.966px;
-                                    line-height: 120%;
-                                    @include media($xl){
-                                        font-size: 14px;
-                                    }
-                                    @include media($lg){
-                                        font-size: 12px;
-                                        padding: 0px 10px;
-                                        height: 17px;
-                                        border-radius: 5px;
-                                    }  
-                                }
-                            }
-                        }
-                        .bottom-row {
-                            align-items: center;
-                            height: 62px;
-                            @include media($xl){
-                                height: 42px;
-                                justify-content: space-between;
-                            } 
-                            .our-price {
-                                padding-left: 15px;
-                                @include media($lg){
-                                    padding-left: 10px;
-                                }
-                                .label {
-                                    font-weight: 600;
-                                    font-size: 14.9757px;
-                                    line-height: 140%;
-                                    margin-right: 34px; 
-                                    @include media($xl){
-                                        font-size: 14px;
-                                        margin-right: 15px;
-                                    } 
-                                    @include media($lg){
-                                        font-size: 10px;
-                                    }                                      
-                                }
-                                .our-price-price {
-                                    font-weight: 600;
-                                    font-size: 24.9326px;
-                                    line-height: 140%;
-                                    @include media($xl){
-                                        font-size: 16px;
-                                    } 
-                                } 
-                            }
-                            .order {
-                                .add-to-cart {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    background: #A39562;
-                                    border-radius: 8px 0px;  
-                                    width: 100%;
-                                    height: 100%;
-                                    color: #FFFFFF; 
-                                    font-weight: 600;
-                                    font-size: 22.4636px;
-                                    line-height: 28px;
-                                    padding-bottom: 5px;
-                                    box-sizing: border-box;
-                                    @include media($xl){
-                                        padding-bottom: 0px;
-                                        font-size: 15px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                // .product-item {
+                //     width: 455px;
+                //     height: 580px;
+                //     background-color: #FFFFFF;
+                //     @include media($xl){
+                //         width: 100%;
+                //         height: auto;
+                //     }
+                //     .body-item {
+                //         .image-wrap {
+                //             width: 100%;
+                //             height: 358px;
+                //             position: relative;
+                //             display: flex;
+                //             align-items: center;
+                //             justify-content: center;
+                //             border-radius: 8px 8px 0px 0px;
+                //             @include media($md){
+                //                 height: 207px;
+                //             }
+                //             a {
+                //                 display: flex;
+                //                 width: 100%;
+                //                 height: 100%;
+                //             }
+                //             img {
+                //                 max-width: 100%;
+                //                 max-height: 100%;
+                //                 object-position: center;
+                //                 object-fit: contain;
+                //             }
+                //             span {
+                //                 position: absolute;
+                //                 &.label-brend {
+                //                     font-size: 20.966px;
+                //                     line-height: 26px;
+                //                     top: 3px;
+                //                     left: 15px;
+                //                     color: #878787;
+                //                     @include media($lg){
+                //                         font-size: 11px;
+                //                         line-height: 140%;
+                //                         left: 8px;
+                //                     }
+                //                 }
+                //                 &.label-percent {
+                //                     width: 126px;
+                //                     height: 30px;
+                //                     display: flex;
+                //                     align-items: center;
+                //                     justify-content: center;
+                //                     font-weight: 600;
+                //                     font-size: 20.966px;
+                //                     line-height: 26px;
+                //                     color: #ffffff;
+                //                     background: #CAB160;
+                //                     top: 0px;
+                //                     right: 0px;
+                //                     border-radius: 0px 8px 0px 8px;
+                //                     @include media($lg){
+                //                         font-size: 14px;
+                //                         height: 20px;
+                //                         width: 82px;
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //         .product-name {
+                //             background: #F9F9F9;
+                //             border-radius: 8px 8px 0px 0px;
+                //             padding: 9px 15px 10px;
+                //             height: 98px;
+                //             @include media($md){
+                //                 padding: 6px 9px 8px;
+                //                 height: 55px;
+                //             }
+                //             a {
+                //                 font-weight: 600;
+                //                 font-size: 20.966px;
+                //                 line-height: 140%; 
+                //                 color: #171717;
+                //                 @include media($xl){
+                //                     font-size: 16px;
+                //                 }
+                //                 @include media($md){
+                //                     font-size: 14px;
+                //                     line-height: 140%;
+                //                 }
+                //             }
+                //         }
+                //     }
+                //     .footer-item {
+                //         .column {
+                //             display: flex;
+                //             height: 100%;
+                //             align-items: center;
+                //             box-sizing: border-box;
+                //             @include media($xl){
+                //                 justify-content: space-between;
+                //             } 
+                //             @include media($lg){
+                //                 justify-content: left;
+                //             }
+                //             span {
+                //                 display: inline-block;
+                //             }
+                //             &:first-child {
+                //                 width: calc(100% - 242px);
+                //                 @include media($xl){
+                //                     width: 48%;
+                //                 } 
+                //             }
+                //             &:last-child {
+                //                 width: 242px;
+                //                 @include media($xl){
+                //                     width: 48%;
+                //                 } 
+                //             }
+                //         }
+                //         .top-row {
+                //             background: #F9F9F9;
+                //             padding-bottom: 15px;
+                //             border-radius: 0px 0px 8px 8px;
+                //             @include media($md){
+                //                 align-items: center;
+                //                 padding-bottom: 7px;
+                //             }
+                //             .retail {
+                //                 padding-left: 15px;
+                //                 @include media($lg){
+                //                     padding-left: 10px;
+                //                 }
+                //                 .label {
+                //                     font-weight: 600;
+                //                     font-size: 14.9757px;
+                //                     line-height: 140%;
+                //                     margin-right: 15px;
+                //                     @include media($xl){
+                //                         font-size: 12px;
+                //                     }      
+                //                     @include media($lg){
+                //                         font-size: 10px;
+                //                         letter-spacing: -0.05em;
+                //                         margin-right: 10px;
+                //                     }                                
+                //                 }
+                //                 .retail-price {
+                //                     background: #2D2D2D;
+                //                     border-radius: 8px;
+                //                     height: 22px;
+                //                     padding: 0px 8px;
+                //                     display: inline-flex;
+                //                     align-items: center;
+                //                     justify-content: center;
+                //                     color: #ffffff;
+                //                     text-decoration: line-through;
+                //                     font-weight: 600;
+                //                     font-size: 17.9709px;
+                //                     line-height: 120%;
+                //                     @include media($xl){
+                //                         font-size: 14px;
+                //                     } 
+                //                     @include media($lg){
+                //                         font-size: 12px;
+                //                     } 
+                //                     @include media($md){
+                //                         height: 14px;
+                //                         border-radius: 5px;
+                //                         padding: 0px 5px;
+                //                     }
+                //                 }                            
+                //             }
+                //             .discount {
+                //                 padding-left: 20px;
+                //                 @include media($lg){
+                //                     padding-left: 15px;
+                //                 }
+                //                 @include media($md){
+                //                     padding-left: 0px;
+                //                     position: relative;
+                //                     top: -1px;
+                //                     left: -2px;
+                //                 }
+                //                 .label {
+                //                     font-weight: 600;
+                //                     font-size: 20.966px;
+                //                     line-height: 140%;
+                //                     margin-right: 15px; 
+                //                     @include media($xl){
+                //                         font-size: 12px;
+                //                     }
+                //                     @include media($md){
+                //                         font-size: 14px;
+                //                         letter-spacing: -0.05em;
+                //                     }                                       
+                //                 }
+                //                 .discount-price {
+                //                     background: #CAB160;
+                //                     border-radius: 8px;
+                //                     height: 25px;
+                //                     padding: 0px 15px;
+                //                     display: inline-flex;
+                //                     align-items: center;
+                //                     justify-content: center;
+                //                     color: #ffffff;
+                //                     font-weight: 600;
+                //                     font-size: 20.966px;
+                //                     line-height: 120%;
+                //                     @include media($xl){
+                //                         font-size: 14px;
+                //                     }
+                //                     @include media($lg){
+                //                         font-size: 12px;
+                //                         padding: 0px 10px;
+                //                         height: 17px;
+                //                         border-radius: 5px;
+                //                     }  
+                //                 }
+                //             }
+                //         }
+                //         .bottom-row {
+                //             align-items: center;
+                //             height: 62px;
+                //             @include media($xl){
+                //                 height: 42px;
+                //                 justify-content: space-between;
+                //             } 
+                //             .our-price {
+                //                 padding-left: 15px;
+                //                 @include media($lg){
+                //                     padding-left: 10px;
+                //                 }
+                //                 .label {
+                //                     font-weight: 600;
+                //                     font-size: 14.9757px;
+                //                     line-height: 140%;
+                //                     margin-right: 34px; 
+                //                     @include media($xl){
+                //                         font-size: 14px;
+                //                         margin-right: 15px;
+                //                     } 
+                //                     @include media($lg){
+                //                         font-size: 10px;
+                //                     }                                      
+                //                 }
+                //                 .our-price-price {
+                //                     font-weight: 600;
+                //                     font-size: 24.9326px;
+                //                     line-height: 140%;
+                //                     @include media($xl){
+                //                         font-size: 16px;
+                //                     } 
+                //                 } 
+                //             }
+                //             .order {
+                //                 .add-to-cart {
+                //                     display: flex;
+                //                     align-items: center;
+                //                     justify-content: center;
+                //                     background: #A39562;
+                //                     border-radius: 8px 0px;  
+                //                     width: 100%;
+                //                     height: 100%;
+                //                     color: #FFFFFF; 
+                //                     font-weight: 600;
+                //                     font-size: 22.4636px;
+                //                     line-height: 28px;
+                //                     padding-bottom: 5px;
+                //                     box-sizing: border-box;
+                //                     @include media($xl){
+                //                         padding-bottom: 0px;
+                //                         font-size: 15px;
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
                 .owl-dots {
                     text-align: center;
                     margin-top: 76px;
@@ -680,17 +679,793 @@ body {
         }
         &.product-info {
             padding-top: 40px;
+            padding-bottom: 60px;
             .container {
-                width: calc(100% - 400px);
+                width: 1460px;
                 margin: 0px auto;
+                @include media($xxl){
+                    width: 100%;
+                    padding: 0px 20px; 
+                }
             }
             .product-gallary {
                 width: 631px;
-                height: 665;
-                img {
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
+                height: 665px;
+                @include media($xl){
+                    width: 450px;
+                    height: 472px;
+                }
+                .slide-item {
+                    width: 631px;
+                    height: 665px;
+                    @include media($xl){
+                        width: 450px;
+                        height: 472px;
+                    }
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }                    
+                }
+            }
+            .info-column {
+                position: relative;
+                padding-left: 41px;
+                width: 828px;
+                @include media($xl){
+                    padding-left: 20px;
+                    width: calc(100% - 450px);
+                }
+                .breadcrumbs {
+                    font-size: 15px;
+                    line-height: 140%;
+                    color: #878787;
+                    padding-top: 6px;
+                    a {
+                        color: #878787;
+                    }
+                }
+                .discount {
+                    display: flex;
+                    align-items: center;
+                    height: 30px;
+                    padding: 0px 40px;
+                    background-color: #CAB160;
+                    border-radius: 0px 5px 0px 5px;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 25px;
+                    color: #ffffff;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                }   
+                .product-title {
+                    font-size: 30px;
+                    line-height: 100%;
+                    color: #171717;
+                    margin: 30px 0px;
+                }      
+                .price-columns {
+                    justify-content: space-between;
+                    margin-bottom: 30px;
+                    .price-column {
+                        // width: 32%;
+                        display: flex;
+                        align-items: center;
+                        .label {
+                            color: #878787;
+                            font-size: 18px;
+                            line-height: 140%;
+                            margin-right: 25px;
+                        }
+                        .price {
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 120%;
+                            color: #ffffff;
+                            &.bg-price {
+                                display: flex;
+                                align-items: center;
+                                height: 24px;
+                                border-radius: 8px;
+                                padding: 0px 8px;
+                            }
+                        }
+                        &.our-price {
+                            .label {
+                                margin-right: 48px;
+                            }
+                            .price {
+                                font-weight: 600;
+                                font-size: 58.7099px;
+                                line-height: 140%;
+                                color: #171717;
+                            }
+                        }
+                        &.retail-price {
+                            .bg-price {
+                                background-color: #1E1E1E;
+                                text-decoration-line: line-through;
+
+                            }
+                        }
+                        &.discount-price {
+                            .bg-price {
+                                background-color: #CAB160;
+                            }
+                        }
+                    }
+                }  
+                .order-columns {
+                    margin-bottom: 30px;
+                    justify-content: space-between;
+                    .add-to-cart-column {
+                        width: 297px;
+                    }
+                    .btn-wrap {
+                        margin-bottom: 25px;
+                        &:last-child {
+                            margin-bottom: 0px;
+                        }
+                        a {
+                            display: flex;
+                            height: 57px;
+                            width: 100%;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: 300;
+                            font-size: 18px;
+                            line-height: 29px;
+                            color: #ffffff;
+                            background-color: #A39562;
+                            border-radius: 10px;
+                        }
+                    }
+                    .quantity-column {
+                        width: 175px;
+                        .quantity-wrap {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 29px;
+                            margin-bottom: 30px;
+                            padding-top: 11px;
+                            .quantity  {
+                                position: relative;
+                                width: 36px;
+                                height: 36px;
+                                border-radius: 50%;
+                                background: #EBEBEB;
+                                box-shadow: 0px 5.65188px 28.2594px rgba(217, 217, 217, 0.3);
+                                cursor: pointer;
+                                &:before {
+                                    content: '';
+                                    width: 9px;
+                                    height: 16px;
+                                    position: absolute;
+                                    display: block;
+                                    background-image: url(quantity-arrow.svg);
+                                    top: 10px;
+                                    left: 12px;
+                                }
+                                &.plus-quantuity {
+                                    &::before {
+                                        transform: rotate(180deg);
+                                        left: 15px;
+                                    }
+                                }
+                            }
+                            .count-quantity {
+                                width: 80px;
+                                display: flex;
+                                justify-content: center;                       
+                            }
+                        }
+                    }
+                    .affirm-info {
+                        display: flex;
+                        justify-content: space-between;
+                        padding-top: 5px;
+                        span {
+                            display: block;
+                            &:first-child {
+                                width: 110px;
+                                font-size: 18px;
+                                line-height: 130%;
+                                span {
+                                    font-weight: 600;
+                                    display: inline;
+                                }
+                            }
+                            &.logo-img {
+                                width: 60px;
+                                display: flex;
+                                align-items: end;
+                                padding-bottom: 5px;
+                                img {
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .review-column {
+                        width: 239px;
+                        background-color: #F9F9F9;
+                        padding: 14px 10px 10px 36px;
+                        border: 0.5px solid #F9F9F9;
+                        border-radius: 10px;
+                        font-size: 18px;
+                        line-height: 130%;
+                        font-weight: 300;
+                        color: rgba(#2D2D2D, 0.5);
+                        .count-of-view {
+                            color: #2D2D2D;
+                            margin-bottom: 7px;
+                            display: block;
+                            padding-left: 47px;
+                            position: relative;
+                            &::before {
+                                content: '';
+                                width: 33px;
+                                height: 20px;
+                                display: block;
+                                object-fit: cover;
+                                object-position: center;
+                                background-image: url(count-of-view.svg);
+                                position: absolute;
+                                left: 0px;
+                                top: 2px;
+                            }
+                        }
+                    }
+                } 
+                .payment-methods {
+                    justify-content: space-between;
+                    margin-bottom: 30px;
+                    .logo-wrap {
+                        width: 100px;
+                        height: 39px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            max-width: 100%;
+                        }
+                    }
+                }   
+                .inquires-columns {
+                    justify-content: space-between;
+                    .inquire-column {
+                        width: 297px;
+                        background: #2D2D2D;
+                        border: 1px solid #F9F9F9;
+                        border-radius: 10px;
+                        padding: 9px 44px 22px;
+                        border-radius: 10px;
+                        background-color: #A39562;
+                        .inquire-link {
+                            margin-bottom: 20px;
+                            display: flex;
+                            align-items: center;
+                            height: 30px;
+                        }
+                        a {
+                            color: #ffffff;
+                            display: inline-block;
+                            padding-left: 11px;
+                            position: relative;
+                        }
+                    }
+                    .tags-column {
+                        width: 465px;
+                        @include media($xxl){
+                            width: 400px;
+                        }
+                        .top-row {
+                            display: flex;
+                            justify-content: space-between;
+                            height: 50px;
+                            margin-bottom: 25px;
+                            flex-wrap: wrap;
+                            @include media($xxl){
+                                height: auto;
+                            }
+                            .stock {
+                                width: 176px;
+                                padding: 0px 15px;
+                                @include media($xxl){
+                                    width: 100%;
+                                    margin-bottom: 30px;
+                                    height: 50px;
+                                }
+                                .value {
+                                    font-weight: 600;
+                                    font-size: 15px;
+                                    line-height: 130%;
+                                    color: #92B825;
+                                    padding-left: 5px;
+                                }
+                            }
+                            .sku {
+                                width: calc(100% - 200px);
+                                @include media($xxl){
+                                    width: 100%;
+                                    height: 50px;
+                                    padding: 0px 15px;
+                                }
+                            }
+                            .info-block {
+                                background: #F9F9F9;
+                                border-radius: 10px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                @include media($xxl){
+                                    justify-content: flex-start;
+                                }
+                            }
+                        }
+                        .label {
+                            font-weight: 600;
+                            font-size: 15px;
+                            line-height: 130%;
+                        }
+                        .value {
+                            color: rgba(#2D2D2D, 0.5);
+                            display: inline-block;
+                            padding-left: 5px;
+                        }
+                        .bottom-row {
+                            background: #F4F4F4;
+                            border: 1px solid #F9F9F9;
+                            border-radius: 10px 10px 10px 10px;
+                            a {
+                                font-weight: 300;
+                                font-size: 15px;
+                                line-height: 130%;
+                                color: rgba(#2D2D2D, 0.5);
+                            }
+                            .info-block {
+                                display: flex;
+                            }
+                            .label {
+                                width: 85px;
+                            }
+                            .tags-wrap {
+                                width: calc(100% - 85px);
+                            }                                                        
+                        }
+                        .tags {
+                            padding: 15px 20px 20px;
+                            background: #F9F9F9;
+                            border: 1px solid #F9F9F9;
+                            border-radius: 10px 10px 0px 0px;
+                        }
+                        .categories {
+                            padding: 15px 20px 15px;
+                        }
+                    }
+                } 
+            }
+            .additional-info {
+                padding-top: 150px;
+                .tabs-title {
+                    display: flex;
+                    margin-bottom: 100px;
+                    justify-content: center;
+                    .tab-name {
+                        display: inline-flex;
+                        height: 58px;
+                        align-items: center;
+                        padding: 0px 11px;
+                        font-size: 20px;
+                        line-height: 140%;
+                        text-align: center;
+                        color: rgba(#171717, 0.5);
+                        border: 1px solid #5D5D5D;
+                        border-radius: 7px;
+                        margin: 0px 5px;
+                        cursor: pointer;
+                        &.active {
+                            background: #A39562;
+                            border: 1px solid #A39562;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+                    }
+                }
+                .tabs-content {
+                    width: 1398px;
+                    margin: 0 auto;
+                    @include media($xxl){
+                        width: 1160px;
+                    }
+                    .tab-content {
+                        display: none;
+                        &.active {
+                            display: block;
+                        }
+                    }
+                    .product-description {
+                        padding: 50px 104px 66px;
+                        font-size: 20px;
+                        line-height: 130.1%;
+                        color: #454545;
+                        background-color: #F9F9F9;
+                        p {
+                            margin-bottom: 25px;
+                            &:last-child {
+                                margin-bottom: 0px;
+                            }
+                        }
+                    }
+                    .product-attributes {
+                        .attribute-item {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center; 
+                            margin-bottom: 10px;  
+                            &:last-child {
+                                margin-bottom: 0px;
+                            }                         
+                        }
+                        .name,
+                        .value {
+                            width: 420px;
+                            font-weight: 500;
+                            font-size: 20px;
+                            line-height: 130.1%;
+                            color: #454545;
+                        }
+                        .line {
+                            width: 427px;
+                            display: block;
+                            height: 1px;
+                            background-color: #a2a2a2;
+                            position: relative;
+                            margin: 0px 90px;
+                            @include media($xxl){
+                                margin: 0px 45px;
+                                width: 300px;
+                            }
+                            &::before,
+                            &::after {
+                                content: '';
+                                width: 7px;
+                                height: 7px;
+                                display: block;
+                                border-radius: 50%;
+                                background-color: #808080;
+                                position: absolute;
+                                top: -3px;
+                            }
+                            &::before {
+                                left: -51px;
+                                @include media($xxl){
+                                    left: -22px;
+                                }
+                            }
+                            &::after {
+                                right: -51px;
+                                @include media($xxl){
+                                    right: -22px;
+                                }
+                            }
+                        }
+                        .name {
+                            text-align: right;
+                        }
+                        .value {
+                            color: rgba(#454545, 0.5);
+                            a {
+                                color: rgba(#454545, 0.5);
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.collection-grid {
+            background-color: #F4F4F4;
+            padding-bottom: 74px;
+            .hero-collection {
+                background-color: #ffffff;
+                padding: 40px 0px 20px;
+                .top-row {
+                    font-size: 15px;
+                    line-height: 140%;
+                    color: #878787;
+                    a {
+                        color: #878787;
+                    }
+                }
+                .bottom-row {
+                    justify-content: space-between;
+                    .filter-title {
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 140%;
+                        display: flex;
+                        height: 26px;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0px 10px;
+                        background: #F4F4F4;
+                        border-radius: 10px;
+                        padding-top: 2px;
+                    }
+                }
+                .title-collection {
+                    font-size: 303.325px;
+                    line-height: 120%;
+                    text-transform: uppercase;
+                    color: #F6F6F6;
+                    font-family: 'Angelic Bonques Sans Regular', sans-serif;
+                    text-align: center;
+                }
+            }
+            .container {
+                width: 1344px;
+                margin: 0 auto;
+                .content-wrap {
+                    justify-content: space-between;
+                    padding-top: 24px;
+                    .filters-wrap {
+                        width: 316px;
+                    }
+                    .collection {
+                        width: 1002px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        &::after {
+                            content: '';
+                            width: 318px;
+                            display: block;
+                        }
+                        .product-item {
+                            margin-bottom: 80px;
+                            width: 318px;
+                            height: auto;
+                            .body-item {
+                                .image-wrap {
+                                    padding-top: 28px;
+                                    span {
+                                        &.label-brend {
+                                            font-size: 18px;
+                                            line-height: 23px;
+                                        }
+                                        &.label-percent {
+                                            font-weight: 600;
+                                            font-size: 18px;
+                                            line-height: 23px;
+                                            width: 117px;
+                                            height: 28px;
+                                        }
+                                    }
+                                    a {
+                                        justify-content: center;
+                                    }
+                                }
+                                .product-name {
+                                    a {
+                                        font-size: 18px;
+                                        line-height: 140%;
+                                    }
+                                }
+                            }
+                            .footer-item {
+                                .column {
+                                    @include media($xl){
+                                        justify-content: space-between;
+                                    } 
+                                    @include media($lg){
+                                        justify-content: left;
+                                    }
+                                    span {
+                                        display: inline-block;
+                                    }
+                                    &:first-child {
+                                        width: calc(100% - 163px);
+                                        @include media($xl){
+                                            width: 48%;
+                                        } 
+                                    }
+                                    &:last-child {
+                                        width: 163px;
+                                        @include media($xl){
+                                            width: 48%;
+                                        } 
+                                    }
+                                }
+                                .top-row {
+                                    background: #F9F9F9;
+                                    padding-bottom: 15px;
+                                    border-radius: 0px 0px 8px 8px;
+                                    align-items: center;
+                                    @include media($md){
+                                        align-items: center;
+                                        padding-bottom: 7px;
+                                    }
+                                    .retail {
+                                        padding-left: 10px;
+                                        @include media($lg){
+                                            padding-left: 10px;
+                                        }
+                                        .label {
+                                            font-size: 14px;
+                                            line-height: 140%;
+                                            margin-right: 6px;
+                                            font-weight: 400;
+                                            @include media($xl){
+                                                font-size: 12px;
+                                            }      
+                                            @include media($lg){
+                                                font-size: 10px;
+                                                letter-spacing: -0.05em;
+                                                margin-right: 10px;
+                                            }                                
+                                        }
+                                        .retail-price {
+                                            background: #2D2D2D;
+                                            height: 20px;
+                                            padding: 0px 5px;
+                                            color: #ffffff;
+                                            font-size: 16px;
+                                            line-height: 120%;
+                                            @include media($xl){
+                                                font-size: 14px;
+                                            } 
+                                            @include media($lg){
+                                                font-size: 12px;
+                                            } 
+                                            @include media($md){
+                                                height: 14px;
+                                                border-radius: 5px;
+                                                padding: 0px 5px;
+                                            }
+                                        }                            
+                                    }
+                                    .discount {
+                                        padding-left: 10px;
+                                        @include media($lg){
+                                            padding-left: 15px;
+                                        }
+                                        @include media($md){
+                                            padding-left: 0px;
+                                            position: relative;
+                                            top: -1px;
+                                            left: -2px;
+                                        }
+                                        .label {
+                                            font-size: 14px;
+                                            line-height: 140%;
+                                            margin-right: 6px;
+                                            font-weight: 400;
+                                            @include media($xl){
+                                                font-size: 12px;
+                                            }
+                                            @include media($md){
+                                                font-size: 14px;
+                                                letter-spacing: -0.05em;
+                                            }                                       
+                                        }
+                                        .discount-price {
+                                            background: #CAB160;
+                                            height: 20px;
+                                            padding: 0px 5px;
+                                            font-weight: 600;
+                                            font-size: 16px;
+                                            line-height: 120%;
+                                            @include media($xl){
+                                                font-size: 14px;
+                                            }
+                                            @include media($lg){
+                                                font-size: 12px;
+                                                padding: 0px 10px;
+                                                height: 17px;
+                                                border-radius: 5px;
+                                            }  
+                                        }
+                                    }
+                                }
+                                .bottom-row {
+                                    align-items: center;
+                                    height: 57px;
+                                    @include media($xl){
+                                        height: 42px;
+                                        justify-content: space-between;
+                                    } 
+                                    .our-price {
+                                        padding-left: 10px;
+                                        padding-top: 5px;
+                                        @include media($lg){
+                                            padding-left: 10px;
+                                        }
+                                        .label {
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 140%;
+                                            margin-right: 6px; 
+                                            @include media($xl){
+                                                font-size: 14px;
+                                                margin-right: 15px;
+                                            } 
+                                            @include media($lg){
+                                                font-size: 10px;
+                                            }                                      
+                                        }
+                                        .our-price-price {
+                                            font-weight: 600;
+                                            font-size: 20px;
+                                            line-height: 140%;
+                                            @include media($xl){
+                                                font-size: 16px;
+                                            } 
+                                        } 
+                                    }
+                                    .order {
+                                        .add-to-cart {  
+                                            font-weight: 600;
+                                            font-size: 23px;
+                                            line-height: 29px;
+                                            padding-bottom: 0px;
+                                            @include media($xl){
+                                                padding-bottom: 0px;
+                                                font-size: 15px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }                    
+                }
+                .pagination-wrap {
+                    display: flex;
+                    justify-content: center;
+                    .page-link-wrap {
+                        margin: 0px 5px;
+                        .page-link {
+                            height: 31px;
+                            width: 45px;
+                            background: #FFFFFF;
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 140%;
+                            color: #2D2D2D;
+                            transition: 0.2s;      
+                            &.current-page-link {
+                                background-color: #2D2D2D;
+                                color: #ffffff;                                
+                            } 
+                            &.next-link {
+                                transform: rotate(180deg);
+                            }
+                            path {
+                                stroke: #2D2D2D;
+                            }                                               
+                        }
+                        a {
+                            &:hover {
+                                background-color: #2D2D2D;
+                                color: #ffffff;
+                                transition: 0.2s;
+                                path {
+                                    stroke: #ffffff;
+                                }  
+                            }
+                        } 
+                    }
                 }
             }
         }

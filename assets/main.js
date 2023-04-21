@@ -11,6 +11,7 @@
         searchForm();
         mobileNavigation();
         productGallary();
+        productAdditionalInfo();
 
     });
 
@@ -157,6 +158,24 @@
                 }); 
 
         }
+    }
+
+    function productAdditionalInfo() { 
+        var additionalInfo = jQuery('.additional-info');
+
+        jQuery('.tab-name', additionalInfo).on('click', function () {
+            var tabName = jQuery(this).data('tab-name');
+            if (jQuery(this).hasClass('active')) {
+                return;
+            }
+
+            jQuery('.tab-content', additionalInfo).removeClass('active');
+            jQuery('.tab-name', additionalInfo).removeClass('active');
+            jQuery(this).addClass('active');
+            jQuery('[data-tab-content=' + tabName + ']').addClass('active');
+        })
+        
+
     }
 
     jQuery('.modal__overlay').click(function(e){

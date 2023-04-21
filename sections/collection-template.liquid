@@ -1,6 +1,97 @@
+<div class="hero-collection">
+  <div class="container">
+    <div class="top-row">
+      <div class="breadcrumbs">Home / Shop / Catalog</div>
+    </div>
+    <div class="title-collection">Watches</div>
+    <div class="bottom-row display-flex">
+      <div class="filter-title">Filters</div>
+      <div class="sorting-list">
+        <div class="collection-sorting styled-select mr3-l mb2-l">
+          {% assign selected = collection.sort_by | default: collection.default_sort_by %}
+          <select id="SortBy" name="sort_by" onchange="(location = this.value);">
+            <option value="placeholder" disabled>
+              Sorting by
+            </option>
+            {% for option in collection.sort_options %}
+              <option value="?sort_by={{ option.value }}" {% if option.value == selected %}selected{% endif %}>
+                {{ option.name }}
+              </option>
+            {% endfor %}
+            <option value="{{ collection.url }}">Clear</a>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% paginate collection.products by 12 %}
+
+<div class="container">
+  <div class="content-wrap display-flex">
+    <div class="filters-wrap">
+      <script>
+        function debounce(func, timeout = 300){
+          let timer;
+          return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { func.apply(this, args); }, timeout);
+          };
+        }
+
+        function onKeyUpEscape(event) {
+          if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+          const openDetailsElement = event.target.closest('details[open]');
+          if (!openDetailsElement) return;
+
+          const summaryElement = openDetailsElement.querySelector('summary');
+          openDetailsElement.removeAttribute('open');
+          summaryElement.setAttribute('aria-expanded', false);
+          summaryElement.focus();
+        }
+      </script>
+      {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+{% comment %}
+
+      {% render 'facets',
+        results: collection,
+        enable_filtering: true,
+        enable_sorting: true,
+        filter_type: 'vertical',
+      %}
+{% endcomment %}
+    </div> 
+    <div class="collection-wrap">
+      <div class="product-grid-container" id="ProductGridContainer">
+
+        <div class="loading-overlay gradient"></div>
+        <div id="product-grid" class="collection" data-id="{{ section.id }}">
+          {% for product in collection.products %}
+            {% include  'product-preview' | product %}
+          {% endfor %}          
+        </div>
+        {% include  'collection-pagination' %}
+
+      </div>
+    </div> 
+  </div>
+</div>
+{% endpaginate %}
+
+
+<script>
+  console.log({{ collection.products | json }});  
+  console.log({{ collection | json }});  
+</script>
+
 {% schema %}
-{
-  "name": "Section name",
-  "settings": []
-}
+  {
+    "name": "Collection grid",
+    "tag": "section",
+    "class": "collection-grid",
+    "settings": []
+  }
 {% endschema %}

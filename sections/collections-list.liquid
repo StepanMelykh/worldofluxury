@@ -1,0 +1,18 @@
+{% paginate collections by 12 %}
+    {% for collection in collections %}
+      <p>{{ collection.title }}</p>
+    {% endfor %}
+    {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+  {% endpaginate %}
+<script>
+  console.log({{ collection.products | json }});  
+  console.log({{ collections | json }});  
+</script>
+
+  TEMPLATE: {{ template  }}
+{% schema %}
+{
+  "name": "Collections list",
+  "settings": []
+}
+{% endschema %}
