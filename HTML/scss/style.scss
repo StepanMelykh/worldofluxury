@@ -1469,5 +1469,77 @@ body {
                 }
             }
         }
+        &.wrap-404 {
+            padding: 67px 0px 0px;
+            .container {
+                width: 800px;
+                margin: 0 auto;
+                @include media($lg){
+                    width: 100%;
+                    padding: 0px 20px;
+                }
+            }
+            .image-wrap {
+                max-width: 800px;
+                margin-bottom: 43px;
+                @include media($lg){
+                    max-width: 100%;
+                }
+                img {
+                    max-width: 100%;
+                }
+            }
+            .content-wrap {
+                padding-bottom: 32px;
+                border-bottom: 1px solid #DDDDDD;
+                .columns {
+                    justify-content: space-between;
+                    @include media($md){
+                        flex-wrap: wrap;
+                    }
+                    .content-column {
+                        width: 75%;
+                        @include media($md){
+                            width: 100%;
+                            text-align: center;
+                            margin-bottom: 30px;
+                        }
+                    }
+                    .link-column {
+                        width: 20%;
+                        align-self: center;
+                        @include media($md){
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                }
+                .content {
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 140%;
+                    p {
+                        margin-bottom: 10px;
+                        &:last-child {
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+                .btn-wrap {
+                    a {
+                        display: inline-flex;
+                        align-items: center;
+                        font-weight: 400;
+                        font-size: 15px;
+                        line-height: 140%;
+                        color: #ffffff;
+                        background-color: #171717;
+                        border-radius: 10px;
+                        height: 27px;
+                        padding: 0px 10px;
+                    }
+                }
+            }
+        }
     }
 }

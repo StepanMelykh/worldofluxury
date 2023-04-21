@@ -1,7 +1,56 @@
-404
+<div class="container">
+  {% if section.settings.image != blank %}
+    <div class="image-wrap">
+      <img class="main-image lazyload" src="{{ section.settings.image | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
+          data-src="{{ section.settings.image | img_url: '800x' }}"
+          data-widths="[800]"
+          data-sizes="auto"
+          tabindex="-1"
+      />
+    </div>
+    <div class="content-wrap">
+      <div class="columns display-flex">
+        <div class="column content-column">
+          <div class="content">{{ section.settings.content }}</div>
+        </div>
+        <div class="column link-column">
+          {% if section.settings.link_title != blank %}  
+            <div class="btn-wrap">
+              <a href="{{ section.settings.link_url }}">{{ section.settings.link_title }}</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
 {% schema %}
 {
-  "name": "Section name",
-  "settings": []
+  "name": "404 content",
+  "tag": "section",
+  "class": "wrap-404",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "link_title",
+      "label": "Link title"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link url"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ]
 }
 {% endschema %}
