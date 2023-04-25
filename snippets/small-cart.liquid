@@ -4,150 +4,19 @@
           <div class="title">Cart <span class="cart-quantity">2 products</span></div>
           <div class="close-cart"></div>
       </div>
-      <div class="items">
-          <div class="items-list cart-items">
-              <div class="item-row">
-                  <div class="remove-roduct"></div>
-                  <div class="columns display-flex">
-                      <div class="column left-column">
-                          <div class="image-wrap">
-                              <a href="#"><img src="{{ 'temp-cart-1.jpg' | asset_url }}" alt=""></a>
-                          </div>
-                      </div>
-                      <div class="column right-column">
-                          <div class="content-wrap">
-                              <div class="top-row">
-                                  <span class="label-brend">Name Brand</span>
-                                  <span class="label-percent">-15%</span>  
-                              </div>
-                              <div class="title"><a href="#">Armand Nicolet J9 Chronograph Stainlees steel Men’s Watch</a></div>
-                              <div class="columns-prices">
-                                  <div class="column">
-                                      <span class="label">Retail price</span>
-                                      <span class="price retail-price">$34,700</span>
-                                  </div>
-                                  <div class="column">
-                                      <span class="label">Discount</span>
-                                      <span class="price discount-price">$34,700</span>
-                                  </div>
-                              </div>
-                              <div class="price-total">
-                                  <span class="label">Our price</span>
-                                  <span class="price our-price">$9,095</span>
-                              </div>
-                          </div>                                    
-                      </div>
-                  </div>
-              </div>
-              <div class="item-row">
-                  <div class="remove-roduct"></div>
-                  <div class="columns display-flex">
-                      <div class="column left-column">
-                          <div class="image-wrap">
-                              <a href="#"><img src="{{ 'temp-cart-1.jpg' | asset_url }}" alt=""></a>
-                          </div>
-                      </div>
-                      <div class="column right-column">
-                          <div class="content-wrap">
-                              <div class="top-row">
-                                  <span class="label-brend">Name Brand</span>
-                                  <span class="label-percent">-15%</span>  
-                              </div>
-                              <div class="title"><a href="#">Armand Nicolet J9 Chronograph Stainlees steel Men’s Watch</a></div>
-                              <div class="columns-prices">
-                                  <div class="column">
-                                      <span class="label">Retail price</span>
-                                      <span class="price retail-price">$34,700</span>
-                                  </div>
-                                  <div class="column">
-                                      <span class="label">Discount</span>
-                                      <span class="price discount-price">$34,700</span>
-                                  </div>
-                              </div>
-                              <div class="price-total">
-                                  <span class="label">Our price</span>
-                                  <span class="price our-price">$9,095</span>
-                              </div>
-                          </div>                                    
-                      </div>
-                  </div>
-              </div>
-              <div class="item-row">
-                  <div class="remove-roduct"></div>
-                  <div class="columns display-flex">
-                      <div class="column left-column">
-                          <div class="image-wrap">
-                              <a href="#"><img src="{{ 'temp-cart-1.jpg' | asset_url }}" alt=""></a>
-                          </div>
-                      </div>
-                      <div class="column right-column">
-                          <div class="content-wrap">
-                              <div class="top-row">
-                                  <span class="label-brend">Name Brand</span>
-                                  <span class="label-percent">-15%</span>  
-                              </div>
-                              <div class="title"><a href="#">Armand Nicolet J9 Chronograph Stainlees steel Men’s Watch</a></div>
-                              <div class="columns-prices">
-                                  <div class="column">
-                                      <span class="label">Retail price</span>
-                                      <span class="price retail-price">$34,700</span>
-                                  </div>
-                                  <div class="column">
-                                      <span class="label">Discount</span>
-                                      <span class="price discount-price">$34,700</span>
-                                  </div>
-                              </div>
-                              <div class="price-total">
-                                  <span class="label">Our price</span>
-                                  <span class="price our-price">$9,095</span>
-                              </div>
-                          </div>                                    
-                      </div>
-                  </div>
-              </div>
-              <div class="item-row">
-                  <div class="remove-roduct"></div>
-                  <div class="columns display-flex">
-                      <div class="column left-column">
-                          <div class="image-wrap">
-                              <a href="#"><img src="{{ 'temp-cart-1.jpg' | asset_url }}" alt=""></a>
-                          </div>
-                      </div>
-                      <div class="column right-column">
-                          <div class="content-wrap">
-                              <div class="top-row">
-                                  <span class="label-brend">Name Brand</span>
-                                  <span class="label-percent">-15%</span>  
-                              </div>
-                              <div class="title"><a href="#">Armand Nicolet J9 Chronograph Stainlees steel Men’s Watch</a></div>
-                              <div class="columns-prices">
-                                  <div class="column">
-                                      <span class="label">Retail price</span>
-                                      <span class="price retail-price">$34,700</span>
-                                  </div>
-                                  <div class="column">
-                                      <span class="label">Discount</span>
-                                      <span class="price discount-price">$34,700</span>
-                                  </div>
-                              </div>
-                              <div class="price-total">
-                                  <span class="label">Our price</span>
-                                  <span class="price our-price">$9,095</span>
-                              </div>
-                          </div>                                    
-                      </div>
-                  </div>
-              </div>
-          </div>
+      <div class="mini-cart-items items">
+            <div class="items-list cart-items mini-products-list">
+
+            </div>
       </div>
-      <div class="empty-cart" style="display: none;">
+      <div class="empty-cart no-items-in-cart" style="display: none;">
           <div class="title">Your cart is empty</div>
-          <div class="btn-link"><a href="#" class="btn-link btn-bg-green btn-shop">Start Shopping</a></div>
+          <div class="btn-link"><a href="/" class="btn-link btn-bg-green btn-shop">Start Shopping</a></div>
       </div>
   </div>
-  <div class="total">
+  <div class="total small-cart-checkout-button">
       <div class="total-row">
-          <div class="btn-checkout"><span>Total: $64.74</span>|<span> Checkout</span></div>
+          <div class="btn-checkout"><span>Total: <span class="mini-cart-subtotal">$0</span></span>|<span> Checkout</span></div>
       </div>
   </div>
 </div> <!-- END CART -->

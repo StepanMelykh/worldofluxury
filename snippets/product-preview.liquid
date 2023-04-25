@@ -7,7 +7,7 @@
         <div class="image-wrap">
             <span class="label-brend">Name Brand</span>
             <span class="label-percent">-{{ percent }}%</span>                                
-            <a href="#">
+            <a href="{{ product.url }}">
                 <img src="{{ product.images[0] | img_url: 'master' }}" alt="{{ product.title }}">   
             </a>
         </div>
@@ -32,7 +32,12 @@
                 <span class="our-price-price">{{ product.price | money_without_trailing_zeros  }}</span>
             </div>
             <div class="column order">
-                <a class="add-to-cart" href="#">Order now</a>
+                <a id="product_id_{{ product.id }}" href="javascript:void(0)" 
+                    class="add-to-cart quick-add-to-cart-btn"
+                    onclick="quickAddItemToCart({{ product.id }})"
+                    data-variant-id="{{ product.variants[0].id }}"
+                    data-product-handle="{{ product.handle }}">Order now
+                </a>
             </div>
         </div>
     </div>

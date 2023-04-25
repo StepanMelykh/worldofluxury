@@ -36,9 +36,14 @@
             <div class="order-columns display-flex">
                 <div class="column add-to-cart-column">
                     <div class="btn-wrap">
-                        <a href="" class="add-to-cart">Order now</a>
+                        <a id="product_id_{{ product.id }}" href="javascript:void(0)" 
+                            class="add-to-cart quick-add-to-cart-btn"
+                            onclick="quickAddItemToCart({{ product.id }})"
+                            data-variant-id="{{ product.variants[0].id }}"
+                            data-product-handle="{{ product.handle }}">Order now
+                        </a>
                     </div>
-                    <div class="btn-wrap">
+                   <div class="btn-wrap">
                         <a href="" class="price-damand">Prequalify now</a>
                     </div>
                 </div>
@@ -84,7 +89,7 @@
                             <path d="M1 0.71875L8 7.01875L15 0.71875" stroke="white" stroke-linecap="round"/>
                             </svg>
                         </span>
-                        <a href="#">Inquire us</a>
+                        <a href="#">Inquire</a>
                     </div>
                     <div class="inquire-link phone-action">
                         <span class="icon">

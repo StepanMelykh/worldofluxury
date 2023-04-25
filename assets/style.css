@@ -835,7 +835,7 @@ footer {
                 justify-content: center; }
         #cart .items-list .item-row .left-column .image-wrap img {
           max-width: 100%;
-          max-height: 100%; }
+          max-height: 131px; }
     #cart .items-list .item-row .right-column {
       width: 272px;
       background: #F4F4F4;
