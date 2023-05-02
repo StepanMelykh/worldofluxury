@@ -1,1 +1,183 @@
-{}
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "6685d3c6-8070-4a5c-b655-967664824793": {
+            "type": "blocks",
+            "settings": {
+              "title": "Watches",
+              "link_url": "shopify:\/\/collections\/watches",
+              "icon": "shopify:\/\/shop_images\/nav-watch-black.svg",
+              "icon_hover": "shopify:\/\/shop_images\/nav-watch-black-white.svg"
+            }
+          },
+          "e76152d1-91e9-4acf-9f09-c9a37a47824f": {
+            "type": "blocks",
+            "settings": {
+              "title": "Accessories",
+              "link_url": "shopify:\/\/collections\/accessories",
+              "icon": "shopify:\/\/shop_images\/nav-acc-black.svg",
+              "icon_hover": "shopify:\/\/shop_images\/nav-acc-black-white_f06a14a8-8104-4b24-b408-c71a46601f80.svg"
+            }
+          },
+          "1ac42e8b-ab94-4c36-927d-d4a7765d55de": {
+            "type": "blocks",
+            "settings": {
+              "title": "Jevelry",
+              "link_url": "shopify:\/\/collections",
+              "icon": "shopify:\/\/shop_images\/nav-jevel-black.svg",
+              "icon_hover": "shopify:\/\/shop_images\/nav-jevel-black-white.svg"
+            }
+          },
+          "19c97b4e-0856-4fae-9263-90b6f2b0362c": {
+            "type": "blocks",
+            "settings": {
+              "title": "Handbags",
+              "link_url": "shopify:\/\/collections",
+              "icon": "shopify:\/\/shop_images\/nav-bag-black.svg",
+              "icon_hover": "shopify:\/\/shop_images\/nav-bag-black-white_6b3bf03e-c67d-447d-93c8-93d4d461cbdb.svg"
+            }
+          },
+          "de460dfb-5f09-40d4-b1ac-373efdbc3f32": {
+            "type": "blocks",
+            "settings": {
+              "title": "Pens",
+              "link_url": "shopify:\/\/collections",
+              "icon": "shopify:\/\/shop_images\/nav-pen-black.svg",
+              "icon_hover": "shopify:\/\/shop_images\/nav-pen-black-white.svg"
+            }
+          }
+        },
+        "block_order": [
+          "6685d3c6-8070-4a5c-b655-967664824793",
+          "e76152d1-91e9-4acf-9f09-c9a37a47824f",
+          "1ac42e8b-ab94-4c36-927d-d4a7765d55de",
+          "19c97b4e-0856-4fae-9263-90b6f2b0362c",
+          "de460dfb-5f09-40d4-b1ac-373efdbc3f32"
+        ],
+        "settings": {
+          "top_logo": "shopify:\/\/shop_images\/logo_world.png"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "289bca62-5fce-4e1f-b7a2-bab9b04fc5db": {
+            "type": "blocks",
+            "settings": {
+              "title": "Google",
+              "logo": "shopify:\/\/shop_images\/temp-logo-1.jpg",
+              "link": "https:\/\/www.google.com\/"
+            }
+          },
+          "b56d8753-7db0-4b9c-88e4-c75d9003741c": {
+            "type": "blocks",
+            "settings": {
+              "title": "",
+              "logo": "shopify:\/\/shop_images\/temp-logo-2.jpg",
+              "link": ""
+            }
+          },
+          "348ecf78-36e0-4479-8646-6fe5b4a70acf": {
+            "type": "blocks",
+            "settings": {
+              "title": "",
+              "logo": "shopify:\/\/shop_images\/temp-logo-3.jpg",
+              "link": ""
+            }
+          },
+          "d253d114-8cf3-4773-be9b-03f915ee8cb5": {
+            "type": "blocks",
+            "settings": {
+              "title": "",
+              "logo": "shopify:\/\/shop_images\/temp-logo-4.jpg",
+              "link": ""
+            }
+          },
+          "ddb25625-c8fc-45a9-baeb-71203e3611d5": {
+            "type": "blocks",
+            "settings": {
+              "title": "",
+              "logo": "shopify:\/\/shop_images\/temp-logo-5.jpg",
+              "link": ""
+            }
+          },
+          "f3d4cd32-d515-49b9-ab74-515456858d72": {
+            "type": "blocks",
+            "settings": {
+              "title": "",
+              "logo": "shopify:\/\/shop_images\/temp-logo-6.jpg",
+              "link": ""
+            }
+          },
+          "4a3f1fe3-842d-46d7-958a-5054fd95aef7": {
+            "type": "blocks",
+            "settings": {
+              "title": "",
+              "logo": "shopify:\/\/shop_images\/temp-logo-7.jpg",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "289bca62-5fce-4e1f-b7a2-bab9b04fc5db",
+          "b56d8753-7db0-4b9c-88e4-c75d9003741c",
+          "348ecf78-36e0-4479-8646-6fe5b4a70acf",
+          "d253d114-8cf3-4773-be9b-03f915ee8cb5",
+          "ddb25625-c8fc-45a9-baeb-71203e3611d5",
+          "f3d4cd32-d515-49b9-ab74-515456858d72",
+          "4a3f1fe3-842d-46d7-958a-5054fd95aef7"
+        ],
+        "settings": {
+          "navigation": "footer"
+        }
+      },
+      "sub-footer": {
+        "type": "sub-footer",
+        "blocks": {
+          "5573f2f4-cd1d-4189-922a-b9e2a141dc54": {
+            "type": "blocks",
+            "settings": {
+              "title": "About us",
+              "navigation": "about-navigation"
+            }
+          },
+          "8423b05a-9fe7-4d12-b278-cecf999a1bf5": {
+            "type": "blocks",
+            "settings": {
+              "title": "Business",
+              "navigation": "business-navigation"
+            }
+          },
+          "5cdd010b-b1f5-4362-a312-4bcc43017780": {
+            "type": "blocks",
+            "settings": {
+              "title": "Policies",
+              "navigation": "policies-navigation"
+            }
+          }
+        },
+        "block_order": [
+          "5573f2f4-cd1d-4189-922a-b9e2a141dc54",
+          "8423b05a-9fe7-4d12-b278-cecf999a1bf5",
+          "5cdd010b-b1f5-4362-a312-4bcc43017780"
+        ],
+        "settings": {
+          "title": "Contact us",
+          "email": "info@worldofluxuryus.com",
+          "phone": "+1 (833) 443-8496"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "d23315ce-0192-47f6-9840-91a4c95f493a": {
+        "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/boost-sd\/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  }
+}

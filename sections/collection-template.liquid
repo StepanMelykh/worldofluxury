@@ -31,38 +31,7 @@
 <div class="container">
   <div class="content-wrap display-flex">
     <div class="filters-wrap">
-      <script>
-        function debounce(func, timeout = 300){
-          let timer;
-          return (...args) => {
-            clearTimeout(timer);
-            timer = setTimeout(() => { func.apply(this, args); }, timeout);
-          };
-        }
 
-        function onKeyUpEscape(event) {
-          if (event.code.toUpperCase() !== 'ESCAPE') return;
-
-          const openDetailsElement = event.target.closest('details[open]');
-          if (!openDetailsElement) return;
-
-          const summaryElement = openDetailsElement.querySelector('summary');
-          openDetailsElement.removeAttribute('open');
-          summaryElement.setAttribute('aria-expanded', false);
-          summaryElement.focus();
-        }
-      </script>
-      {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
-{% comment %}
-
-      {% render 'facets',
-        results: collection,
-        enable_filtering: true,
-        enable_sorting: true,
-        filter_type: 'vertical',
-      %}
-{% endcomment %}
     </div> 
     <div class="collection-wrap">
       <div class="product-grid-container" id="ProductGridContainer">

@@ -12,6 +12,7 @@
         mobileNavigation();
         productGallary();
         productAdditionalInfo();
+        inquirePopupBehavior();
 
     });
 
@@ -152,9 +153,9 @@
                     items: 1,
                     dots: true,
                     loop: true,
-                    // autoplay: true,
-                    // autoplaySpeed: 1000,
-                    margin: 10
+                    nav: true,
+                    navText: ['<span class="nav-btn prev-btn"></span>', '<span class="nav-btn next-btn"></span>'],
+                    margin: 0
                 }); 
 
         }
@@ -178,6 +179,20 @@
 
     }
 
+    function inquirePopupBehavior() { 
+        jQuery('.inquire-action').on('click', function () {
+            jQuery('.popup-inquire').addClass('active');
+        });
+
+        jQuery('.close-popup').on('click', function () {
+            jQuery('.popup-inquire').removeClass('active');
+        });
+
+        jQuery('.popup-bg').on('click', function () {
+            jQuery('.popup-inquire').removeClass('active');
+        });
+    }
+
     jQuery('.modal__overlay').click(function(e){
 
         if( jQuery('#cart').hasClass('active') ){
@@ -194,6 +209,7 @@
 
         modalOverlayActive('hide');
     });
+
 
 
 })(jQuery);

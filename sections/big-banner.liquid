@@ -1,16 +1,25 @@
-{% if section.settings.image_url != blank %}
-    <a href="{{ section.settings.link_url }}">
-        <div class="image-wrap">
+<a href="{{ section.settings.link_url }}">
+    {% if section.settings.image_url != blank %}
+        <div class="image-wrap desktop-image">
             <img class="main-image lazyload" src="{{ section.settings.image_url | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
                 data-src="{{ section.settings.image_url | img_url: '1920x' }}"
                 data-widths="[1920]"
                 data-sizes="auto"
                 tabindex="-1"
             />
-        </div>                    
-    </a>
-{% endif %}
-
+        </div>  
+    {% endif %}
+    {% if section.settings.image_url_mobile != blank %}
+        <div class="image-wrap mobile-image">
+            <img class="main-image lazyload" src="{{ section.settings.image_url_mobile | img_url: "10x" }}" alt="{{ block.settings.title | escape }}"
+                data-src="{{ section.settings.image_url_mobile | img_url: '1920x' }}"
+                data-widths="[1920]"
+                data-sizes="auto"
+                tabindex="-1"
+            />
+        </div>   
+    {% endif %}                         
+</a>
 
 {% schema %}
     {
@@ -26,7 +35,12 @@
             {
                 "type": "image_picker",
                 "id": "image_url",
-                "label": "Banner"
+                "label": "Banner desktop"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_url_mobile",
+                "label": "Banner mobile"
             }
         ],
         "presets": [

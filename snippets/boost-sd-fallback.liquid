@@ -1,0 +1,36 @@
+<script>
+  if (window.boostSDAppConfig) {
+    window.boostSDAppConfig.generalSettings.custom_js_asset_url = "{{ 'boost-sd-custom.js' | asset_url }}";
+    window.boostSDAppConfig.generalSettings.custom_css_asset_url = "{{ 'boost-sd-custom.css' | asset_url }}";
+  }
+  console.log('Boost Start');
+  console.log({{ request | json }});
+  console.log('Boost End');
+
+  {% if request.page_type  == 'collection' %}
+
+    {% assign products_per_page = 12 %}
+    {% paginate collection.products by products_per_page %}
+      window.boostSDFallback = {
+        collection: {
+          title: {{ collection.title }}
+        },        
+        productPerPage: {{ products_per_page }},
+        products: {{ collection.products | json }},
+        pagination: {{ paginate | json }},
+      };
+    {% endpaginate %}
+    window.addEventListener('DOMContentLoaded', async () => {
+      const cdn = window.boostSDAppConfig?.api?.cdn || 'https://boost-cdn-staging.bc-solutions.net';
+
+      const script = document.createElement("script");
+      script.src = `${cdn}/fallback-theme/0.0.1/boost-sd-fallback-theme.js?v=${Date.now()}`;
+      script.defer = true;
+
+      document.body.appendChild(script);
+    });
+  {% endif %}
+
+  console.log('NEW FILTER');
+
+</script>
