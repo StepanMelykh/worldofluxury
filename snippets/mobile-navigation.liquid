@@ -24,54 +24,19 @@
     </div>
     <div class="navigation">
         <ul class="main-navigation">
-            <li class="has-child">
-                <a class="parent-link" href="#">Watches</a>
-                <ul class="sub-menu">
-                    <li><a class="child-link" href="#">Rolex</a></li>
-                    <li><a class="child-link" href="#">Hublot</a></li>
-                    <li><a class="child-link" href="#">Omega</a></li>
-                </ul>
-            </li>
-            <li class="has-child">
-                <a class="parent-link" href="#">Preowned watches</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Rolex</a></li>
-                    <li><a href="#">Hublot</a></li>
-                    <li><a href="#">Omega</a></li>
-                </ul>
-            </li>
-            <li class="has-child">
-                <a href="#">Jevelry</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Rolex</a></li>
-                    <li><a href="#">Hublot</a></li>
-                    <li><a href="#">Omega</a></li>
-                </ul>
-            </li>
-            <li class="has-child">
-                <a href="#">Accessories</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Rolex</a></li>
-                    <li><a href="#">Hublot</a></li>
-                    <li><a href="#">Omega</a></li>
-                </ul>
-            </li>
-            <li class="has-child">
-                <a href="#">Pens</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Rolex</a></li>
-                    <li><a href="#">Hublot</a></li>
-                    <li><a href="#">Omega</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Handbags</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Rolex</a></li>
-                    <li><a href="#">Hublot</a></li>
-                    <li><a href="#">Omega</a></li>
-                </ul>
-            </li>
+            {% for link in linklists.main-menu.links %}
+                <li {% if link.links != blank %}class="has-child"{% endif %}>
+                    <a class="parent-link" href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links != blank %}
+                        <ul class="sub-menu">
+                            {% for child_link in link.links %}
+                                <li><a class="child-link" href="{{ child_link.url }}">{{ child_link.title }}</a></li>
+                            {% endfor %}
+                        </ul>                    
+                    {% endif %}
+                </li>   
+            {% endfor %}
+
         </ul>
     </div>                
     <div class="login-btn">
