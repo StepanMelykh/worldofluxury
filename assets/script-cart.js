@@ -4,7 +4,7 @@ jQuery(function() {
     initButtonChangeQuantityOnProductPage();
     initUpdateQuantityOnCartPage();
     initPromoCodeForm();
-
+    
 });
 
 async function doesDiscountCodeExist(discountCode) {
@@ -56,7 +56,7 @@ function loadCart() {
                 $('.cart-quantity').text(item_count +' '+ count_title);
 
                 // mini cart data
-                jQuery('.mini-cart-subtotal').text( '$' + total_price.toFixed(2) );
+                jQuery('.mini-cart-subtotal').text( '$' + total_price.toFixed(0).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,") );
 
                 var cart_list = [];
 
@@ -67,10 +67,11 @@ function loadCart() {
                             var item_id = data['items'][i]['id'];
                             var product_title = data['items'][i]['product_title'];
                             var quantity = data['items'][i]['quantity'];
-                            var line_price = data['items'][i]['price'] / 100;
+                            var price = data['items'][i]['price'] / 100;
                             var product_url = data['items'][i]['url'];
                             var image_url = data['items'][i]['image'];
                             var variant_id = data['items'][i]['variant_id'];
+                            var quantity = data['items'][i]['quantity'];
 
                             var html =  '<div class="item-row">\n'+
                                             '<div class="remove-roduct remove-item-from-cart" data-productId="'+ variant_id +'"></div>\n'+
@@ -87,19 +88,26 @@ function loadCart() {
                                                             '<span class="label-percent">-15%</span>\n'+
                                                         '</div>\n'+
                                                         '<div class="title"><a href="'+ product_url +'">'+ product_title +'</a></div>\n'+
-                                                        '<div class="columns-prices">\n'+
-                                                            '<div class="column">\n'+
-                                                                '<span class="label">Retail price</span>\n'+
-                                                                '<span class="price retail-price">$34,700</span>\n'+
-                                                            '</div>\n'+
-                                                            '<div class="column">\n'+
-                                                                '<span class="label">Discount</span>\n'+
-                                                                '<span class="price discount-price">$34,700</span>\n'+
-                                                            '</div>\n'+
-                                                        '</div>\n'+
-                                                        '<div class="price-total">\n'+
-                                                            '<span class="label">Our price</span>\n'+
-                                                            '<span class="price our-price">$'+ line_price.toFixed(2) +'</span>\n'+
+                                                        // '<div class="columns-prices">\n'+
+                                                        //     '<div class="column">\n'+
+                                                        //         '<span class="label">Retail price</span>\n'+
+                                                        //         '<span class="price retail-price">$34,700</span>\n'+
+                                                        //     '</div>\n'+
+                                                        //     '<div class="column">\n'+
+                                                        //         '<span class="label">Discount</span>\n'+
+                                                        //         '<span class="price discount-price">$34,700</span>\n'+
+                                                        //     '</div>\n'+
+                                                        // '</div>\n' +
+                                                        '<div class="bottom-row">\n'+
+                                                            '<div class="price-total">\n'+
+                                                                '<span class="label">Our price</span>\n'+
+                                                                '<span class="price our-price">$'+ price.toFixed(0).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,") +'</span>\n'+
+                                                            '</div>\n' +
+                                                            '<div class="quantity-wrap" data-variant-id="'+ variant_id +'">\n'+
+                                                                '<span class="quantity minus-quantity cart-quantity-update"></span>\n'+
+                                                                '<span class="count-quantity" data-product-quantity="'+ quantity +'">'+ quantity +'</span>\n'+
+                                                                '<span class="quantity plus-quantity cart-quantity-update"></span>\n'+
+                                                            '</div>\n' +
                                                         '</div>\n'+
                                                     '</div>\n'+                                  
                                                 '</div>\n'+
@@ -154,7 +162,8 @@ function initCart() {
                 }
                 $('.cart-quantity').text(total_items_in_cart +' '+ count_title);
 
-                $('#small_cart_elements_count').text(products_in_cart);
+                $('#header_cart_quantity').text(total_items_in_cart);
+                // $('#small_cart_elements_count').text(products_in_cart);
                 $('.no-items-in-cart').hide();
                 $('.mini-cart-items').show();
                 $('.small-cart-checkout-button').show();
@@ -246,24 +255,24 @@ function removeItemCountInCart(variant_id, new_count, reload) {
 }
 
 function initUpdateQuantityOnCartPage(){
-    $('.cart-quantity-update').on('click', function(){
+    $(document).on('click', '.cart-quantity-update', function(){
         $('.cart-loading').show();
         $('.product-cart-row').hide();
+        
+        var parentQuantity = $(this).parent();
+        var variant_id = $(parentQuantity).data('variant-id');
 
-        var product_id = $(this).data('product_id');
-        var variant_id = $('#cart_product_variant_id_' + product_id).val();
+        var current_element_quantity = parseInt( jQuery('.count-quantity', parentQuantity).attr('data-product-quantity') );
 
-        var current_element_quantity = parseInt($('#product_selected_quantity_' + product_id).val());
-
-        if($(this).hasClass('icon-plus')) {
-            updateItemCountInCart(variant_id, current_element_quantity, '', '', 1);
-        }else{
-            if($(this).hasClass('delete-item-from-cart')){
-                current_element_quantity = 0;
-            }
-            console.log(current_element_quantity);
-            removeItemCountInCart(variant_id, current_element_quantity, 1);
+        if (jQuery(this).hasClass('plus-quantity')) {
+            var newQuantity = current_element_quantity + 1;
         }
+
+        if (jQuery(this).hasClass('minus-quantity')) {
+            var newQuantity = current_element_quantity - 1;
+        }
+
+        updateItemCountInCart(variant_id, newQuantity, '', '', 1);
 
     });
 }
@@ -303,8 +312,7 @@ function showSmallCart(){
 function quickAddItemToCart(product_id) {
 
     var variant_id = jQuery('#product_id_'+ product_id).attr('data-variant-id');
-    var product_handle = jQuery('#product_id_'+ product_id).attr('data-product-handle');
-    // console.log( jQuery('[name=color_'+ product_id +']:checked').val() );
+    var product_handle = jQuery('#product_id_' + product_id).attr('data-product-handle');
 
     var data = {
         "id": variant_id,
@@ -323,7 +331,40 @@ function quickAddItemToCart(product_id) {
                 initCart();
                 loadCart();
                 showSmallCart();
-                getProductData(product_handle);
+                // getProductData(product_handle);
+            }
+        },
+        error: function(error) {
+            alert(error.responseJSON.message + '\r\n' + error.responseJSON.description);
+        }
+    });
+}
+
+function addItemToCart(variant_id) {
+
+    // var variant_id = jQuery('#product_id_'+ product_id).attr('data-variant-id');
+    var product_handle = jQuery('#product_id_' + variant_id).attr('data-product-handle');
+    var countQuantity = jQuery('#quantity_variant_id_'+ variant_id +' .count-quantity').attr('data-product-quantity');
+    console.log( countQuantity );
+
+    var data = {
+        "id": variant_id,
+        "quantity": countQuantity
+    }
+
+    jQuery.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: data,
+        dataType: 'json',
+        success: function() {
+            if(document.location.pathname=='/cart'){
+                document.location.reload();
+            }else{
+                initCart();
+                loadCart();
+                showSmallCart();
+                // getProductData(product_handle);
             }
         },
         error: function(error) {

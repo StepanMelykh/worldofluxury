@@ -521,7 +521,7 @@ body {
                         height: 339px;
                     }
                     img {
-                        object-fit: cover;
+                        object-fit: contain;
                         width: 100%;
                         height: 100%;
                     }                    
@@ -822,7 +822,7 @@ body {
                                     top: 10px;
                                     left: 12px;
                                 }
-                                &.plus-quantuity {
+                                &.plus-quantity {
                                     &::before {
                                         transform: rotate(180deg);
                                         left: 15px;
@@ -1728,6 +1728,10 @@ body {
                 @include media($xxl){
                     width: 1160px;
                 }
+                @include media($xl){
+                    width: 100%;
+                    padding: 0px 20px;
+                }
                 h1 {
                     font-size: 32px;
                     line-height: 140%;
@@ -1785,7 +1789,50 @@ body {
                         margin: 15px 0;
                         opacity: .1;
                     }
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
                 }
+            }
+        }
+    }
+}
+
+.form-wrap {
+    &.sell-watch {
+        .columns-wrap {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            .col {
+                width: 45%;
+                // @include media($lg) {
+                //     width: 50%;
+                // }
+                @include media($sm) {
+                    width: 100%;
+                }
+            }
+            svg {
+                width: 35px;
+            }
+            .column-description {
+                text-align: center;
+                .title {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+                .text{
+                    font-size: 14px;
+                }
+            }
+            .item {
+                margin-bottom: 35px;
+            }
+            .file-103 {
+                margin-bottom: 15px;
             }
         }
     }

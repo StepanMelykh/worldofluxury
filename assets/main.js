@@ -13,6 +13,7 @@
         productGallary();
         productAdditionalInfo();
         inquirePopupBehavior();
+        changeProductQuantity();
 
     });
 
@@ -193,6 +194,24 @@
         });
     }
 
+    function changeProductQuantity() { 
+        jQuery('span.quantity').on('click', function () {
+            var parentQuantity = jQuery(this).parent();
+            var currentQuantity = parseInt(jQuery('.count-quantity', parentQuantity).attr('data-product-quantity'));
+            var newQuantity = currentQuantity;
+            if ( jQuery(this).hasClass('minus-quantity') && (currentQuantity > 1) ) { 
+                newQuantity = currentQuantity - 1;
+            }
+
+            if ( jQuery(this).hasClass('plus-quantity') ) { 
+                newQuantity = currentQuantity + 1;
+            }
+
+            jQuery('.count-quantity', parentQuantity).attr('data-product-quantity', newQuantity);
+            jQuery('.count-quantity', parentQuantity).text(newQuantity);
+        });
+    }
+
     jQuery('.modal__overlay').click(function(e){
 
         if( jQuery('#cart').hasClass('active') ){
@@ -209,7 +228,5 @@
 
         modalOverlayActive('hide');
     });
-
-
 
 })(jQuery);

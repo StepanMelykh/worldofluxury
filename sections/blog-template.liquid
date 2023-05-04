@@ -1,3 +1,22 @@
+<h1>Start</h1>
+{% for blog in blogs %}
+  <p>{{ blog.handle  }}</p>
+{% endfor %}
+<p>End</p>
+
+{% for link in linklists.blogs.links %}
+  {% assign blog = link.object %}
+  {% for article in blog.articles %}
+    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+  {% endfor %} 
+{% endfor %}
+
+
+<script>
+  console.log('Blog Start');
+  console.log({{ linklists.about-navigation.links | json  }});
+  console.log('Blog End');
+</script>
 {% schema %}
 {
   "name": "Section name",
