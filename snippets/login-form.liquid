@@ -1,0 +1,120 @@
+<div id="login-container" class="login-section">
+  <!-- START LOGIN CONTAINER -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="mobile-top-bar">
+          <div class="top-bar">
+            <div class="burger-icon mob-login-burger"></div>
+            <div class="icons-wrap">
+              <div class="close-mob-login-form"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-wrap">
+          <div class="close-login-form"></div>
+          <div class="tabs-wrap login-register-forms">
+            <div class="tabs-title">
+              <div class="tab-name active" data-form-name="login">
+                <span>Login</span>
+              </div>
+              <div class="tab-name" data-form-name="register">
+                <span>Register</span>
+              </div>
+            </div>
+            <div class="tabs-content">
+              <div class="tab-content active" data-form-tab="login">
+                {% form 'customer_login', class: "account-form", id: "customer-login-popup" %}
+                  <div class="field-wrap">
+                    <input
+                      type="email"
+                      name="customer[email]"
+                      placeholder="Email address"
+                      id="email_login" />
+                  </div>
+                  <div class="field-wrap">
+                    <input
+                      type="password"
+                      name="customer[password]"
+                      placeholder="Password"
+                      id="password_login" />
+                  </div>
+                  <div class="field-wrap" id="submitLogin">
+                    <input type="submit" value="Login">
+                  </div>
+                  <div class="form-content">
+                    <p>
+                      <a href="/account/login#recover">Forgot your password?</a>
+                    </p>
+                    <p>Don’t have an account yet?
+                      <a
+                        class="login-register-forms"
+                        href="#"
+                        data-form-name="register">Register</a>
+                    </p>
+                  </div>
+                {% endform %}
+              </div>
+              <div class="tab-content" data-form-tab="register">
+                {% form 'create_customer', class: "account-form", id: "register_new_user" %}
+                  <div class="field-wrap">
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      name="customer[first_name]"
+                      id="first_name_reg" />
+                  </div>
+                  <div class="field-wrap">
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      name="customer[last_name]"
+                      id="last_name_reg" />
+                  </div>
+                  <div class="field-wrap">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      name="customer[email]"
+                      id="email_reg" />
+                  </div>
+                  <div class="field-wrap">
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      name="customer[password]"
+                      id="password_reg" />
+                  </div>
+                  <div class="field-wrap">
+                    <input type="submit" value="Register">
+                  </div>
+                  <div class="field-wrap">
+                    <div class="checkbox-wrap">
+                      <label for="input-privacy">
+                        <input
+                          id="input-privacy"
+                          class="input-checkbox"
+                          type="checkbox"
+                          checked>
+                        <span class="custom-checkbox"></span>
+                        <span>Keep me up to date with the latest from Marquis</span>
+                      </label>
+                    </div>
+                    <p>Already have an account?
+                      <a
+                        class="login-register-forms"
+                        href="#"
+                        data-form-name="login">Login</a>
+                    </p>
+                  </div>
+
+                {% endform %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END LOGIN CONTAINER -->

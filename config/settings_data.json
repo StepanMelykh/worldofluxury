@@ -25,8 +25,8 @@
           "1ac42e8b-ab94-4c36-927d-d4a7765d55de": {
             "type": "blocks",
             "settings": {
-              "title": "Jevelry",
-              "link_url": "shopify:\/\/collections",
+              "title": "Jewelry",
+              "link_url": "shopify:\/\/collections\/jewelry",
               "icon": "shopify:\/\/shop_images\/nav-jevel-black.svg",
               "icon_hover": "shopify:\/\/shop_images\/nav-jevel-black-white.svg"
             }
@@ -35,7 +35,7 @@
             "type": "blocks",
             "settings": {
               "title": "Handbags",
-              "link_url": "shopify:\/\/collections",
+              "link_url": "shopify:\/\/collections\/bags",
               "icon": "shopify:\/\/shop_images\/nav-bag-black.svg",
               "icon_hover": "shopify:\/\/shop_images\/nav-bag-black-white_6b3bf03e-c67d-447d-93c8-93d4d461cbdb.svg"
             }
@@ -44,7 +44,7 @@
             "type": "blocks",
             "settings": {
               "title": "Pens",
-              "link_url": "shopify:\/\/collections",
+              "link_url": "shopify:\/\/collections\/pens",
               "icon": "shopify:\/\/shop_images\/nav-pen-black.svg",
               "icon_hover": "shopify:\/\/shop_images\/nav-pen-black-white.svg"
             }
@@ -141,21 +141,21 @@
             "type": "blocks",
             "settings": {
               "title": "About us",
-              "navigation": "about-navigation"
+              "navigation": "about-us-bottom-column"
             }
           },
           "8423b05a-9fe7-4d12-b278-cecf999a1bf5": {
             "type": "blocks",
             "settings": {
               "title": "Business",
-              "navigation": "business-navigation"
+              "navigation": "business-bottom-column"
             }
           },
           "5cdd010b-b1f5-4362-a312-4bcc43017780": {
             "type": "blocks",
             "settings": {
               "title": "Policies",
-              "navigation": "policies-navigation"
+              "navigation": "policies-bottom-column"
             }
           }
         },
@@ -175,6 +175,11 @@
     "blocks": {
       "d23315ce-0192-47f6-9840-91a4c95f493a": {
         "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/boost-sd\/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "disabled": false,
+        "settings": {}
+      },
+      "6279071938380501511": {
+        "type": "shopify:\/\/apps\/powerful-contact-form-builder\/blocks\/app-embed\/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
         "disabled": false,
         "settings": {}
       }
