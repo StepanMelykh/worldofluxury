@@ -4,12 +4,12 @@
     "settings": [
       {
         "type": "url",
-        "id": "fb_link",
+        "id": "facebook_link",
         "label": "Facebook"
       },
       {
         "type": "url",
-        "id": "ig_link",
+        "id": "instagram_link",
         "label": "Instagram"
       },
       {
@@ -19,13 +19,28 @@
       },
       {
         "type": "url",
-        "id": "pint_link",
+        "id": "twitter_link",
+        "label": "Twitter"
+      },
+      {
+        "type": "url",
+        "id": "pinterest_link",
         "label": "Pinterest"
+      },
+      {
+        "type": "url",
+        "id": "youtube_link",
+        "label": "Youtube"
       },
       {
         "type": "text",
         "id": "contact_email",
         "label": "Contact Email"
+      },
+      {
+        "type": "text",
+        "id": "phone",
+        "label": "Contact Phone"
       }
     ]
   },
@@ -41,7 +56,7 @@
         "type": "textarea",
         "id": "copyright_text",
         "label": "Copyright Text",
-        "default": "© 2022 Nera. All rights reserved."
+        "default": "© 2005– 2023 «World of Luxury»"
       }
     ]
   }

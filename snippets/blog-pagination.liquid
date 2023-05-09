@@ -1,0 +1,35 @@
+<div class="pagination-wrap">
+    {% if paginate.previous.is_link %}
+      <div class="page-link-wrap">
+        <a class="page-link prev-link" href="{{ paginate.previous.url }}">
+          <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 1L1.42484 6.57516L7 12.1503" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    {% endif %}  
+
+    {% for part in paginate.parts %}
+      <div class="page-link-wrap">
+        {% if part.is_link  %}
+          <a class="page-link" href="{{ part.url }}">{{ part.title }}</a>
+        {% else %}
+          {% if part.title == paginate.current_page %}
+            <span class="page-link current-page-link">{{ part.title }}</span>
+          {% else %}
+            <span class="page-link">{{ part.title }}</span>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    {% if paginate.next.is_link %}
+      <div class="page-link-wrap">
+        <a class="page-link next-link" href="{{ paginate.next.url }}">
+          <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 1L1.42484 6.57516L7 12.1503" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    {% endif %}
+  </div>

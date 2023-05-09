@@ -2,8 +2,22 @@
   <div class="top-row">
     <h1>{{ article.title }}</h1>
   </div>
-  <div class="content">
-    {{ article.content }}
+  <div class="blog-post-wrap display-flex">
+    <div class="blog-post">
+      <div class="content">
+        {{ article.content }}
+      </div>      
+    </div>
+    <div class="blog-posts-sidebar">
+      <div class="sub-title">Categories</div>
+      <div class="blogs-list">
+        <ul>
+          {%  for blog in linklists.blogs.links %}
+            <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>  
+          {% endfor %}          
+        </ul>
+      </div>    
+  </div>
   </div>
 </div>
 
@@ -11,7 +25,7 @@
 {
   "name": "Page content",
   "tag": "section",
-  "class": "page-content",
+  "class": "blog-post",
   "settings": []
 }
 {% endschema %}

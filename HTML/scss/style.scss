@@ -1623,47 +1623,6 @@ body {
                         }
                     }                    
                 }
-                .pagination-wrap {
-                    display: flex;
-                    justify-content: center;
-                    .page-link-wrap {
-                        margin: 0px 5px;
-                        .page-link {
-                            height: 31px;
-                            width: 45px;
-                            background: #FFFFFF;
-                            border-radius: 10px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-weight: 400;
-                            font-size: 18px;
-                            line-height: 140%;
-                            color: #2D2D2D;
-                            transition: 0.2s;      
-                            &.current-page-link {
-                                background-color: #2D2D2D;
-                                color: #ffffff;                                
-                            } 
-                            &.next-link {
-                                transform: rotate(180deg);
-                            }
-                            path {
-                                stroke: #2D2D2D;
-                            }                                               
-                        }
-                        a {
-                            &:hover {
-                                background-color: #2D2D2D;
-                                color: #ffffff;
-                                transition: 0.2s;
-                                path {
-                                    stroke: #ffffff;
-                                }  
-                            }
-                        } 
-                    }
-                }
             }
         }
         &.wrap-404 {
@@ -1817,6 +1776,301 @@ body {
                 }
             }
         }
+        &.blog-grid {
+            padding-bottom: 60px;
+            padding-top: 60px;
+            .container {
+                width: 1190px;
+                margin: 0 auto;
+                @include media($xl){
+                    width: 100%;
+                    padding: 0px 8px;
+                }
+            }
+            .top-row {
+                h1 {
+                    font-size: 52px;
+                    line-height: 140%;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin-bottom: 60px;
+                    color: #171717;
+                    position: relative;
+                    @include media($xl){
+                        font-size: 32px;
+                        margin-bottom: 0px;
+                    }
+                    &:after {
+                        content: "";
+                        background-color: #0006;
+                        display: block;
+                        height: 3px;
+                        width: 60px;
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        -webkit-transform: translateX(-50%);
+                        transform: translate(-50%);
+                    }
+                }
+            }
+            .blog-posts-wrap {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .blog-posts {
+                    width: 80%;
+                    @include media($md){
+                        width: 100%;
+                    }
+                    .article-wrap {
+                        text-align: center;
+                        padding-bottom: 50px;
+                        padding-top: 50px;
+                        border-bottom: 2px solid #ececec;
+                        .article-title {
+                            padding: 0px 200px;
+                            @include media($xl){
+                                padding: 0px 25px;
+                            }
+                            a {
+                                font-size: 28px;
+                                line-height: 140%;
+                                margin: 0px 0px 30px;
+                                display: inline-block;
+                                color: #171717;
+                                opacity: 1;
+                                transition: 0.2s;
+                                font-weight: 600;
+                                @include media($xl){
+                                    font-size: 24px;
+                                }
+                                &:hover {
+                                    opacity: 0.5;
+                                    transition: 0.2s;
+                                }
+                            }
+                        }
+                        .description {
+                            font-size: 18px;
+                            line-height: 140%;
+
+                            a {
+                                color: #171717;
+                                text-decoration: underline;
+                            }
+                            p {
+                                font-size: 18px;
+                                line-height: 140%;
+                                margin-bottom: 20px;
+                            }
+                        }
+                        .read-more {
+                            margin-top: 50px;
+                            a {
+                                display: inline-flex;
+                                height: 46px;
+                                padding: 0px 35px;
+                                border: #A39562 solid 1px;
+                                border-radius: 5px;
+                                color: #A39562;
+                                align-items: center;
+                                justify-content: center;
+                                text-transform: uppercase;
+                                font-weight: 600;
+                                transition: 0.3s;
+                                &:hover {
+                                    color: #ffffff;
+                                    background-color: #A39562;
+                                    transition: 0.3s;
+                                }
+                            }
+                        }
+                    }
+                }
+                .blog-posts-sidebar {
+                    padding-top: 44px;
+                    width: 15%;
+                    @include media($md){
+                        width: 100%;
+                    }
+                    .sub-title {
+                        font-size: 28px;
+                        line-height: 140%;
+                        font-weight: 600;
+                        padding-bottom: 5px;
+                        margin-bottom: 5px;
+                        border-bottom: 2px solid #ececec;
+                    }
+                    li {
+                        list-style: none;
+                        margin-bottom: 5px;
+                        a {
+                            font-size: 18px;
+                            line-height: 140%;
+                            color: #171717;
+                            transition: 0.2s;
+                            &:hover {
+                                opacity: 0.5;
+                                transition: 0.2s;
+                            }
+                        }
+                    }
+                }                
+            }
+            .pagination-wrap {
+                margin-top: 50px;
+            }
+        }
+        &.blog-post {
+            padding-bottom: 60px;
+            padding-top: 60px;
+            .container {
+                width: 1190px;
+                margin: 0 auto;
+                @include media($xl){
+                    width: 100%;
+                    padding: 0px 8px;
+                }
+            }
+            .top-row {
+                h1 {
+                    font-size: 52px;
+                    line-height: 140%;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin-bottom: 60px;
+                    color: #171717;
+                    position: relative;
+                    @include media($xl){
+                        font-size: 32px;
+                        margin-bottom: 0px;
+                    }
+                    &:after {
+                        content: "";
+                        background-color: #0006;
+                        display: block;
+                        height: 3px;
+                        width: 60px;
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        -webkit-transform: translateX(-50%);
+                        transform: translate(-50%);
+                    }
+                }
+            }
+            .blog-post-wrap {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .blog-post {
+                    width: 80%;
+                    padding-bottom: 50px;
+                    padding-top: 50px;
+                    border-bottom: 2px solid #ececec;
+                    @include media($md){
+                        width: 100%;
+                    }
+                    h2 {
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                    }
+                    li {
+                        list-style: none;
+                    }
+                    .content {
+                        font-size: 18px;
+                        line-height: 140%;
+
+                        a {
+                            color: #171717;
+                            text-decoration: underline;
+                        }
+                        p {
+                            font-size: 18px;
+                            line-height: 140%;
+                            margin-bottom: 20px;
+                        }
+                    }
+                    img {
+                        max-width: 100%;
+                    }
+                }
+                .blog-posts-sidebar {
+                    width: 15%;
+                    padding-top: 44px;
+                    @include media($md){
+                        width: 100%;
+                    }
+                    .sub-title {
+                        font-size: 28px;
+                        line-height: 140%;
+                        font-weight: 600;
+                        padding-bottom: 5px;
+                        margin-bottom: 5px;
+                        border-bottom: 2px solid #ececec;
+                    }
+                    li {
+                        list-style: none;
+                        margin-bottom: 5px;
+                        a {
+                            font-size: 18px;
+                            line-height: 140%;
+                            color: #171717;
+                            transition: 0.2s;
+                            &:hover {
+                                opacity: 0.5;
+                                transition: 0.2s;
+                            }
+                        }
+                    }
+                }                
+            }
+        }
+    }
+}
+
+.pagination-wrap {
+    display: flex;
+    justify-content: center;
+    .page-link-wrap {
+        margin: 0px 5px;
+        .page-link {
+            height: 31px;
+            width: 45px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: #2D2D2D;
+            transition: 0.2s;      
+            &.current-page-link {
+                background-color: #2D2D2D;
+                color: #ffffff;                                
+            } 
+            &.next-link {
+                transform: rotate(180deg);
+            }
+            path {
+                stroke: #2D2D2D;
+            }                                               
+        }
+        a {
+            &:hover {
+                background-color: #2D2D2D;
+                color: #ffffff;
+                transition: 0.2s;
+                path {
+                    stroke: #ffffff;
+                }  
+            }
+        } 
     }
 }
 
@@ -1861,4 +2115,30 @@ body {
 
 #login-container {
     display: none;
+}
+
+.boost-sd__product-list {
+    .boost-sd__product-item-grid-view-layout {
+        @include media($md){
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ececec;
+        }
+    }
+    .boost-sd__product-image-wrapper {
+        height: 350px;
+        margin: 0 auto;
+        @include media($xxl){
+            height: 300px;
+        }
+        @include media($xl){
+            height: 250px;
+        }
+        @include media($lg){
+            height: 160px;
+        }
+        @include media($md){
+            height: 350px;
+        }
+    }
 }
