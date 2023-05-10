@@ -38,12 +38,20 @@
             {% endfor %}
 
         </ul>
-    </div>                
+    </div>       
+    {% if customer %}         
     <div class="login-btn">
         <div class="btn-wrap">
-            <a href="#">Login</a>
+            <a href="/account">Account</a>
         </div>
     </div>
+    {% else %}
+        <div class="login-btn sign-in">
+            <div class="btn-wrap">
+                <a href="javascript:void(0)">Login</a>
+            </div>
+        </div>
+    {% endif %}
     <div class="social-navigation display-flex">
         {% if settings.facebook_link != blank %}
         <div class="social-link facebook-link">

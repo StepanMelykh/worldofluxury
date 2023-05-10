@@ -63,6 +63,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
 
+      {% if template.name == 'account' %}
+        {{ 'script-account.js' | asset_url | script_tag }}
+      {% endif %}
 
     {{ 'lazysizes.min.js' | asset_url | script_tag }}
     {{ 'script-cart.js' | asset_url | script_tag }}

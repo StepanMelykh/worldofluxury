@@ -1,0 +1,108 @@
+{% if customer %}
+<section class="page-wrap order-history-page-wrap account-page-section"> <!-- START PAGE WRAP -->
+    <div class="container">
+        <div class="section-content">
+            <!-- ACCOUNT PAGE CONTENT-->
+            <div class="account-page display-flex">
+                <div class="account-page__navigation">
+                    {% include "customer-menu", active_menu: 'order-history' %}
+                </div>
+
+                <div class="account-page__content">
+                    <div class="account-information">
+                        <div class="account-page-heading">
+                            Order history
+                        </div>
+                        <div class="orders-wrap">
+
+                            {% if customer.orders.size != 0 %}
+
+                                {% for order in customer.orders %}
+                                    <div class="order-item display-flex">
+                                        <div class="column order-info">
+                                            <div class="order">
+                                                <div class="top-row">
+                                                    <div class="column date">Order Date: {{ order.created_at | date: "%b %d, %Y"  }}</div>
+                                                    <div class="column total">Total: {{ order.total_price | money }}</div>
+                                                </div>
+                                                <div class="products">
+                                                    {% for line_item in order.line_items %}
+                                                        <div class="item">
+                                                            <div class="product-info">
+                                                                <div class="image-wrap">
+                                                                    <a href="{{ line_item.product.url }}" target="_blank">
+                                                                        {{ line_item.image | img_url: '100x' | img_tag }}
+                                                                    </a>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <div class="title"><a href="{{ line_item.product.url }}" target="_blank">{{ line_item.title }}</a></div>
+                                                                    <div class="info size">{{ line_item.product.metafields.arena.pack_count }} Pack</div>
+                                                                    <div class="info delivery">Quantity: {{ line_item.quantity }}</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="total-price">
+                                                                <span>{{ line_item.original_price |  money }}</span>
+                                                            </div>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column order-status">
+                                            {% if order.fulfillment_status == 'fulfilled' %}
+
+                                                <div class="status">
+                                                    Status: {{ order.fulfillment_status_label }}
+                                                </div>
+
+                                                {% for line in order.line_items %}
+                                                    {{ line.fulfillment_service }}
+                                                    {% if line.fulfillment.created_at %}
+                                                        <div class="delivery">
+                                                            <span>Shipped: {{ line.fulfillment.created_at | date: "%b %d, %Y" }}</span>
+                                                            <span>Estimated delivery: <script>calculateEstimation('{{ line.fulfillment.created_at }}');</script></span>
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if line.fulfillment.tracking_url %}
+                                                        <div class="delivery">
+                                                            <a target="_blank" href="{{ line.fulfillment.tracking_url }}">Track Order</a>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            {% else %}
+                                                <div class="status">
+                                                    Status: {{ order.fulfillment_status_label }}
+                                                </div>
+                                                <div class="order-number">
+                                                    Order Number: {{ order.order_number | link_to: order.customer_url }}
+                                                </div>
+                                            {% endif %}
+
+                                            <div class="links">
+                                                <div class="link"><a href="/pages/contact-us">Need help with your order?</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                {% endfor %}
+
+                            {% else %}
+
+                                <p>You have no orders yet!</p>
+
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!-- END PAGE WRAP -->
+{% else %}
+    <script>
+        document.location.href='/';
+    </script>
+{% endif %}
