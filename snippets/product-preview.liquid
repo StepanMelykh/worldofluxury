@@ -5,7 +5,7 @@
 <div class="product-item" data-product-count="{{ count }}">
     <div class="body-item">
         <div class="image-wrap">
-            <span class="label-brend">Name Brand</span>
+            <span class="label-brend">{{ product.metafields.product_attribute.watch_brand }}</span>
             <span class="label-percent">-{{ percent }}%</span>                                
             <a href="{{ product.url }}">
                 <img src="{{ product.images[0] | img_url: 'master' }}" alt="{{ product.title }}">   

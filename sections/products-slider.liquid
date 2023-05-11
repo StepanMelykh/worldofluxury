@@ -1,18 +1,41 @@
 <div class="top-row">
-    <div class="tabs-wrap">
-        <div class="tab active">New products</div>
-        <div class="tab">Top sale</div>
+    <div class="tabs-title" data-titles-id="{{ section.id }}">
+        {% assign recommended_active = 'active' %}
+        {% if section.settings.new_products %}
+            <div class="tab-title active" data-tab-name="new-products">New products</div>
+            {% assign recommended_active = '' %}
+        {% endif %}
+        {% if section.settings.recommended_products %}
+            <div class="tab-title {{ recommended_active }}" data-tab-name="recommended-products">{{ section.settings.tab-title }}</div>
+        {% endif %}
     </div>
 </div>
-<div id="products-slider" class="products-slider owl-carousel">
-    {% assign  count = 1 %}
-    {% paginate collections.all.products by 10 %}
-        {% assign collection = collections.all.products | sort: 'published_at'%}
-        {% for product in collection %}
-            {% include  'product-preview' | product %}
-            {%  assign count = count | plus: 1  %}
-        {% endfor %}
-    {% endpaginate %}
+<div class="tabs-content" data-contents-id="{{ section.id }}">
+    {% if section.settings.new_products %}
+        <div class="tab-content active" data-tab-content="new-products">
+            <div id="products-slider" class="products-slider owl-carousel">
+                {% assign  count = 1 %}
+                {% paginate collections.all.products by 10 %}
+                    {% assign collection = collections.all.products | sort: 'published_at'%}
+                    {% for product in collection %}
+                        {% include  'product-preview' | product %}
+                        {%  assign count = count | plus: 1  %}
+                    {% endfor %}
+                {% endpaginate %}
+            </div>          
+        </div>    
+    {% endif %}
+    {% if section.settings.recommended_products %}
+        <div class="tab-content {{ recommended_active }}" data-tab-content="recommended-products">
+            <div id="products-slider" class="products-slider owl-carousel">
+                {% for block in section.blocks %}
+                    {% assign product = block.settings.recommended_product %}
+                    {% include  'product-preview' | product %}
+                    {%  assign count = count | plus: 1  %}
+                {% endfor %}
+            </div>          
+        </div> 
+    {% endif %}
 </div>
 
 
@@ -31,6 +54,35 @@
                 "type": "number",
                 "id": "product_count",
                 "label": "Count"
+            },
+            {
+                "type": "checkbox",
+                "id": "new_products",
+                "label": "Show the new products tab"
+            },            
+            {
+                "type": "checkbox",
+                "id": "recommended_products",
+                "label": "Show the recommended products tab"
+            },
+            {
+                "type": "text",
+                "id": "tab-title",
+                "label": "Title of Recommended products tab",
+                "default": "Recommended products"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Producs",
+                "type": "products",
+                "settings": [
+                    {
+                        "type": "product",
+                        "id": "recommended_product",
+                        "label": "Product"
+                    }
+                ]
             }
         ],
         "presets": [

@@ -5,6 +5,8 @@ $lg: 991px;
 $xl: 1200px;
 $xxl: 1600px;
 
+$translateX: calc((100% - 1970px) - 112px);
+
 @mixin media($canvas) {
     @media only screen and (max-width: $canvas) { @content; }
 }

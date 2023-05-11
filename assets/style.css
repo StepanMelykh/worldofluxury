@@ -1755,14 +1755,14 @@ body {
           padding-bottom: 61px; } }
       body section.products-grid .top-row {
         text-align: center; }
-        body section.products-grid .top-row .tabs-wrap {
+        body section.products-grid .top-row .tabs-title {
           display: -webkit-inline-box;
           display: -ms-inline-flexbox;
           display: inline-flex;
           -webkit-box-pack: center;
               -ms-flex-pack: center;
                   justify-content: center; }
-          body section.products-grid .top-row .tabs-wrap .tab {
+          body section.products-grid .top-row .tabs-title .tab-title {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -1780,16 +1780,30 @@ body {
             padding: 0px 10px;
             border: 0.5px solid #5D5D5D;
             border-radius: 7px;
-            margin-right: 10px; }
+            margin-right: 10px;
+            cursor: pointer; }
             @media only screen and (max-width: 767px) {
-              body section.products-grid .top-row .tabs-wrap .tab {
+              body section.products-grid .top-row .tabs-title .tab-title {
                 font-weight: 400; } }
-            body section.products-grid .top-row .tabs-wrap .tab:last-child {
+            body section.products-grid .top-row .tabs-title .tab-title:last-child {
               margin-right: 0px; }
-            body section.products-grid .top-row .tabs-wrap .tab.active {
+            body section.products-grid .top-row .tabs-title .tab-title.active {
               color: #ffffff;
               background: #A39562;
               border: 0.5px solid #D9D9D9; }
+      body section.products-grid .tabs-content .tab-content {
+        display: block; }
+        body section.products-grid .tabs-content .tab-content:not(.active) {
+          height: 0;
+          opacity: 0;
+          overflow: hidden;
+          padding: 0;
+          visibility: hidden;
+          -webkit-transition: 0.2s;
+          transition: 0.2s; }
+        body section.products-grid .tabs-content .tab-content.active {
+          -webkit-transition: 0.2s;
+          transition: 0.2s; }
       body section.products-grid .products-slider {
         padding-top: 70px;
         min-width: 1970px;
@@ -1811,7 +1825,9 @@ body {
                     transform: translateX(8px); } }
         body section.products-grid .products-slider .owl-dots {
           text-align: center;
-          margin-top: 76px; }
+          margin-top: 76px;
+          -webkit-transform: translateX(calc((100% - 1970px) - 112px));
+                  transform: translateX(calc((100% - 1970px) - 112px)); }
           @media only screen and (max-width: 1200px) {
             body section.products-grid .products-slider .owl-dots {
               display: none; } }
