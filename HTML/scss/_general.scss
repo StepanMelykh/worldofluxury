@@ -1561,9 +1561,15 @@ footer {
                     line-height: 28px;
                     padding-bottom: 5px;
                     box-sizing: border-box;
+                    transition: 0.2s;
                     @include media($xl){
                         padding-bottom: 0px;
                         font-size: 15px;
+                    }
+                    &:hover {
+                        background: #EBEBEB;
+                        color: #2D2D2D;
+                        transition: 0.2s;
                     }
                 }
             }

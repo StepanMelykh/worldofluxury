@@ -1,1 +1,58 @@
-<h1>Cart</h1>
+<div class="container">
+    <div class="top-row">
+        <h1>Cart</h1>
+    </div>
+    <div class="content">
+        <div class="cart-wrap">
+            {% for cart_item in cart.items %}
+                <div class="product-row"  data-variant-id="{{ cart_item.variant_id }}">
+                    <div class="columns display-flex">
+                        <div class="column image-column">
+                            <img src="{{ cart_item.image | img_url: 'master' }}" alt="{{ cart_item.title }}">
+                        </div>
+                        <div class="column description-column">
+                            <div class="product-title">
+                                <a href="{{ cart_item.url }}">{{ cart_item.title }}</a>
+                            </div>
+                            <div class="description">
+                                <div class="quantity-wrap display-flex">
+                                    <div class="label">Quantity:</div>
+                                    <span class="count-quantity" data-product-quantity="{{ cart_item.quantity }}">{{ cart_item.quantity }}</span>
+                                </div> 
+                                <div class="price-total display-flex">
+                                    <span class="label">Our price:</span>
+                                    <span class="price our-price">{{ cart_item.price | money_without_trailing_zeros }}</span>
+                                </div> 
+                                <div class="btn-wrap remove-product" data-variant-id="{{ cart_item.variant_id }}" onclick="removeItemCountInCart({{ cart_item.variant_id }}, 0)">Remove</div>                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="total-row">
+            <div class="sub-total">
+                <div class="label">Subtotal</div>
+                <div class="line-price">{{ cart.total_price | money_without_trailing_zeros }}</div>
+            </div>
+            <div class="btn-wrap">
+                <a href="/checkout" class="btn-checkout">Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    console.log('Cart Start');
+    console.log({{ cart | json }});
+    console.log('Cart End');
+</script>
+
+{% schema %}
+    {
+      "name": "Page content",
+      "tag": "section",
+      "class": "page-content cart-page",
+      "settings": []
+    }
+{% endschema %}
