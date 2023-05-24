@@ -16,7 +16,7 @@
             <div id="products-slider" class="products-slider owl-carousel">
                 {% assign  count = 1 %}
                 {% paginate collections.all.products by 10 %}
-                    {% assign collection = collections.all.products | sort: 'published_at'%}
+                    {% assign collection = collections['new-products'].products  %}
                     {% for product in collection %}
                         {% include  'product-preview' | product %}
                         {%  assign count = count | plus: 1  %}

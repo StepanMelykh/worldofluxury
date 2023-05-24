@@ -2056,15 +2056,29 @@ body {
             width: 1190px;
             margin: 0 auto;
             padding: 50px 0px;
+            @include media($xl){
+                width: 100%;
+            }
             .account-page {
                 justify-content: space-between;
+                @include media($md){
+                    flex-direction: column;
+                }
             }
             .account-page__navigation {
                 width: 15%;
                 padding-top: 15px;
+                @include media($md){
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
                 ul {
                     li {
                         margin-bottom: 10px;
+                        @include media($md){
+                            display: inline-block;
+                            margin: 0px 15px;
+                        }
                         &.active {
                             a {
                                 text-decoration: underline;
@@ -2083,6 +2097,9 @@ body {
             }
             .account-page__content {
                 width: 80%;
+                @include media($md){
+                    width: 100%;
+                }
                 .account-page-heading {
                     font-size: 24px;
                     line-height: 140%;
@@ -2399,6 +2416,72 @@ body {
                     }
                 }
             }
+            .orders-wrap {
+                .order-item  {
+                    padding-bottom: 25px;
+                    margin-bottom: 25px;
+                    border-bottom: 1px solid #DDDDDD;
+                    @include media($md){
+                        flex-direction: column;
+                    }  
+                    .top-row {
+                        .date {
+                            font-weight: 600;
+                            font-size: 18px;
+                            line-height: 140%;
+                        }
+                        
+                    }
+                    .order-info {
+                        width: 450px;    
+                        @include media($md){
+                            width: 100%;
+                        }                    
+                    }
+                    .products {
+                        .item {
+                            padding: 15px 0px;
+                            .product-info {
+                                padding-right: 50px;
+                                .image-wrap {
+                                    width: 150px;
+                                    margin-bottom: 10px;
+                                    margin-top: 15px;
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                        
+                                    }
+                                }
+                                .content {
+                                    .title {
+                                        margin-bottom: 10px;
+                                        a {
+                                            font-size: 18px;
+                                            color: #171717;                                            
+                                        }
+
+                                    }
+                                }
+                            }
+                            .total-price {
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                    .order-status {
+                        font-weight: 600;
+                        @include media($md){
+                            width: 100%;
+                        }  
+                        a {
+                            color: #171717;
+                            text-decoration: underline;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
         }
         &.cart-page {
             .cart-wrap {
@@ -2490,7 +2573,7 @@ body {
                     }
                 }
             }
-        }
+        } 
     }
 }
 
@@ -2765,6 +2848,7 @@ body {
     .boost-sd__product-image-wrapper {
         height: 350px;
         margin: 0 auto;
+        width: 100%;
         @include media($xxl){
             height: 300px;
         }

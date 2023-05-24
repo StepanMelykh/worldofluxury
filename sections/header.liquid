@@ -26,7 +26,7 @@
                                     </a>
                                 </div>
                                 <div class="link-item">
-                                    <a href="/search" class="search-action_">
+                                    <a href="javascript:void(0)" class="search-action">
                                         <div class="icon">
                                             <svg class="search-image" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23.7134 22.7136L29.9998 29" stroke="black" stroke-width="1.31707" stroke-linecap="round"/>
@@ -65,8 +65,8 @@
                                     </a>
                                 </div>
                                 {% if customer %}
-                                    <div class="link-item">
-                                        <a href="javascript:void(0)">
+                                    <div class="link-item sign-in">
+                                        <a href="/account">
                                             <div class="icon">
                                                 <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M18.792 25.625L23.917 20.5L18.792 15.375" stroke="black" stroke-linecap="square"/>
@@ -125,9 +125,9 @@
     </div>
     <div class="search-form">
         <div class="form-wrap">
-            <form action="">
+            <form action="/search">
                 <div class="input-field">
-                    <input type="text" placeholder="Search">
+                    <input type="text" placeholder="Search" name="q">
                 </div>
                 <div class="input-field submit-field">
                     <button>

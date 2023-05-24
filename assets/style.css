@@ -779,6 +779,9 @@ footer {
       color: #284734;
       font-weight: 700;
       margin-bottom: 23px; }
+    #cart .empty-cart a {
+      color: #171717;
+      font-size: 18px; }
   #cart .items-list .no-items-in-cart {
     text-align: center;
     font-weight: 600;
@@ -3571,15 +3574,32 @@ body {
       width: 1190px;
       margin: 0 auto;
       padding: 50px 0px; }
+      @media only screen and (max-width: 1200px) {
+        body section.account-page-section {
+          width: 100%; } }
       body section.account-page-section .account-page {
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
                 justify-content: space-between; }
+        @media only screen and (max-width: 767px) {
+          body section.account-page-section .account-page {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column; } }
       body section.account-page-section .account-page__navigation {
         width: 15%;
         padding-top: 15px; }
+        @media only screen and (max-width: 767px) {
+          body section.account-page-section .account-page__navigation {
+            width: 100%;
+            margin-bottom: 30px; } }
         body section.account-page-section .account-page__navigation ul li {
           margin-bottom: 10px; }
+          @media only screen and (max-width: 767px) {
+            body section.account-page-section .account-page__navigation ul li {
+              display: inline-block;
+              margin: 0px 15px; } }
           body section.account-page-section .account-page__navigation ul li.active a {
             text-decoration: underline;
             font-weight: 600; }
@@ -3590,6 +3610,9 @@ body {
             text-transform: capitalize; }
       body section.account-page-section .account-page__content {
         width: 80%; }
+        @media only screen and (max-width: 767px) {
+          body section.account-page-section .account-page__content {
+            width: 100%; } }
         body section.account-page-section .account-page__content .account-page-heading {
           font-size: 24px;
           line-height: 140%;
@@ -3906,6 +3929,52 @@ body {
             body section.account-page-section .account-page__content .account-information__wrap .block-title {
               font-size: 22px;
               line-height: 26px; } }
+      body section.account-page-section .orders-wrap .order-item {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid #DDDDDD; }
+        @media only screen and (max-width: 767px) {
+          body section.account-page-section .orders-wrap .order-item {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column; } }
+        body section.account-page-section .orders-wrap .order-item .top-row .date {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 140%; }
+        body section.account-page-section .orders-wrap .order-item .order-info {
+          width: 450px; }
+          @media only screen and (max-width: 767px) {
+            body section.account-page-section .orders-wrap .order-item .order-info {
+              width: 100%; } }
+        body section.account-page-section .orders-wrap .order-item .products .item {
+          padding: 15px 0px; }
+          body section.account-page-section .orders-wrap .order-item .products .item .product-info {
+            padding-right: 50px; }
+            body section.account-page-section .orders-wrap .order-item .products .item .product-info .image-wrap {
+              width: 150px;
+              margin-bottom: 10px;
+              margin-top: 15px; }
+              body section.account-page-section .orders-wrap .order-item .products .item .product-info .image-wrap img {
+                width: 100%;
+                height: auto; }
+            body section.account-page-section .orders-wrap .order-item .products .item .product-info .content .title {
+              margin-bottom: 10px; }
+              body section.account-page-section .orders-wrap .order-item .products .item .product-info .content .title a {
+                font-size: 18px;
+                color: #171717; }
+          body section.account-page-section .orders-wrap .order-item .products .item .total-price {
+            margin-top: 10px; }
+        body section.account-page-section .orders-wrap .order-item .order-status {
+          font-weight: 600; }
+          @media only screen and (max-width: 767px) {
+            body section.account-page-section .orders-wrap .order-item .order-status {
+              width: 100%; } }
+          body section.account-page-section .orders-wrap .order-item .order-status a {
+            color: #171717;
+            text-decoration: underline;
+            font-weight: 400; }
     @media only screen and (max-width: 767px) {
       body section.cart-page .cart-wrap .columns {
         -webkit-box-orient: vertical;
@@ -4268,7 +4337,8 @@ body {
     border-bottom: 2px solid #ececec; } }
 .boost-sd__product-list .boost-sd__product-image-wrapper {
   height: 350px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 100%; }
   @media only screen and (max-width: 1600px) {
     .boost-sd__product-list .boost-sd__product-image-wrapper {
       height: 300px; } }

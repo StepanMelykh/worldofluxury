@@ -31,17 +31,16 @@
                                                             <div class="product-info">
                                                                 <div class="image-wrap">
                                                                     <a href="{{ line_item.product.url }}" target="_blank">
-                                                                        {{ line_item.image | img_url: '100x' | img_tag }}
+                                                                        {{ line_item.image | img_url: '400x' | img_tag }}
                                                                     </a>
                                                                 </div>
                                                                 <div class="content">
                                                                     <div class="title"><a href="{{ line_item.product.url }}" target="_blank">{{ line_item.title }}</a></div>
-                                                                    <div class="info size">{{ line_item.product.metafields.arena.pack_count }} Pack</div>
                                                                     <div class="info delivery">Quantity: {{ line_item.quantity }}</div>
                                                                 </div>
                                                             </div>
                                                             <div class="total-price">
-                                                                <span>{{ line_item.original_price |  money }}</span>
+                                                                <span>Price: {{ line_item.original_price |  money }}</span>
                                                             </div>
                                                         </div>
                                                     {% endfor %}
@@ -80,7 +79,7 @@
                                             {% endif %}
 
                                             <div class="links">
-                                                <div class="link"><a href="/pages/contact-us">Need help with your order?</a></div>
+                                                <div class="link"><a href="/pages/contact">Need help with your order?</a></div>
                                             </div>
                                         </div>
                                     </div>
