@@ -2072,7 +2072,13 @@ body {
                     width: 100%;
                     margin-bottom: 30px;
                 }
+                @include media($sm){
+                    overflow: auto;
+                }
                 ul {
+                    @include media($sm){
+                        min-width: 400px;
+                    }
                     li {
                         margin-bottom: 10px;
                         @include media($md){
@@ -2447,6 +2453,9 @@ body {
                                     width: 150px;
                                     margin-bottom: 10px;
                                     margin-top: 15px;
+                                    @include media($sm){
+                                        margin: 15px auto 10px;
+                                    }
                                     img {
                                         width: 100%;
                                         height: auto;

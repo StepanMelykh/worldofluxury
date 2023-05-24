@@ -3594,6 +3594,12 @@ body {
           body section.account-page-section .account-page__navigation {
             width: 100%;
             margin-bottom: 30px; } }
+        @media only screen and (max-width: 576px) {
+          body section.account-page-section .account-page__navigation {
+            overflow: auto; } }
+        @media only screen and (max-width: 576px) {
+          body section.account-page-section .account-page__navigation ul {
+            min-width: 400px; } }
         body section.account-page-section .account-page__navigation ul li {
           margin-bottom: 10px; }
           @media only screen and (max-width: 767px) {
@@ -3956,6 +3962,9 @@ body {
               width: 150px;
               margin-bottom: 10px;
               margin-top: 15px; }
+              @media only screen and (max-width: 576px) {
+                body section.account-page-section .orders-wrap .order-item .products .item .product-info .image-wrap {
+                  margin: 15px auto 10px; } }
               body section.account-page-section .orders-wrap .order-item .products .item .product-info .image-wrap img {
                 width: 100%;
                 height: auto; }
