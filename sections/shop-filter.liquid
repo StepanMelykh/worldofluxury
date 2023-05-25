@@ -1,39 +1,19 @@
 <div class="container">
-    <div class="section-title">Shop watches</div>
+    <div class="section-title">{{ section.settings.title }}</div>
     <div class="columns display-flex">
-        <div class="column">
-            <div class="image-wrap">
-                <img src="{{ 'temp-shop-img-1.png' | asset_url }}" alt="">
-            </div>
-            <div class="footer">
-                <a href="">
-                    <span>View Watches up to</span>
-                    <span>$3,999</span>
-                </a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="image-wrap">
-                <img src="{{ 'temp-shop-img-2.png' | asset_url }}" alt="">
-            </div>
-            <div class="footer">
-                <a href="">
-                    <span>View Watches</span>
-                    <span>$3,999 - $9,999</span>
-                </a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="image-wrap">
-                <img src="{{ 'temp-shop-img-3.png' | asset_url }}" alt="">
-            </div>
-            <div class="footer">
-                <a href="">
-                    <span>View Watches over</span>
-                    <span>$9,999</span>
-                </a>
-            </div>
-        </div>
+        {% for block in section.blocks %}
+            <div class="column">
+                <div class="image-wrap">
+                    <img src="{{ block.settings.image_preview | img_url: 'master' }}" alt="">
+                </div>
+                <div class="footer">
+                    <a href="{{ block.settings.link }}">
+                        <span>{{ block.settings.title }}</span>
+                        <span>{{ block.settings.price }}</span>
+                    </a>
+                </div>
+            </div>            
+        {% endfor %}
     </div>
 </div>
 
@@ -47,6 +27,34 @@
                 "type": "text",
                 "id": "title",
                 "label": "Title"
+            }
+        ],
+        "blocks":[
+            {
+                "name": "Filter",
+                "type": "filter",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image_preview",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "price",
+                        "label": "Price"
+                    },
+                    {
+                        "type": "text",
+                        "id": "link",
+                        "label": "Link"
+                    }
+                ]
             }
         ],
         "presets": [

@@ -1,0 +1,32 @@
+<section class="page-content">
+    <div class="container">
+    <div class="top-row">
+        <h1>{{ page.title }}</h1>
+    </div>
+    <div class="content">
+        <div class="block-wrap" style="margin-bottom: 50px;">
+            <h2 style="font-size: 24px; margin-bottom: 25px; text-decoration: underline;">Products</h2>
+            {% paginate collections.all.products by 10000 %}
+                {% for product in collections.all.products %}
+                    <p style="margin-bottom: 0px;"><a href="{{ product.url }}">{{ product.title }}</a></p>
+                {% endfor %}
+            {% endpaginate %}            
+        </div>
+
+        <div class="block-wrap" style="margin-bottom: 50px;">
+            <h2 style="font-size: 24px; margin-bottom: 25px; text-decoration: underline;">Pages</h2>
+            {% for page in pages %}
+                <p style="margin-bottom: 0px;"><a href="{{ page.url }}">{{ page.title }}</a></p>
+            {% endfor %}
+        </div>
+
+        <div class="block-wrap" style="margin-bottom: 50px;">
+            <h2 style="font-size: 24px; margin-bottom: 25px; text-decoration: underline;">Blogs</h2>
+            {% for blog in linklists.blogs.links %}
+                <p style="margin-bottom: 0px;"><a href="{{ blog.url }}">{{ blog.title }}</a></p>
+            {% endfor %}
+        </div>
+
+    </div>
+    </div>    
+</section>
