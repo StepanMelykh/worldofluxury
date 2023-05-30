@@ -339,3 +339,16 @@
     </div>
   </div>
 </div>
+
+<div class="popup-gallary">
+  <div class="popup-bg popup-gallary-bg"></div>
+  <div class="popup-wrap">
+    <div id="popup-product-gallary" class="popup-product-gallary owl-carousel">
+      {% for image in product.images %}
+        <div class="slide-item">
+          <img src="{{ image | img_url: 'master' }}" alt="{{ product.title }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
