@@ -2849,6 +2849,7 @@ body {
             padding-bottom: 30px;
             margin-bottom: 30px;
             border-bottom: 2px solid #ececec;
+            width: 100%;
         }
     }
     .boost-sd__product-image-wrapper {
@@ -2867,6 +2868,43 @@ body {
         @include media($md){
             height: 350px;
         }
+    }
+}
+.boost-sd__product-item-list-view-layout {
+    .boost-sd__product-item-list-view-layout-image {
+        flex: 260px;
+        max-width: 260px;   
+        @include media($lg){
+            flex: 160px;
+            max-width: 160px;  
+        }     
+        @include media($md){
+            flex: 260px;
+            max-width: 260px;  
+            .boost-sd__product-image-wrapper {
+                height: 225px;
+            }
+        }  
+        @include media($sm){
+            flex: 160px;
+            max-width: 160px; 
+        }            
+    }
+    .boost-sd__product-item-list-view-layout-info-group {
+        flex: calc(100% - 260px);
+        max-width: calc(100% - 260px);        
+        @include media($lg){
+            flex: calc(100% - 160px);
+            max-width: calc(100% - 160px);     
+        }
+        @include media($lg){
+            flex: calc(100% - 260px);
+            max-width: calc(100% - 260px);     
+        }
+        @include media($sm){
+            flex: calc(100% - 160px);
+            max-width: calc(100% - 160px); 
+        } 
     }
 }
 .popup-gallary {
@@ -2907,15 +2945,15 @@ body {
             height: auto;
         }
         .popup-product-gallary {
-           max-width: 750px;
+            width: 750px;
             height: 100%;
             margin: 0 auto;
             background-color: #ffffff;
             @include media($md){
-                max-width: 550px;
+                width: 550px;
             }
             @include media($sm){
-                max-width: 370px;
+                width: 370px;
             }
             .owl-stage-outer {
                 height: 100%;
@@ -2958,6 +2996,32 @@ body {
                         right: 33px;
                     }
                 }
+            }
+        }
+        .close-popup-gallary {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 5;
+            cursor: pointer;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #171717;
+                top: 11px;
+                left: 0px;
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+            &::after {
+                transform: rotate(45deg);
             }
         }
     }

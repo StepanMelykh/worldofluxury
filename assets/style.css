@@ -4343,7 +4343,8 @@ body {
   .boost-sd__product-list .boost-sd__product-item-grid-view-layout {
     padding-bottom: 30px;
     margin-bottom: 30px;
-    border-bottom: 2px solid #ececec; } }
+    border-bottom: 2px solid #ececec;
+    width: 100%; } }
 .boost-sd__product-list .boost-sd__product-image-wrapper {
   height: 350px;
   margin: 0 auto;
@@ -4360,6 +4361,55 @@ body {
   @media only screen and (max-width: 767px) {
     .boost-sd__product-list .boost-sd__product-image-wrapper {
       height: 350px; } }
+
+.boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-image {
+  -webkit-box-flex: 260px;
+      -ms-flex: 260px;
+          flex: 260px;
+  max-width: 260px; }
+  @media only screen and (max-width: 991px) {
+    .boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-image {
+      -webkit-box-flex: 160px;
+          -ms-flex: 160px;
+              flex: 160px;
+      max-width: 160px; } }
+  @media only screen and (max-width: 767px) {
+    .boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-image {
+      -webkit-box-flex: 260px;
+          -ms-flex: 260px;
+              flex: 260px;
+      max-width: 260px; }
+      .boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-image .boost-sd__product-image-wrapper {
+        height: 225px; } }
+  @media only screen and (max-width: 576px) {
+    .boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-image {
+      -webkit-box-flex: 160px;
+          -ms-flex: 160px;
+              flex: 160px;
+      max-width: 160px; } }
+.boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-info-group {
+  -webkit-box-flex: calc(100% - 260px);
+      -ms-flex: calc(100% - 260px);
+          flex: calc(100% - 260px);
+  max-width: calc(100% - 260px); }
+  @media only screen and (max-width: 991px) {
+    .boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-info-group {
+      -webkit-box-flex: calc(100% - 160px);
+          -ms-flex: calc(100% - 160px);
+              flex: calc(100% - 160px);
+      max-width: calc(100% - 160px); } }
+  @media only screen and (max-width: 991px) {
+    .boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-info-group {
+      -webkit-box-flex: calc(100% - 260px);
+          -ms-flex: calc(100% - 260px);
+              flex: calc(100% - 260px);
+      max-width: calc(100% - 260px); } }
+  @media only screen and (max-width: 576px) {
+    .boost-sd__product-item-list-view-layout .boost-sd__product-item-list-view-layout-info-group {
+      -webkit-box-flex: calc(100% - 160px);
+          -ms-flex: calc(100% - 160px);
+              flex: calc(100% - 160px);
+      max-width: calc(100% - 160px); } }
 
 .popup-gallary {
   position: fixed;
@@ -4404,16 +4454,16 @@ body {
       .popup-gallary .popup-wrap {
         height: auto; } }
     .popup-gallary .popup-wrap .popup-product-gallary {
-      max-width: 750px;
+      width: 750px;
       height: 100%;
       margin: 0 auto;
       background-color: #ffffff; }
       @media only screen and (max-width: 767px) {
         .popup-gallary .popup-wrap .popup-product-gallary {
-          max-width: 550px; } }
+          width: 550px; } }
       @media only screen and (max-width: 576px) {
         .popup-gallary .popup-wrap .popup-product-gallary {
-          max-width: 370px; } }
+          width: 370px; } }
       .popup-gallary .popup-wrap .popup-product-gallary .owl-stage-outer {
         height: 100%; }
         .popup-gallary .popup-wrap .popup-product-gallary .owl-stage-outer .owl-stage {
@@ -4450,5 +4500,28 @@ body {
             -webkit-transform: rotate(-135deg);
                     transform: rotate(-135deg);
             right: 33px; }
+    .popup-gallary .popup-wrap .close-popup-gallary {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 5;
+      cursor: pointer; }
+      .popup-gallary .popup-wrap .close-popup-gallary::before, .popup-gallary .popup-wrap .close-popup-gallary::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #171717;
+        top: 11px;
+        left: 0px; }
+      .popup-gallary .popup-wrap .close-popup-gallary::before {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+      .popup-gallary .popup-wrap .close-popup-gallary::after {
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
 
 /*# sourceMappingURL=style.css.map */

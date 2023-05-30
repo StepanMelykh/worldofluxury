@@ -148,6 +148,28 @@
     }
 
     function productGallary() { 
+
+        var popupProductGallary = jQuery('#popup-product-gallary');
+        if (popupProductGallary.length > 0) { 
+            popupProductGallary.owlCarousel({
+                items: 1,
+                dots: true,
+                loop: true,
+                nav: true,
+                navText: ['<span class="nav-btn prev-btn"></span>', '<span class="nav-btn next-btn"></span>'],
+                margin: 0
+            }); 
+
+            jQuery('.close-popup-gallary').on('click', function () {
+                jQuery('.popup-gallary').removeClass('active');
+            });
+
+            jQuery('.popup-gallary-bg').on('click', function () {
+                jQuery('.popup-gallary').removeClass('active');
+            });        
+        }
+
+
         var productGallary = jQuery('#product-gallary');
         if (productGallary.length > 0) { 
             productGallary.owlCarousel({
@@ -158,10 +180,18 @@
                 navText: ['<span class="nav-btn prev-btn"></span>', '<span class="nav-btn next-btn"></span>'],
                 margin: 0
             }); 
+            jQuery('.slide-item', productGallary).on('click', function () {
+                jQuery('.popup-gallary').addClass('active');
+                var currentIndex = jQuery(this).data('index-slide');
+                console.log(currentIndex);
+                // jQuery('#popupProductGallary .owl-item').removeClass('active');
+                // var index = jQuery('[data-popup-index-slide=' + currentIndex + ']').parent().addClass('active');
+                // console.log(index);
+                popupProductGallary.trigger('to.owl.carousel', currentIndex);
+            });        
         }
-        jQuery('.owl-item', productGallary).on('click', function () {
-            jQuery('.popup-gallary').addClass('active');
-        });
+
+
     }
 
     function productAdditionalInfo() { 
@@ -257,24 +287,25 @@
     }
 
     function popupProductGallary() { 
-        var productGallary = jQuery('#popup-product-gallary');
-        if (productGallary.length > 0) { 
+        // var productGallary = jQuery('#popup-product-gallary');
+        // if (productGallary.length > 0) { 
+        //     productGallary.owlCarousel({
+        //         items: 1,
+        //         dots: true,
+        //         loop: true,
+        //         nav: true,
+        //         navText: ['<span class="nav-btn prev-btn"></span>', '<span class="nav-btn next-btn"></span>'],
+        //         margin: 0
+        //     }); 
 
-                productGallary.owlCarousel({
-                    items: 1,
-                    dots: true,
-                    loop: true,
-                    nav: true,
-                    navText: ['<span class="nav-btn prev-btn"></span>', '<span class="nav-btn next-btn"></span>'],
-                    margin: 0
-                }); 
+        //     jQuery('.close-popup-gallary').on('click', function () {
+        //         jQuery('.popup-gallary').removeClass('active');
+        //     });
 
-        }
-
-        jQuery('.popup-gallary-bg').on('click', function () {
-            console.log('close');
-            jQuery('.popup-gallary').removeClass('active');
-        });
+        //     jQuery('.popup-gallary-bg').on('click', function () {
+        //         jQuery('.popup-gallary').removeClass('active');
+        //     });        
+        // }
     }
 
     jQuery('.modal__overlay').click(function(e){
