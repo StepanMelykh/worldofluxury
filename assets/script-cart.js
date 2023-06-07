@@ -85,7 +85,7 @@ function loadCart() {
                                                     '<div class="content-wrap">\n'+
                                                         '<div class="top-row">\n'+
                                                             '<span class="label-brend">Name Brand</span>\n'+
-                                                            '<span class="label-percent">-15%</span>\n'+
+                                                            '<span class="label-percent">15% Off</span>\n'+
                                                         '</div>\n'+
                                                         '<div class="title"><a href="'+ product_url +'">'+ product_title +'</a></div>\n'+
                                                         // '<div class="columns-prices">\n'+
