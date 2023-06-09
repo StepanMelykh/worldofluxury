@@ -323,13 +323,11 @@
     function scaleImageGallary() { 
         var windowWidth = jQuery("#product-gallary .slide-item").width();
         var windowHeight = jQuery("#product-gallary .slide-item").height();
-        console.log(windowWidth + " : " + windowHeight);
+
         var scaleValue = 3;
         jQuery("#product-gallary .slide-item").on('mousemove', function (event) { 
             var relX = event.pageX - $(this).offset().left;
             var relY = event.pageY - $(this).offset().top;
-            
-            console.log(relX + " : " + relY);
 
             var trX = (relX * 100) / windowWidth - 50;
             var trY = (relY * 100) / windowHeight - 50;
