@@ -933,6 +933,15 @@ body {
                             }
                         }
                     }
+                    .affirm-as-low-as {
+                        font-size: 18px !important;
+                        line-height: 130%;
+                        a {
+                            color: #1E1E1E;
+                            text-decoration: underline !important;
+                            font-weight: 600;
+                        }
+                    }
                     .review-column {
                         width: 239px;
                         background-color: #F9F9F9;
@@ -1869,6 +1878,10 @@ body {
                         max-width: 100%;
                         height: auto;
                     }
+                }
+                td, th {
+                    border-bottom: 1px solid #ececec;
+                    padding: 5px 0px;
                 }
             }
         }

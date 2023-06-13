@@ -79,7 +79,7 @@
         <div class="column add-to-cart-column">
           <div class="price-column our-price our-price-mobile">
             <div class="label">Our price:</div>
-            <div class="price">{{ price | money_without_trailing_zeros }}</div>
+            <div class="our-price-affirm price">{{ price | money_without_trailing_zeros }}</div>
           </div>
           <div class="btn-wrap">
             <a
@@ -95,7 +95,6 @@
             <a href="" class="price-damand">Prequalify now</a>
           </div>
           <div class="affirm-info">
-            <span>Starting at $615/mo with Affirm</span>
           </div>
         </div>
         <div class="column quantity-column">
@@ -302,12 +301,12 @@
         <div class="logos-wrap">
           <div class="image-wrap">
             <a href="https://www.trustpilot.com/review/worldofluxuryus.com" target="_blank">
-              <img src="https://s3.amazonaws.com/wpimages/wp-content/uploads/2022/08/23095627/trustpilot-1.jpg" alt="">  
+              <img src="{{ 'trustpilot-logo.png' | asset_url }}" alt="">  
             </a>
           </div>
           <div class="image-wrap">
             <a href="https://www.google.com/maps/place/World+of+Luxury/@25.9287409,-80.1364906,15z/data=!4m5!3m4!1s0x0:0xc795902b2d1d261!8m2!3d25.9287409!4d-80.1364906" target="_blank">
-              <img src="https://cdn.shopify.com/s/files/1/0733/6522/5790/files/temp-logo-4.jpg?v=1680794162" alt="">  
+              <img src="{{ '4.8-google-review.jpg' | asset_url }}" alt="">  
             </a>
           </div>
         </div>

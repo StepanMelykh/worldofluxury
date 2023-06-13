@@ -2492,6 +2492,13 @@ body {
                 padding-bottom: 5px; }
                 body section.product-info .info-column .order-columns .affirm-info span.logo-img img {
                   max-width: 100%; }
+          body section.product-info .info-column .order-columns .affirm-as-low-as {
+            font-size: 18px !important;
+            line-height: 130%; }
+            body section.product-info .info-column .order-columns .affirm-as-low-as a {
+              color: #1E1E1E;
+              text-decoration: underline !important;
+              font-weight: 600; }
           body section.product-info .info-column .order-columns .review-column {
             width: 239px;
             background-color: #F9F9F9;
@@ -3416,6 +3423,9 @@ body {
           body section.page-content .container .content img {
             max-width: 100%;
             height: auto; }
+        body section.page-content .container td, body section.page-content .container th {
+          border-bottom: 1px solid #ececec;
+          padding: 5px 0px; }
     body section.blog-grid {
       padding-bottom: 60px;
       padding-top: 60px; }
