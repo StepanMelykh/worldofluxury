@@ -17,6 +17,7 @@
         loginAction();
         productsTabActions();
         scaleImageGallary();
+        scrollActions();
         // popupProductGallary();
     });
 
@@ -343,6 +344,18 @@
                 'transition': '0.3s'
             })
          })
+    }
+
+    function scrollActions() { 
+        jQuery(window).scroll(function () {
+            if ($(this).width() > 767) { 
+                if ($(this).scrollTop() >= 450) {
+                    $('.flexable-add-to-cart-wrap').addClass('active');
+                } else {
+                    $('.flexable-add-to-cart-wrap').removeClass('active');
+                }
+            }
+        });
     }
 
     jQuery('.modal__overlay').click(function(e){

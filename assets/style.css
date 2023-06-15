@@ -2410,6 +2410,8 @@ body {
                 font-weight: 600;
                 font-size: 23px;
                 line-height: 140%; }
+              body section.product-info .info-column .order-columns .add-to-cart-column .our-price-mobile .affirm-as-low-as {
+                display: none; }
             body section.product-info .info-column .order-columns .add-to-cart-column .price-damand {
               display: none; }
           body section.product-info .info-column .order-columns .quantity-column {
@@ -2508,7 +2510,8 @@ body {
             font-size: 18px;
             line-height: 130%;
             font-weight: 300;
-            color: rgba(45, 45, 45, 0.5); }
+            color: rgba(45, 45, 45, 0.5);
+            opacity: 0; }
             @media only screen and (max-width: 1600px) {
               body section.product-info .info-column .order-columns .review-column {
                 width: 100%;
@@ -2606,7 +2609,7 @@ body {
             background: #1e1e1e;
             border: 1px solid #F9F9F9;
             border-radius: 10px;
-            padding: 9px 44px 22px;
+            padding: 9px 35px 22px;
             border-radius: 10px; }
             @media only screen and (max-width: 767px) {
               body section.product-info .info-column .inquires-columns .inquire-column {
@@ -2625,14 +2628,16 @@ body {
                       align-items: center;
               height: 30px;
               position: relative; }
+              body section.product-info .info-column .inquires-columns .inquire-column .inquire-link:last-child {
+                margin-bottom: 0px; }
             body section.product-info .info-column .inquires-columns .inquire-column span {
               position: absolute; }
             body section.product-info .info-column .inquires-columns .inquire-column a {
               color: #ffffff;
               display: inline-block;
-              padding-left: 28px;
+              padding-left: 34px;
               position: relative;
-              font-size: 18px;
+              font-size: 22px;
               font-weight: 600; }
           body section.product-info .info-column .inquires-columns .tags-column {
             width: 465px; }
@@ -2696,6 +2701,10 @@ body {
                     padding: 0px 15px; } }
                 body section.product-info .info-column .inquires-columns .tags-column .top-row .sku .label {
                   width: 65px; }
+                body section.product-info .info-column .inquires-columns .tags-column .top-row .sku .value {
+                  font-size: 15px;
+                  line-height: 130%;
+                  color: #1E1E1E; }
               body section.product-info .info-column .inquires-columns .tags-column .top-row .info-block {
                 padding: 0px 20px;
                 background: #F9F9F9;
@@ -4607,5 +4616,103 @@ body {
       .popup-gallary .popup-wrap .close-popup-gallary::after {
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg); }
+
+.flexable-add-to-cart-wrap {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #f6f6f6;
+  border-top: 0.5px solid #DDDDDD;
+  padding: 10px 0px 10px;
+  z-index: 15;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  .flexable-add-to-cart-wrap.active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+  @media only screen and (max-width: 767px) {
+    .flexable-add-to-cart-wrap.active {
+      display: none; } }
+  .flexable-add-to-cart-wrap .columns-wrap {
+    width: 1198px;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media only screen and (max-width: 1600px) {
+      .flexable-add-to-cart-wrap .columns-wrap {
+        width: 720px; } }
+  .flexable-add-to-cart-wrap .image-preview-column {
+    width: 100px; }
+    .flexable-add-to-cart-wrap .image-preview-column .image-wrap {
+      width: 100px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      .flexable-add-to-cart-wrap .image-preview-column .image-wrap img {
+        max-width: 100%;
+        max-height: 100%; }
+  .flexable-add-to-cart-wrap .price-column {
+    width: calc(100% - 350px);
+    padding-left: 25px;
+    padding-right: 25px; }
+    .flexable-add-to-cart-wrap .price-column .label {
+      font-size: 24px;
+      line-height: 130%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      .flexable-add-to-cart-wrap .price-column .label .price {
+        font-size: 48px;
+        font-weight: 600;
+        display: inline-block;
+        margin-left: 25px; }
+      .flexable-add-to-cart-wrap .price-column .label .affirm-as-low-as {
+        width: 100%;
+        margin-top: 15px;
+        font-size: 18px !important;
+        line-height: 130%; }
+        .flexable-add-to-cart-wrap .price-column .label .affirm-as-low-as a {
+          color: #1E1E1E !important;
+          text-decoration: underline; }
+        .flexable-add-to-cart-wrap .price-column .label .affirm-as-low-as .affirm-ala-price {
+          font-weight: 600; }
+  .flexable-add-to-cart-wrap .add-to-cart-column .btn-wrap a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 57px;
+    width: 250px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 29px;
+    color: #fff;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    -webkit-transition: .2s;
+    transition: .2s; }
 
 /*# sourceMappingURL=style.css.map */

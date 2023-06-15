@@ -88,7 +88,7 @@
               class="add-to-cart quick-add-to-cart-btn"
               onclick="addItemToCart({{ product.variants[0].id }})"
               data-variant-id="{{ product.variants[0].id }}"
-              data-product-handle="{{ product.handle }}">Order now
+              data-product-handle="{{ product.handle }}">Order Now
             </a>
           </div>
           <div class="btn-wrap">
@@ -136,8 +136,8 @@
           <div class="inquire-link inquire-action">
             <span class="icon">
               <svg
-                width="16"
-                height="12"
+                width="20"
+                height="16"
                 viewBox="0 0 16 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -156,8 +156,8 @@
           <div class="inquire-link phone-action">
             <span class="icon">
               <svg
-                width="16"
-                height="17"
+                width="20"
+                height="21"
                 viewBox="0 0 16 17"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -172,8 +172,8 @@
           <div class="inquire-link trade-action">
             <span class="icon">
               <svg
-                width="16"
-                height="18"
+                width="20"
+                height="22"
                 viewBox="0 0 16 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -200,8 +200,8 @@
           <div class="inquire-link sell-action">
             <span class="icon">
               <svg
-                width="8"
-                height="17"
+                width="12"
+                height="21"
                 viewBox="0 0 8 17"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -213,6 +213,7 @@
             </span>
             <a href="/pages/sell-your-watch">Sell Your Watch</a>
           </div>
+          <!--
           <div class="social-links">
             {% if settings.facebook_link != blank %}
                 <div class="social-link facebook-link">
@@ -262,6 +263,7 @@
                 </div>                
             {% endif %}
           </div>
+          -->
         </div>
         <div class="column tags-column">
           <div class="top-row">
@@ -345,12 +347,39 @@
   </div>
 </div>
 
+<div class="flexable-add-to-cart-wrap">
+  <div class="columns-wrap display-flex">
+    <div class="column image-preview-column">
+          <div class="image-wrap">
+            <img src="{{ product.images[0] | img_url: 'master' }}" alt="{{ product.title }}">
+          </div>
+    </div>  
+    <div class="column price-column">
+      <div class="our-price">
+        <div class="label">Our price: <span class="our-price-affirm price">{{ price | money_without_trailing_zeros }}</span></div>
+      </div>
+    </div>
+    <div class="column add-to-cart-column">
+      <div class="btn-wrap">
+        <a
+          id="product_id_{{ product.id }}"
+          href="javascript:void(0)"
+          class="add-to-cart quick-add-to-cart-btn"
+          onclick="addItemToCart({{ product.variants[0].id }})"
+          data-variant-id="{{ product.variants[0].id }}"
+          data-product-handle="{{ product.handle }}">Order Now
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-  console.log({{ product | json }});
-  console.log('++++++++==============');
-  console.log({{ product.metafields.product | json }});
-  console.log({{ product.metafields.product_attribute | json }});
-  console.log('=====================');
+  // console.log({{ product | json }});
+  // console.log('++++++++==============');
+  // console.log({{ product.metafields.product | json }});
+  // console.log({{ product.metafields.product_attribute | json }});
+  // console.log('=====================');
 </script>
 
 {% schema %}
