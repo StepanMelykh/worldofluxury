@@ -2945,7 +2945,8 @@ body {
             body section.product-info .additional-info .tabs-content .product-attributes .value a {
               color: rgba(69, 69, 69, 0.5);
               text-decoration: underline; }
-      body section.product-info .popup-inquire {
+      body section.product-info .popup-inquire,
+      body section.product-info .popup-price-damand {
         position: fixed;
         width: 100%;
         height: 100%;
@@ -2965,12 +2966,14 @@ body {
         opacity: 0;
         -webkit-transition: 0.3s;
         transition: 0.3s; }
-        body section.product-info .popup-inquire.active {
+        body section.product-info .popup-inquire.active,
+        body section.product-info .popup-price-damand.active {
           visibility: visible;
           opacity: 1;
           -webkit-transition: 0.3s;
           transition: 0.3s; }
-        body section.product-info .popup-inquire .popup-bg {
+        body section.product-info .popup-inquire .popup-bg,
+        body section.product-info .popup-price-damand .popup-bg {
           position: absolute;
           width: 100%;
           height: 100%;
@@ -2978,7 +2981,8 @@ body {
           top: 0px;
           background-color: rgba(0, 0, 0, 0.5);
           z-index: 5; }
-        body section.product-info .popup-inquire .popup-wrap {
+        body section.product-info .popup-inquire .popup-wrap,
+        body section.product-info .popup-price-damand .popup-wrap {
           width: 356px;
           -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
                   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -2986,17 +2990,22 @@ body {
           position: relative;
           z-index: 10;
           border-radius: 8px; }
-          body section.product-info .popup-inquire .popup-wrap .globo-form-app {
+          body section.product-info .popup-inquire .popup-wrap .globo-form-app,
+          body section.product-info .popup-price-damand .popup-wrap .globo-form-app {
             margin: 0px; }
-          body section.product-info .popup-inquire .popup-wrap .globo-formbuilder {
+          body section.product-info .popup-inquire .popup-wrap .globo-formbuilder,
+          body section.product-info .popup-price-damand .popup-wrap .globo-formbuilder {
             margin: 0px !important; }
-          body section.product-info .popup-inquire .popup-wrap .form-container .input-field {
+          body section.product-info .popup-inquire .popup-wrap .form-container .input-field,
+          body section.product-info .popup-price-damand .popup-wrap .form-container .input-field {
             margin-bottom: 15px; }
-          body section.product-info .popup-inquire .popup-wrap .form-container label {
+          body section.product-info .popup-inquire .popup-wrap .form-container label,
+          body section.product-info .popup-price-damand .popup-wrap .form-container label {
             display: block;
             margin-bottom: 5px;
             font-weight: 600; }
-          body section.product-info .popup-inquire .popup-wrap .form-container input {
+          body section.product-info .popup-inquire .popup-wrap .form-container input,
+          body section.product-info .popup-price-damand .popup-wrap .form-container input {
             width: 100%;
             height: 35px;
             background-color: rgba(0, 0, 0, 0.03);
@@ -3005,7 +3014,8 @@ body {
             border-color: rgba(0, 0, 0, 0.09);
             border-radius: 5px;
             padding: 0px 10px; }
-          body section.product-info .popup-inquire .popup-wrap .form-container textarea {
+          body section.product-info .popup-inquire .popup-wrap .form-container textarea,
+          body section.product-info .popup-price-damand .popup-wrap .form-container textarea {
             width: 100%;
             background-color: rgba(0, 0, 0, 0.03);
             -webkit-box-shadow: none;
@@ -3014,7 +3024,8 @@ body {
             border-radius: 5px;
             height: 60px;
             padding: 10px; }
-          body section.product-info .popup-inquire .popup-wrap .form-container input[type=submit] {
+          body section.product-info .popup-inquire .popup-wrap .form-container input[type=submit],
+          body section.product-info .popup-price-damand .popup-wrap .form-container input[type=submit] {
             display: -webkit-inline-box;
             display: -ms-inline-flexbox;
             display: inline-flex;
@@ -3030,13 +3041,16 @@ body {
             color: #ffffff;
             padding: 0px 25px;
             cursor: pointer; }
-          body section.product-info .popup-inquire .popup-wrap .form-container .success-msg {
+          body section.product-info .popup-inquire .popup-wrap .form-container .success-msg,
+          body section.product-info .popup-price-damand .popup-wrap .form-container .success-msg {
             text-align: center; }
-            body section.product-info .popup-inquire .popup-wrap .form-container .success-msg p {
+            body section.product-info .popup-inquire .popup-wrap .form-container .success-msg p,
+            body section.product-info .popup-price-damand .popup-wrap .form-container .success-msg p {
               font-size: 24px;
               line-height: 140%;
               font-weight: 600; }
-            body section.product-info .popup-inquire .popup-wrap .form-container .success-msg a {
+            body section.product-info .popup-inquire .popup-wrap .form-container .success-msg a,
+            body section.product-info .popup-price-damand .popup-wrap .form-container .success-msg a {
               height: 36px;
               width: 120px;
               font-size: 18px;
