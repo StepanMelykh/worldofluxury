@@ -19,6 +19,7 @@
         scaleImageGallary();
         scrollActions();
         priceOnDemandBehavior();
+        boostProductListreplacePrice();
         // popupProductGallary();
     });
 
@@ -371,6 +372,25 @@
                 }
             }
         });
+    }
+
+
+    function boostProductListreplacePrice() { 
+        setTimeout(function () {
+            var boostItems = jQuery('.boost-sd__product-item');
+            boostItems.each(function (index, el) {
+                if (jQuery('.boost-sd__format-currency span', this).text() == '$0') { 
+                    jQuery('.boost-sd__format-currency span', this).text('Price on demand');
+                    jQuery('.boost-sd__btn-add-to-cart', this).css('display', 'none');
+                    jQuery('.boost-sd__btn-quick-view', this).css('display', 'none');
+                }
+            });
+
+            jQuery('.boost-sd__pagination-number').on('click', function () {
+                boostProductListreplacePrice();
+            }); 
+
+        }, 3000);
     }
 
     jQuery('.modal__overlay').click(function (e) {
