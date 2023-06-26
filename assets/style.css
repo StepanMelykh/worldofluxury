@@ -1950,11 +1950,17 @@ body {
                 text-transform: uppercase;
                 color: #FFFFFF;
                 background: #2D2D2D;
-                border-radius: 0px 0px 8px 8px; }
+                border-radius: 0px 0px 8px 8px;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap; }
+                @media only screen and (max-width: 991px) {
+                  body section.shop-filter .container .columns .column .footer a {
+                    padding: 0px 15px; } }
                 @media only screen and (max-width: 767px) {
                   body section.shop-filter .container .columns .column .footer a {
                     height: 103px;
-                    font-size: 16px; } }
+                    font-size: 16px;
+                    padding: 0px; } }
                 body section.shop-filter .container .columns .column .footer a span {
                   display: inline-block;
                   position: relative; }
