@@ -3074,6 +3074,33 @@ body {
                       align-items: center;
               border-radius: 8px;
               margin: 25px auto 0px; }
+        body section.product-info .popup-inquire .close-popup,
+        body section.product-info .popup-price-damand .close-popup {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          right: 20px;
+          top: 20px;
+          z-index: 5;
+          cursor: pointer; }
+          body section.product-info .popup-inquire .close-popup:before, body section.product-info .popup-inquire .close-popup:after,
+          body section.product-info .popup-price-damand .close-popup:before,
+          body section.product-info .popup-price-damand .close-popup:after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: #1e1e1e;
+            position: absolute;
+            top: 15px;
+            left: 0px; }
+          body section.product-info .popup-inquire .close-popup::before,
+          body section.product-info .popup-price-damand .close-popup::before {
+            -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg); }
+          body section.product-info .popup-inquire .close-popup::after,
+          body section.product-info .popup-price-damand .close-popup::after {
+            -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg); }
     body section.collection-grid {
       background-color: #F4F4F4;
       padding-bottom: 74px; }
