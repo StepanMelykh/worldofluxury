@@ -20,6 +20,7 @@
         scrollActions();
         priceOnDemandBehavior();
         boostProductListreplacePrice();
+        setSKUNumber();
         // popupProductGallary();
     });
 
@@ -391,6 +392,15 @@
             }); 
 
         }, 3000);
+    }
+
+    function setSKUNumber() { 
+        setTimeout(function () { 
+            var product_title = jQuery('h1.product-title').text();
+            jQuery('#hidden-3').val(product_title);
+            // console.log(jQuery('#hidden-3').val());
+        }, 2000);
+        
     }
 
     jQuery('.modal__overlay').click(function (e) {
