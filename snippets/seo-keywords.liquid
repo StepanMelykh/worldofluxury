@@ -1,0 +1,8 @@
+{% assign keywords = "test" %}
+{% if template.name == 'product' %}
+    {% assign keywords = product.type %}
+
+{% endif %}
+
+
+<meta name="keywords" content="{{ keywords }}"/>
