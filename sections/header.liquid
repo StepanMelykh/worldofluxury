@@ -184,26 +184,71 @@
       <div class="navigation-wrap">
         <nav class="top-navigation">
           <ul class="display-flex">
-            {% for block in section.blocks %}
-              <li>
-                <a href="{{ block.settings.link_url }}">
+            {% comment %}
+              {% for block in section.blocks %}
+                <li>
+                  <a href="{{ block.settings.link_url }}">
+                    <span class="icon">
+                      {% if block.settings.icon != blank %}
+                        <img
+                          class="main-icon"
+                          src="{{ block.settings.icon | img_url: 'master' }}"
+                          alt="">
+                      {% endif %}
+                      {% if block.settings.icon_hover != blank %}
+                        <img
+                          class="hover-icon"
+                          src="{{ block.settings.icon_hover | img_url: 'master' }}"
+                          alt="">
+                      {% endif %}
+                    </span>
+                    <span class="title">{{ block.settings.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+          {% endcomment %}
+            {% assign counter = 0 %}
+            {% for link in linklists.top-main-menu.links %}
+              <li {% if link.links != blank %}class="has-child"{% endif %}>
+                <a href="{{ link.url }}">
                   <span class="icon">
-                    {% if block.settings.icon != blank %}
+                    {% if section.blocks[counter].settings.icon != blank %}
                       <img
                         class="main-icon"
-                        src="{{ block.settings.icon | img_url: 'master' }}"
+                        src="{{section.blocks[counter].settings.icon | img_url: 'master' }}"
                         alt="">
                     {% endif %}
-                    {% if block.settings.icon_hover != blank %}
+                    {% if section.blocks[1].settings.icon_hover != blank %}
                       <img
                         class="hover-icon"
-                        src="{{ block.settings.icon_hover | img_url: 'master' }}"
+                        src="{{ section.blocks[counter].settings.icon_hover | img_url: 'master' }}"
                         alt="">
                     {% endif %}
                   </span>
-                  <span class="title">{{ block.settings.title }}</span>
+                  <span class="title">{{ link.title }}</span>
                 </a>
+                {% if link.links != blank %}
+                  <div class="sub-menu-wrap">
+                    <ul class="sub-menu">
+                      {% for link_child in link.links %}
+                        <li {% if link_child.links != blank %}class="has-child-last"{% endif %}>
+                          <a href="{{ link_child.url }}">{{ link_child.title }}</a>
+                            {% if link_child.links != blank %}
+                              <ul class="last-sub-menu">
+                                {% for last_child in link_child.links %}
+                                  <li>
+                                    <a href="{{ last_child.url }}">{{ last_child.title }}</a>
+                                  </li>
+                                {% endfor %}
+                              </ul>
+                            {% endif %}                        
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
               </li>
+              {% assign counter = counter | plus: 1 %}
             {% endfor %}
           </ul>
         </nav>

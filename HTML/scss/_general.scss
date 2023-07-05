@@ -240,8 +240,15 @@ header {
                 display: none;
             }
 			.navigation-wrap {
+                position: relative;
 				ul {
-					justify-content: center;
+					// justify-content: center;
+                    justify-content: space-between;
+                    width: 800px;
+                    margin: 0 auto;
+                    @include media($lg){
+                        width: 100%;
+                    }
 					li {
 						margin: 0px 38px;
 						list-style: none;
@@ -306,7 +313,91 @@ header {
 							}
 						}
 					}
-				}
+				} 
+                .has-child {
+                    &:hover {
+                        .sub-menu-wrap {
+                            visibility: visible;
+                            opacity: 1;
+                            transition: 0.4s;
+                        }
+                    }
+                }
+                .sub-menu-wrap {
+                    position: absolute;
+                    left: 0px;
+                    top: 30px;
+                    width: 100%;
+                    background-color: #fff;
+                    visibility: hidden;
+                    opacity: 0;  
+                    transition: 0.2s; 
+                    border-top: 1px solid #DDDDDD;
+                    border-bottom: 1px solid #DDDDDD;                     
+                             
+                }              
+                .sub-menu {
+                    width: 800px;
+                    margin: 0 auto;
+                    position: relative;
+                    z-index: 5;
+                    padding: 10px 0px; 
+                    @include media($lg){
+                        width: 100%;
+                        padding: 0px 20px;
+                    }
+                    a {
+                        padding: 0px 10px;
+                    }
+                    .last-sub-menu {
+                        display: none;
+                        column-count: 4; 
+                        position: absolute;
+                        top: 0px;
+                        left: 140px;
+                        z-index: 1;
+                        background-color: #fff;
+                        padding: 15px;
+                        @include media($lg){
+                            width: 700px;
+                            left: 160px;
+                        }
+                        li {
+                            margin-bottom: 10px;
+                            a {
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 140%;
+                                display: block;
+                                background: transparent;
+                                color: #888888;
+                                height: auto;
+                                &:hover {
+                                    color: #000000;
+                                }
+                            }
+                        }
+                    }
+
+                    li {
+                        margin: 0px;
+                        // display: inline-block;
+                    }    
+                    .has-child-last {
+                        width: 140px;
+                        margin: 10px 0px;
+                        &>a {
+                            display: flex;
+                            width: 100%;
+                        }
+                        &:hover {
+                            .last-sub-menu {
+                                display: block;
+                            }
+                        }
+                    }                
+                }
 			}
 		}
 	}
