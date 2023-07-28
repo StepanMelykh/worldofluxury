@@ -2307,7 +2307,8 @@ body {
           font-size: 30px;
           line-height: 100%;
           color: #171717;
-          margin: 30px 0px; }
+          margin: 30px 0px;
+          font-weight: 600; }
           @media only screen and (max-width: 767px) {
             body section.product-info .info-column .product-title {
               font-size: 18px;
@@ -2390,9 +2391,6 @@ body {
               body section.product-info .info-column .price-columns .price-column.our-price {
                 width: 100%;
                 margin-bottom: 25px; } }
-            @media only screen and (max-width: 767px) {
-              body section.product-info .info-column .price-columns .price-column.our-price {
-                display: none; } }
             body section.product-info .info-column .price-columns .price-column.our-price .label {
               margin-right: 48px; }
               @media only screen and (max-width: 1600px) {
@@ -2403,6 +2401,9 @@ body {
               font-size: 58.7099px;
               line-height: 140%;
               color: #171717; }
+              @media only screen and (max-width: 767px) {
+                body section.product-info .info-column .price-columns .price-column.our-price .price {
+                  font-size: 34px; } }
             @media only screen and (max-width: 1200px) {
               body section.product-info .info-column .price-columns .price-column.retail-price {
                 width: 50%; } }
@@ -2653,6 +2654,13 @@ body {
         body section.product-info .info-column .payment-methods {
           margin-bottom: 30px;
           overflow: auto; }
+          body section.product-info .info-column .payment-methods.mobile-payments {
+            display: none; }
+          @media only screen and (max-width: 767px) {
+            body section.product-info .info-column .payment-methods {
+              display: none; }
+              body section.product-info .info-column .payment-methods.mobile-payments {
+                display: block; } }
           body section.product-info .info-column .payment-methods .overflow-scroll {
             -webkit-box-pack: justify;
                 -ms-flex-pack: justify;
@@ -2686,17 +2694,9 @@ body {
                   -ms-flex-pack: center;
                       justify-content: center; } }
           body section.product-info .info-column .inquires-columns .inquire-column {
-            width: 297px;
-            background: #1e1e1e;
-            border: 1px solid #F9F9F9;
-            border-radius: 10px;
-            padding: 9px 35px 22px;
-            border-radius: 10px; }
+            width: 297px; }
             @media only screen and (max-width: 767px) {
               body section.product-info .info-column .inquires-columns .inquire-column {
-                -webkit-box-ordinal-group: 3;
-                    -ms-flex-order: 2;
-                        order: 2;
                 padding: 15px;
                 width: 100%; } }
             body section.product-info .info-column .inquires-columns .inquire-column .inquire-link {
@@ -2707,16 +2707,23 @@ body {
               -webkit-box-align: center;
                   -ms-flex-align: center;
                       align-items: center;
-              height: 30px;
-              position: relative; }
+              position: relative;
+              background: #1e1e1e;
+              padding: 20px;
+              align-items: center;
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center;
+              border-radius: 10px; }
               body section.product-info .info-column .inquires-columns .inquire-column .inquire-link:last-child {
                 margin-bottom: 0px; }
             body section.product-info .info-column .inquires-columns .inquire-column span {
-              position: absolute; }
+              position: relative;
+              top: 2px; }
             body section.product-info .info-column .inquires-columns .inquire-column a {
               color: #ffffff;
               display: inline-block;
-              padding-left: 34px;
+              padding-left: 20px;
               position: relative;
               font-size: 22px;
               font-weight: 600; }
@@ -2731,11 +2738,7 @@ body {
                 margin-top: 25px; } }
             @media only screen and (max-width: 767px) {
               body section.product-info .info-column .inquires-columns .tags-column {
-                -webkit-box-ordinal-group: 2;
-                    -ms-flex-order: 1;
-                        order: 1;
-                margin-bottom: 30px;
-                margin-top: 0px; } }
+                margin-bottom: 30px; } }
             body section.product-info .info-column .inquires-columns .tags-column .top-row {
               display: -webkit-box;
               display: -ms-flexbox;

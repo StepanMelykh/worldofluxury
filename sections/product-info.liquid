@@ -57,7 +57,7 @@
       <div class="price-columns display-flex">
         <div class="price-column our-price">
 
-          <div class="label">Our price:</div>
+          <div class="label">Our Price:</div>
           {% if product.price > 0 %}
             <div class="price">{{ price | money_without_trailing_zeros }}</div>
           {% endif %}
@@ -65,7 +65,7 @@
 
         {% if product.compare_at_price != blank %}
           <div class="price-column retail-price">
-            <div class="label">Retail price:</div>
+            <div class="label">Retail Price:</div>
             <div class="price bg-price">{{ retail_price | money_without_trailing_zeros }}</div>
           </div>
         {% endif %}
@@ -85,7 +85,7 @@
       <div class="order-columns display-flex">
         <div class="column add-to-cart-column">
           <div class="price-column our-price our-price-mobile">
-            <div class="label">Our price:</div>
+            <div class="label">Our Price:</div>
             {% if product.price > 0 %}
               <div class="our-price-affirm price">{{ price | money_without_trailing_zeros }}</div>
             {% else %}
@@ -153,6 +153,32 @@
       </div>
       <div class="inquires-columns display-flex">
         <div class="column inquire-column">
+
+          <div class="inquire-link">
+            <div class="add-to-cart-column">
+              {% if product.price > 0 %}
+                <div class="btn-wrap">
+                  <a
+                    id="product_id_{{ product.id }}"
+                    href="javascript:void(0)"
+                    class="add-to-cart quick-add-to-cart-btn"
+                    onclick="addItemToCart({{ product.variants[0].id }})"
+                    data-variant-id="{{ product.variants[0].id }}"
+                    data-product-handle="{{ product.handle }}">Order Now
+                  </a>
+                </div>
+              {% else %}
+                <div class="btn-wrap">
+                  <a
+                    href="javascript:void(0)"
+                    class="price-damand"
+                    data-product-handle="{{ product.handle }}">Price on demand
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
           <div class="inquire-link inquire-action">
             <span class="icon">
               <svg
@@ -171,7 +197,7 @@
                   stroke-linecap="round" />
               </svg>
             </span>
-            <a href="javascript:void(0)">Inquire</a>
+            <a href="javascript:void(0)">Send Inquiry</a>
           </div>
           <div class="inquire-link phone-action">
             <span class="icon">
@@ -187,7 +213,7 @@
                   stroke-linecap="round" />
               </svg>
             </span>
-            <a href="tel:{{ settings.phone }}">{{ settings.phone }}</a>
+            <a href="tel:{{ settings.phone }}">Call: {{ settings.phone }}</a>
           </div>
           <div class="inquire-link trade-action">
             <span class="icon">
@@ -215,7 +241,7 @@
                   stroke-linecap="square" />
               </svg>
             </span>
-            <a href="/pages/trade-in">Trade in</a>
+            <a href="/pages/trade-in">Trade In</a>
           </div>
           <div class="inquire-link sell-action">
             <span class="icon">
@@ -334,6 +360,27 @@
           </div>
         </div>
       </div>
+
+      <div class="payment-methods mobile-payments">
+        <div class="overflow-scroll display-flex">
+          <div class="logo-wrap">
+            <img src="{{ "payment-method-paypal.png" | asset_url }}" alt="PayPal">
+          </div>
+          <div class="logo-wrap">
+            <img src="{{ "payment-method-amazon.png" | asset_url }}" alt="PayPal">
+          </div>
+          <div class="logo-wrap">
+            <img src="{{ "payment-method-affirm.png" | asset_url }}" alt="PayPal">
+          </div>
+          <div class="logo-wrap">
+            <img src="{{ "payment-method-bankwire.png" | asset_url }}" alt="PayPal">
+          </div>
+          <div class="logo-wrap">
+            <img src="{{ "payment-method-escrow.png" | asset_url }}" alt="PayPal">
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
   <div class="additional-info">
@@ -424,26 +471,21 @@
   "class": "product-info",
   "settings": []
 }
-{% endschema %}
-<div class="popup-inquire">
-  <div class="popup-bg"></div>
-  <div class="popup-wrap">
-    <div class="close-popup"></div>
-    <div class="form-container">
-      <div class="globo-formbuilder" data-id="MjUzNw=="></div>
-    </div>
+{% endschema %}<div class="popup-inquire">
+<div class="popup-bg"></div>
+<div class="popup-wrap">
+  <div class="close-popup"></div>
+  <div class="form-container">
+    <div class="globo-formbuilder" data-id="MjUzNw=="></div>
   </div>
-</div>
-<div class="popup-price-damand">
-  <div class="popup-bg"></div>
-  <div class="popup-wrap">
-    <div class="close-popup"></div>
-    <div class="form-container">
-      <div class="globo-formbuilder" data-id="NzU5Mg=="></div>
-    </div>
+</div></div><div class="popup-price-damand">
+<div class="popup-bg"></div>
+<div class="popup-wrap">
+  <div class="close-popup"></div>
+  <div class="form-container">
+    <div class="globo-formbuilder" data-id="NzU5Mg=="></div>
   </div>
-</div>
-<div class="popup-gallary">
+</div></div><div class="popup-gallary">
 <div class="popup-bg popup-gallary-bg"></div>
 <div class="popup-wrap">
   <div class="close-popup-gallary"></div>

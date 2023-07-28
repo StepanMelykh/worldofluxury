@@ -678,6 +678,7 @@ body {
                     line-height: 100%;
                     color: #171717;
                     margin: 30px 0px;
+                    font-weight: 600;
                     @include media($md){
                         font-size: 18px;
                         line-height: 140%;
@@ -756,7 +757,7 @@ body {
                                 margin-bottom: 25px;
                             }
                             @include media($md){
-                                display: none;
+                                // display: none;
                             }
                             .label {
                                 margin-right: 48px;
@@ -769,6 +770,9 @@ body {
                                 font-size: 58.7099px;
                                 line-height: 140%;
                                 color: #171717;
+                                @include media($md){
+                                    font-size: 34px;
+                                }
                             }
                         }
                         &.retail-price {
@@ -1020,6 +1024,15 @@ body {
                 .payment-methods {
                     margin-bottom: 30px;
                     overflow: auto;
+                    &.mobile-payments {
+                        display: none;
+                    }
+                    @include media($md){
+                        display: none;
+                        &.mobile-payments {
+                            display: block;
+                        }
+                    } 
                     .overflow-scroll {
                         justify-content: space-between;                        
                         @include media($sm){
@@ -1045,13 +1058,13 @@ body {
                     }
                     .inquire-column {
                         width: 297px;
-                        background: #1e1e1e;
-                        border: 1px solid #F9F9F9;
-                        border-radius: 10px;
-                        padding: 9px 35px 22px;
-                        border-radius: 10px;
+                        // background: #1e1e1e;
+                        // border: 1px solid #F9F9F9;
+                        // border-radius: 10px;
+                        // padding: 9px 35px 22px;
+                        // border-radius: 10px;
                         @include media($md){
-                            order: 2;
+                            // order: 2;
                             padding: 15px;
                             width: 100%;                            
                         }
@@ -1059,19 +1072,25 @@ body {
                             margin-bottom: 20px;
                             display: flex;
                             align-items: center;
-                            height: 30px;
+                            // height: 30px;
                             position: relative;
+                            background: #1e1e1e;
+                            padding: 20px;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 10px;
                             &:last-child {
                                 margin-bottom: 0px;
                             }
                         }
                         span {
-                            position: absolute;
+                            position: relative;
+                            top: 2px;
                         }
                         a {
                             color: #ffffff;
                             display: inline-block;
-                            padding-left: 34px;
+                            padding-left: 20px;
                             position: relative;
                             font-size: 22px;
                             font-weight: 600;
@@ -1087,9 +1106,9 @@ body {
                             margin-top: 25px;
                         }
                         @include media($md){
-                            order: 1;
+                            // order: 1;
                             margin-bottom: 30px;
-                            margin-top: 0px;
+                            // margin-top: 0px;
                         }
                         .top-row {
                             display: flex;
