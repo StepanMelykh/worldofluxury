@@ -547,9 +547,6 @@ footer {
           line-height: 140%;
           color: #000000;
           font-weight: 600; }
-          @media only screen and (max-width: 1600px) {
-            footer .column .footer-column .contacts a {
-              font-size: 14px; } }
           @media only screen and (max-width: 991px) {
             footer .column .footer-column .contacts a {
               margin-bottom: 20px;
