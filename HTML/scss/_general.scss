@@ -79,6 +79,19 @@ header {
 	padding-bottom: 5px;
     position: relative;
     border-bottom: 1px solid #DDDDDD;
+    transition: 0.3s;
+    width: 100%;
+    z-index: 999;
+    &.fixed {
+        position: fixed;
+        padding-bottom: 0px;
+        top: -77px;
+        transition: 0.3s;
+        &.active{
+            top: 0px;
+            transition: 0.3s;
+        }
+    }
 	a {
 		color: #000000;
 	}
@@ -770,7 +783,7 @@ footer {
 #cart {
     position: fixed;
     right: -455px;
-    z-index: 9999999;
+    z-index: 9999999999;
     top: 0;
     bottom: 0;
     width: 455px;

@@ -21,6 +21,7 @@
         priceOnDemandBehavior();
         boostProductListreplacePrice();
         setSKUNumber();
+        mobileHeader();
         // popupProductGallary();
     });
 
@@ -419,5 +420,24 @@
 
         modalOverlayActive('hide');
     });
+
+    function mobileHeader() { 
+        jQuery(window).scroll(function () {
+            if ($(this).width() < 768) {
+                if ( $(this).scrollTop() >= 78 && ($(this).scrollTop() < 150) ) {
+                    $('header').addClass('fixed');
+                }
+                if ($(this).scrollTop() < 78 ) { 
+                    $('header').removeClass('fixed');
+                }
+
+                if ($(this).scrollTop() >= 150) {
+                    $('header').addClass('active');
+                } else { 
+                    $('header').removeClass('active');
+                }
+            }
+        })
+    }
 
 })(jQuery);
