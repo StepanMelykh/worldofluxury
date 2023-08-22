@@ -4,54 +4,55 @@
   {% assign retail_price = product.compare_at_price %}
   {% assign discount = retail_price | minus: price %}
   {% assign percent = discount | times: 100 | divided_by: retail_price %}
-{% endif %} 
+{% endif %}
 
 <div class="product-item" data-product-count="{{ count }}">
-    <div class="body-item">
-        <div class="image-wrap">
-            
-            <span class="label-brend">{{ product.metafields.product_attribute.watch_brand }}</span>
-            {% if product.compare_at_price != blank %}
-                <span class="label-percent">-{{ percent }}%</span>                                
-            {% endif %}
-            <a href="{{ product.url }}">
-                <img src="{{ product.images[0] | img_url: 'master' }}" alt="{{ product.title }}">   
-            </a>
-        </div>
-        <div class="product-name">
-            <a href="{{ product.url }}">{{ product.title }}</a>
-        </div>
+  <div class="body-item">
+    <div class="image-wrap">
+      <span class="label-brend">{{ product.metafields.product_attribute.watch_brand }}</span>
+      {% if product.compare_at_price != blank %}
+        <span class="label-percent">-{{ percent }}%</span>
+      {% endif %}
+      <a href="{{ product.url }}">
+        <img src="{{ product.images[0] | img_url: 'master' }}" alt="{{ product.title }}">
+      </a>
     </div>
-    <div class="footer-item">
-        <div class="top-row display-flex">
-            {% if product.compare_at_price != blank %}
-                <div class="column retail">
-                    <span class="label">Retail price</span>
-                    <span class="retail-price">{{ retail_price | money_without_trailing_zeros }}</span>
-                </div>
-            {%endif %}
-
-            {% if product.compare_at_price != blank %}
-                <div class="column discount">
-                    <span class="label">Discount</span>
-                    <span class="discount-price">{{ discount | money_without_trailing_zeros }}</span>
-                </div>
-            {%endif %}
-
-        </div>
-        <div class="bottom-row display-flex">
-            <div class="column our-price">
-                <span class="label">Our price</span>
-                <span class="our-price-price">{{ product.price | money_without_trailing_zeros  }}</span>
-            </div>
-            <div class="column order">
-                <a id="product_id_{{ product.id }}" href="javascript:void(0)" 
-                    class="add-to-cart quick-add-to-cart-btn"
-                    onclick="quickAddItemToCart({{ product.id }})"
-                    data-variant-id="{{ product.variants[0].id }}"
-                    data-product-handle="{{ product.handle }}">Order now
-                </a>
-            </div>
-        </div>
+    <div class="product-name">
+      <a href="{{ product.url }}">{{ product.title }}</a>
     </div>
+  </div>
+  <div class="footer-item">
+    <div class="top-row display-flex">
+      {% if product.compare_at_price != blank %}
+        <div class="column retail">
+          <span class="label">Retail price</span>
+          <span class="retail-price">{{ retail_price | money_without_trailing_zeros }}</span>
+        </div>
+      {% endif %}
+
+      {% if product.compare_at_price != blank %}
+        <div class="column discount">
+          <span class="label">Discount</span>
+          <span class="discount-price">{{ discount | money_without_trailing_zeros }}</span>
+        </div>
+      {% endif %}
+
+    </div>
+    <div class="bottom-row display-flex">
+      <div class="column our-price">
+        <span class="label">Our price</span>
+        <span class="our-price-price">{{ product.price | money_without_trailing_zeros }}</span>
+      </div>
+      <div class="column order">
+        <a
+          id="product_id_{{ product.id }}"
+          href="javascript:void(0)"
+          class="add-to-cart quick-add-to-cart-btn"
+          onclick="quickAddItemToCart({{ product.id }})"
+          data-variant-id="{{ product.variants[0].id }}"
+          data-product-handle="{{ product.handle }}">Order now
+        </a>
+      </div>
+    </div>
+  </div>
 </div>

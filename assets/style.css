@@ -4574,6 +4574,10 @@ body {
     margin-bottom: 30px;
     border-bottom: 2px solid #ececec;
     width: 100%; } }
+.boost-sd__product-list .boost-sd__product-item-grid-view-layout .boost-sd__product-image-img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  background: transparent; }
 .boost-sd__product-list .boost-sd__product-image-wrapper {
   height: 350px;
   margin: 0 auto;

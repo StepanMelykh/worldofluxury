@@ -2999,6 +2999,10 @@ body {
             border-bottom: 2px solid #ececec;
             width: 100%;
         }
+        .boost-sd__product-image-img {
+            object-fit: contain;
+            background: transparent;
+        }
     }
     .boost-sd__product-image-wrapper {
         height: 350px;

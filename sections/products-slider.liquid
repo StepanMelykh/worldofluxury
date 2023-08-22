@@ -18,7 +18,7 @@
         {% paginate collections.all.products by 100 %}
           {% assign collection = collections['new-products'].products %}
           {% for product in collection %}
-            {% if product.price > 0 and count < 11 %}
+            {% if product.price > 0 and count < 15 %}
               {% include 'product-preview' | product %}
               {% assign count = count | plus: 1 %}
             {% endif %}
