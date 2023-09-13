@@ -109,6 +109,42 @@ header {
     background-color: #ffffff;
     position: relative;
     z-index: 10; }
+    @media only screen and (max-width: 767px) {
+      header .header-wrap .contacts-row {
+        height: 25px; } }
+    header .header-wrap .contacts-row .container {
+      width: 1572px;
+      margin: 0 auto;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      position: relative; }
+      @media only screen and (max-width: 1600px) {
+        header .header-wrap .contacts-row .container {
+          width: 100%; } }
+    header .header-wrap .contacts-row .columns {
+      position: absolute;
+      width: 100%;
+      top: 15px;
+      left: 0px; }
+      header .header-wrap .contacts-row .columns .contact-col {
+        position: absolute; }
+        header .header-wrap .contacts-row .columns .contact-col.email-column {
+          left: 0px; }
+          @media only screen and (max-width: 1600px) {
+            header .header-wrap .contacts-row .columns .contact-col.email-column {
+              left: 20px; } }
+          @media only screen and (max-width: 767px) {
+            header .header-wrap .contacts-row .columns .contact-col.email-column {
+              left: 26px; } }
+        header .header-wrap .contacts-row .columns .contact-col.phone-column {
+          right: 0px; }
+          @media only screen and (max-width: 1600px) {
+            header .header-wrap .contacts-row .columns .contact-col.phone-column {
+              right: 20px; } }
+  @media only screen and (max-width: 1600px) and (max-width: 767px) {
+    header .header-wrap .contacts-row .columns .contact-col.phone-column {
+      right: 26px; } }
+
     header .header-wrap .top-row {
       padding-bottom: 20px; }
       @media only screen and (max-width: 767px) {

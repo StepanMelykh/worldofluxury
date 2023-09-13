@@ -100,6 +100,47 @@ header {
         background-color: #ffffff;
         position: relative;
         z-index: 10;
+        .contacts-row {
+            @include media($md){
+                height: 25px;
+            }
+            .container {
+                width: 1572px;
+                margin: 0 auto;
+                box-sizing: border-box;
+                position: relative;
+                @include media($xxl){
+                    width: 100%;
+                }
+            }
+            .columns {
+                position: absolute;
+                width: 100%;
+                top: 15px;
+                left: 0px;
+                .contact-col {
+                    position: absolute;
+                    &.email-column {
+                        left: 0px;
+                        @include media($xxl){
+                            left: 20px;
+                        }
+                        @include media($md){
+                            left: 26px;
+                        }
+                    }
+                    &.phone-column {
+                        right: 0px;
+                        @include media($xxl){
+                            right: 20px;
+                            @include media($md){
+                                right: 26px;
+                            }
+                        }
+                    }
+                }                
+            }
+        }
 		.top-row {
             padding-bottom: 20px;
             @include media($md){

@@ -1,5 +1,17 @@
 <header>
   <div class="header-wrap">
+    <div class="contacts-row">
+      <div class="container">
+        <div class="columns">
+          <div class="contact-col email-column">
+            <a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a>
+          </div>
+          <div class="contact-col phone-column">
+            <a href="tel:{{ settings.phone }}">{{ settings.phone }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="top-row">
       <div class="container">
         <div class="logo-wrap">
@@ -185,28 +197,28 @@
         <nav class="top-navigation">
           <ul class="display-flex">
             {% comment %}
-              {% for block in section.blocks %}
-                <li>
-                  <a href="{{ block.settings.link_url }}">
-                    <span class="icon">
-                      {% if block.settings.icon != blank %}
-                        <img
-                          class="main-icon"
-                          src="{{ block.settings.icon | img_url: 'master' }}"
-                          alt="">
-                      {% endif %}
-                      {% if block.settings.icon_hover != blank %}
-                        <img
-                          class="hover-icon"
-                          src="{{ block.settings.icon_hover | img_url: 'master' }}"
-                          alt="">
-                      {% endif %}
-                    </span>
-                    <span class="title">{{ block.settings.title }}</span>
-                  </a>
-                </li>
-              {% endfor %}
-          {% endcomment %}
+            {% for block in section.blocks %}
+            <li>
+            <a href="{{ block.settings.link_url }}">
+            <span class="icon">
+            {% if block.settings.icon != blank %}
+            <img
+            class="main-icon"
+            src="{{ block.settings.icon | img_url: 'master' }}"
+            alt="">
+            {% endif %}
+            {% if block.settings.icon_hover != blank %}
+            <img
+            class="hover-icon"
+            src="{{ block.settings.icon_hover | img_url: 'master' }}"
+            alt="">
+            {% endif %}
+            </span>
+            <span class="title">{{ block.settings.title }}</span>
+            </a>
+            </li>
+            {% endfor %}
+            {% endcomment %}
             {% assign counter = 0 %}
             {% for link in linklists.top-main-menu.links %}
               <li {% if link.links != blank %}class="has-child"{% endif %}>
@@ -233,15 +245,15 @@
                       {% for link_child in link.links %}
                         <li {% if link_child.links != blank %}class="has-child-last"{% endif %}>
                           <a href="{{ link_child.url }}">{{ link_child.title }}</a>
-                            {% if link_child.links != blank %}
-                              <ul class="last-sub-menu">
-                                {% for last_child in link_child.links %}
-                                  <li>
-                                    <a href="{{ last_child.url }}">{{ last_child.title }}</a>
-                                  </li>
-                                {% endfor %}
-                              </ul>
-                            {% endif %}                        
+                          {% if link_child.links != blank %}
+                            <ul class="last-sub-menu">
+                              {% for last_child in link_child.links %}
+                                <li>
+                                  <a href="{{ last_child.url }}">{{ last_child.title }}</a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
                         </li>
                       {% endfor %}
                     </ul>
