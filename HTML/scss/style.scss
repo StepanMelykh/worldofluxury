@@ -661,6 +661,27 @@ body {
                     }
                 }
             }
+            .video-preview-button {
+                position: relative;
+                text-align: center;
+                margin-top: 25px;
+                a {
+                    border: 0.5px solid #171717;
+                    border-radius: 7px;
+                    display: inline-flex;
+                    height: 50px;
+                    align-items: center;
+                    color: #171717;
+                    position: relative;
+                    padding: 0px 25px;
+                    transition: 0.2s;
+                    &:hover {
+                        background-color: #171717;
+                        color: #ffffff;
+                        transition: 0.2s;
+                    }
+                }
+            }
             .info-column {
                 position: relative;
                 padding-left: 41px;
@@ -3282,4 +3303,96 @@ body {
 
 #worldphonecallbutton {
     bottom: 32px !important;
+}
+
+.popup-video-preview {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
+    }
+    .popup-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        background-color: rgba(#000000, 0.5); 
+        z-index: 5;
+    }
+    .popup-wrap {
+        position: relative;
+        z-index: 10;
+        box-sizing: border-box;
+        //height: 90%;
+        max-width: 50%;
+        width: 50%;
+        // margin-top: 50px;
+        // margin-bottom: 50px;
+        @include media($md){
+            height: auto;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .close-popup-video {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 5;
+            cursor: pointer;
+            background-color: #ffffff;
+            border-radius: 50%;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 25px;
+                height: 2px;
+                background-color: #171717;
+                top: 16px;
+                left: 5px;
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+
+        .video-wrap{
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            &.vertical {
+                @include media($md){
+                    padding-top: 100%;
+                }
+            }
+          }
+          .video-wrap video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+    }
 }

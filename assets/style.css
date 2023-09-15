@@ -109,6 +109,42 @@ header {
     background-color: #ffffff;
     position: relative;
     z-index: 10; }
+    @media only screen and (max-width: 767px) {
+      header .header-wrap .contacts-row {
+        height: 25px; } }
+    header .header-wrap .contacts-row .container {
+      width: 1572px;
+      margin: 0 auto;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      position: relative; }
+      @media only screen and (max-width: 1600px) {
+        header .header-wrap .contacts-row .container {
+          width: 100%; } }
+    header .header-wrap .contacts-row .columns {
+      position: absolute;
+      width: 100%;
+      top: 15px;
+      left: 0px; }
+      header .header-wrap .contacts-row .columns .contact-col {
+        position: absolute; }
+        header .header-wrap .contacts-row .columns .contact-col.email-column {
+          left: 0px; }
+          @media only screen and (max-width: 1600px) {
+            header .header-wrap .contacts-row .columns .contact-col.email-column {
+              left: 20px; } }
+          @media only screen and (max-width: 767px) {
+            header .header-wrap .contacts-row .columns .contact-col.email-column {
+              left: 26px; } }
+        header .header-wrap .contacts-row .columns .contact-col.phone-column {
+          right: 0px; }
+          @media only screen and (max-width: 1600px) {
+            header .header-wrap .contacts-row .columns .contact-col.phone-column {
+              right: 20px; } }
+  @media only screen and (max-width: 1600px) and (max-width: 767px) {
+    header .header-wrap .contacts-row .columns .contact-col.phone-column {
+      right: 26px; } }
+
     header .header-wrap .top-row {
       padding-bottom: 20px; }
       @media only screen and (max-width: 767px) {
@@ -2302,6 +2338,30 @@ body {
             body section.product-info .gallary-images-dots .images-wrap .img-dot img {
               max-width: 100%;
               max-height: 100%; }
+      body section.product-info .video-preview-button {
+        position: relative;
+        text-align: center;
+        margin-top: 25px; }
+        body section.product-info .video-preview-button a {
+          border: 0.5px solid #171717;
+          border-radius: 7px;
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          height: 50px;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          color: #171717;
+          position: relative;
+          padding: 0px 25px;
+          -webkit-transition: 0.2s;
+          transition: 0.2s; }
+          body section.product-info .video-preview-button a:hover {
+            background-color: #171717;
+            color: #ffffff;
+            -webkit-transition: 0.2s;
+            transition: 0.2s; }
       body section.product-info .info-column {
         position: relative;
         padding-left: 41px;
@@ -4857,5 +4917,89 @@ body {
 
 #worldphonecallbutton {
   bottom: 32px !important; }
+
+.popup-video-preview {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .popup-video-preview.active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+  .popup-video-preview .popup-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5; }
+  .popup-video-preview .popup-wrap {
+    position: relative;
+    z-index: 10;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    max-width: 50%;
+    width: 50%; }
+    @media only screen and (max-width: 767px) {
+      .popup-video-preview .popup-wrap {
+        height: auto;
+        width: 100%;
+        max-width: 100%; } }
+    .popup-video-preview .popup-wrap .close-popup-video {
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 5;
+      cursor: pointer;
+      background-color: #ffffff;
+      border-radius: 50%; }
+      .popup-video-preview .popup-wrap .close-popup-video::before, .popup-video-preview .popup-wrap .close-popup-video::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: #171717;
+        top: 16px;
+        left: 5px; }
+      .popup-video-preview .popup-wrap .close-popup-video::before {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+      .popup-video-preview .popup-wrap .close-popup-video::after {
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+    .popup-video-preview .popup-wrap .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0; }
+      @media only screen and (max-width: 767px) {
+        .popup-video-preview .popup-wrap .video-wrap.vertical {
+          padding-top: 100%; } }
+    .popup-video-preview .popup-wrap .video-wrap video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
 
 /*# sourceMappingURL=style.css.map */

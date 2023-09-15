@@ -23,6 +23,7 @@
         setSKUNumber();
         mobileHeader();
         // popupProductGallary();
+        videoPopup();
     });
 
     function homeHeroSlider() {
@@ -438,6 +439,25 @@
                 }
             }
         })
+    }
+
+    function videoPopup() { 
+        jQuery('#video-btn').on('click', function (e) {
+            e.preventDefault();
+            jQuery('.popup-video-preview').addClass('active');
+        });
+        jQuery('.close-popup-video').on('click', function () { 
+            jQuery('.popup-video-preview').removeClass('active');
+            var video = document.getElementById("video-preview");
+            video.pause();
+            video.currentTime = 0;
+        });
+        jQuery('.popup-video-preview .popup-gallary-bg').on('click', function () { 
+            jQuery('.popup-video-preview').removeClass('active');
+            var video = document.getElementById("video-preview");
+            video.pause();
+            video.currentTime = 0;
+        });
     }
 
 })(jQuery);
