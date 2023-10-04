@@ -3107,7 +3107,7 @@ body {
         height: 100%;
         top: 0px;
         left: 0px;
-        z-index: 20;
+        z-index: -1;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -3126,7 +3126,8 @@ body {
           visibility: visible;
           opacity: 1;
           -webkit-transition: 0.3s;
-          transition: 0.3s; }
+          transition: 0.3s;
+          z-index: 20; }
         body section.product-info .popup-inquire .popup-bg,
         body section.product-info .popup-price-damand .popup-bg {
           position: absolute;
