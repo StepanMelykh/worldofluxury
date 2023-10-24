@@ -100,7 +100,7 @@
               <div class="our-price-affirm price" style="font-size: 18px;">Price on demand</div>
             {% endif %}
           </div>
-          {% if product.price > 0 %}
+          {% if product.price > 0 and product.available %}
             <div class="btn-wrap">
               <a
                 id="product_id_{{ product.id }}"
@@ -110,6 +110,15 @@
                 data-variant-id="{{ product.variants[0].id }}"
                 data-product-handle="{{ product.handle }}">Order Now
               </a>
+            </div>
+            <script>
+              console.log({{ product | json }});
+            </script>
+          {% elsif product.available == false %}
+            <div class="btn-wrap">
+              <a
+                href="javascript:void(0)"
+                style="display: flex;">Sold out</a>
             </div>
           {% else %}
             <div class="btn-wrap">
@@ -121,7 +130,7 @@
           {% endif %}
           <div class="affirm-info"></div>
         </div>
-        {% if product.price > 0 %}
+        {% if product.price > 0 and product.available %}
           <div class="column quantity-column">
             <div
               id="quantity_variant_id_{{ product.variants[0].id }}"
@@ -164,7 +173,7 @@
 
           <div class="inquire-link">
             <div class="add-to-cart-column">
-              {% if product.price > 0 %}
+              {% if product.price > 0 and product.available %}
                 <div class="btn-wrap">
                   <a
                     id="product_id_{{ product.id }}"
@@ -175,6 +184,12 @@
                     data-product-handle="{{ product.handle }}">Order Now
                   </a>
                 </div>
+              {% elsif product.available == false %}
+                  <div class="btn-wrap">
+                    <a
+                      href="javascript:void(0)"
+                      style="display: flex;">Sold out</a>
+                  </div>  
               {% else %}
                 <div class="btn-wrap">
                   <a
@@ -443,7 +458,7 @@
       </div>
     </div>
     <div class="column add-to-cart-column">
-      {% if product.price > 0 %}
+      {% if product.price > 0 and product.available %}
         <div class="btn-wrap">
           <a
             id="product_id_{{ product.id }}"
@@ -454,6 +469,12 @@
             data-product-handle="{{ product.handle }}">Order Now
           </a>
         </div>
+      {% elsif product.available == false %}
+          <div class="btn-wrap">
+            <a
+              href="javascript:void(0)"
+              style="display: flex;">Sold out</a>
+          </div>  
       {% else %}
         <div class="btn-wrap">
           <a

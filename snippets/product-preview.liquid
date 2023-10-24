@@ -44,14 +44,21 @@
         <span class="our-price-price">{{ product.price | money_without_trailing_zeros }}</span>
       </div>
       <div class="column order">
-        <a
-          id="product_id_{{ product.id }}"
-          href="javascript:void(0)"
-          class="add-to-cart quick-add-to-cart-btn"
-          onclick="quickAddItemToCart({{ product.id }})"
-          data-variant-id="{{ product.variants[0].id }}"
-          data-product-handle="{{ product.handle }}">Order now
-        </a>
+        {% if product.price > 0 and product.available %}
+          <a
+            id="product_id_{{ product.id }}"
+            href="javascript:void(0)"
+            class="add-to-cart quick-add-to-cart-btn"
+            onclick="quickAddItemToCart({{ product.id }})"
+            data-variant-id="{{ product.variants[0].id }}"
+            data-product-handle="{{ product.handle }}">Order now
+          </a>
+        {% else %}
+          <a
+            class="add-to-cart"
+            href="javascript:void(0)"
+            style="display: flex;">Sold out</a>
+        {% endif %}
       </div>
     </div>
   </div>
