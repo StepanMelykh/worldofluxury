@@ -1,0 +1,62 @@
+<div class="testimonials-wrap">
+    <div class="container">
+        <div class="section-title">{{ section.settings.title }}</div>
+        <div id="testimonials-slider" class="testimonials-slider owl-carousel">
+            {% for block in section.blocks %}
+                <div class="testimonial-item">
+                    <div class="content">{{ block.settings.testimonial }}</div>
+                    <div class="name">
+                        {% if block.settings.url != blank  %}
+                            <a href="{{ block.settings.url }}" target="_blank">{{ block.settings.name }}</a>
+                        {%  else %}
+                            <span>{{ block.settings.name }}</span>
+                        {% endif %}
+                    </div>
+                </div>            
+            {% endfor %}
+        </div>        
+    </div>
+</div>
+
+{% schema %}
+        {
+        "name": "Testimonials slider",
+        "tag": "section",
+        "class": "testimonials",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Slide",
+                "type": "slide",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "name",
+                        "label": "Name"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "testimonial",
+                        "label": "Testimonial"
+                    },
+                    {
+                        "type": "url",
+                        "id": "url",
+                        "label": "Url"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Testimonials slider"
+            }
+        ]
+    }
+{% endschema %}
